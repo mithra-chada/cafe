@@ -1,0 +1,3419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheroney — Boho Specialty Café &amp; Kitchen | Visakhapatnam</title>
+  <meta name="description" content="Cheroney: Vizag's Boho-inspired specialty coffee, signature hot chocolate, kombucha mocktails and all-day kitchen in Yendada, Visakhapatnam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Playfair:opsz,wdth,wght@5..1200,87.5..112.5,300..900&family=Titan+One&family=Yellowtail&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Playfair:opsz,wdth,wght@5..1200,87.5..112.5,300..900&family=Titan+One&family=Yellowtail&display=swap');
+
+    :root {
+      --cream: #faf3e4;
+      --ink: #141110;
+      --tomato: #ef4a23;
+      --butter: #ffd46e;
+      --sky: #8fc6e8;
+      --pink: #f6a9c2;
+      --sage: #b9c48a;
+      --white: #ffffff;
+      --night: #141110;
+      --page: var(--cream);
+    }
+
+    html[data-theme="dark"] {
+      --page: var(--night);
+    }
+
+    /* Fluid rem scaling system */
+    html {
+      font-size: calc(100vw / 90);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    @media (max-width: 991px) {
+      html {
+        font-size: calc(100vw / 60);
+      }
+    }
+    @media (max-width: 600px) {
+      html {
+        font-size: calc(100vw / 24.375);
+      }
+    }
+
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    a, button {
+      color: inherit;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+    img, video, svg {
+      display: block;
+    }
+
+    /* Lenis helper rules */
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+
+    body {
+      background-color: var(--page);
+      color: var(--ink);
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      transition: background-color .7s cubic-bezier(.65, .05, 0, 1), color .7s cubic-bezier(.65, .05, 0, 1);
+      overflow-x: clip;
+    }
+
+    /* Visibility before page-ready */
+    html:not([data-page-ready]) main {
+      visibility: hidden;
+    }
+    [data-text-reveal],
+    [data-scroll-reveal] {
+      visibility: hidden;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html main,
+      [data-text-reveal],
+      [data-scroll-reveal] {
+        visibility: visible !important;
+      }
+    }
+
+    /* Shared type styles */
+    .t-hero-headline {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      font-size: 9rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.8em;
+      text-align: center;
+    }
+    .t-section-headline {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      font-size: 8rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.8em;
+    }
+    .t-team-headline {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      font-size: 7rem;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.8em;
+    }
+    .t-alt-serif {
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 300, "wdth" 87.5, "opsz" 120;
+      font-weight: 300;
+      font-stretch: 87.5%;
+      letter-spacing: -0.035em;
+    }
+    .t-eyebrow-m {
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 500, "wdth" 87.5, "opsz" 40;
+      font-weight: 500;
+      font-stretch: 87.5%;
+      font-size: 2.5rem;
+      letter-spacing: -0.03em;
+      line-height: 1em;
+    }
+    .t-eyebrow-s {
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 500, "wdth" 87.5, "opsz" 40;
+      font-weight: 500;
+      font-stretch: 87.5%;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+      line-height: 1em;
+    }
+    .t-paragraph {
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 400, "wdth" 100, "opsz" 20;
+      font-weight: 400;
+      font-stretch: 100%;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+    @media (max-width: 991px) {
+      .t-hero-headline { font-size: 6.4rem; }
+      .t-section-headline { font-size: 6rem; }
+      .t-team-headline { font-size: 6rem; }
+    }
+    @media (max-width: 600px) {
+      .t-hero-headline { font-size: 4rem; }
+      .t-section-headline { font-size: 4.2rem; }
+      .t-team-headline { font-size: 4.2rem; }
+      .t-eyebrow-m { font-size: 1.75rem; }
+      .t-eyebrow-s { font-size: 1.5rem; }
+    }
+
+    /* SplitText line wrappers */
+    .line-mask {
+      overflow: hidden;
+      display: block;
+      padding-bottom: .06em;
+      margin-bottom: -.06em;
+    }
+    .line {
+      display: block;
+      padding-bottom: .06em;
+      margin-bottom: -.06em;
+      will-change: transform;
+    }
+    .char {
+      display: inline-block;
+      will-change: transform, font-variation-settings;
+    }
+
+    /* Cropping system (.crop & .cell) */
+    .crop {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      container-type: size;
+      overflow: hidden;
+      background-color: #e9dcc6;
+    }
+    .crop .cell {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: var(--ar, 1);
+      width: max(100cqw, calc(100cqh * var(--ar, 1)));
+      height: auto;
+      overflow: hidden;
+    }
+    .crop .cell img.sheet-img {
+      position: absolute;
+      max-width: none;
+      display: block;
+    }
+    .crop .cell img.cheroney-real-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      transition: transform 0.6s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    /* 5.1 Load wipe (fixed overlay) */
+    .load-wipe {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      pointer-events: none;
+      overflow: clip;
+    }
+    .load-wipe[data-transition-ready] {
+      display: none !important;
+    }
+    .load-wipe svg {
+      width: 100%;
+      height: 100%;
+    }
+    .load-wipe path {
+      fill: none;
+      stroke: var(--tomato);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 0;
+    }
+
+    /* 5.2 Cursor label ("View case ->") */
+    .cursor-label-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      pointer-events: none;
+      translate: -50% -120%;
+    }
+    .cursor-label-card {
+      width: 9.5rem;
+      background-color: var(--butter);
+      color: var(--ink);
+      overflow: hidden;
+      transform: scale(0);
+      transition: transform .4s cubic-bezier(.65, .05, 0, 1);
+      position: relative;
+      display: flex;
+      box-shadow: 0 .35rem 1.2rem rgba(20, 17, 16, 0.16);
+    }
+    .cursor-label-wrap[data-cursor-marquee-status="active"] .cursor-label-card {
+      transform: scale(1);
+    }
+    .cursor-label-track {
+      position: relative;
+      display: flex;
+      width: 100%;
+      white-space: nowrap;
+    }
+    .cursor-label-span {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      padding: .375em .25em;
+      white-space: nowrap;
+      display: inline-block;
+      animation: cursorMarquee 3s linear infinite;
+      animation-play-state: paused;
+    }
+    .cursor-label-span:nth-child(2) {
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+    @keyframes cursorMarquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* 5.3 Nav (fixed, z-index 50) */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+    .site-nav > * {
+      pointer-events: auto;
+    }
+    .nav-logo {
+      font-family: 'Yellowtail', cursive;
+      font-weight: 400;
+      font-size: 3.6rem;
+      line-height: 1;
+      color: var(--tomato);
+      transform: rotate(-8deg);
+      transform-origin: left center;
+      margin-top: .2rem;
+      display: inline-block;
+      text-shadow: 0 2px 12px rgba(250, 243, 228, 0.35);
+    }
+    .nav-center-pill {
+      position: absolute;
+      left: 50%;
+      top: 1.25rem;
+      transform: translateX(-50%);
+      height: 3rem;
+      padding: 0 1.25rem;
+      gap: 1.5rem;
+      background-color: var(--white);
+      color: var(--ink);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 .25rem 1rem rgba(20, 17, 16, 0.06);
+    }
+    .nav-link {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .draw-line-box {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 100%;
+      height: .5em;
+      color: var(--tomato);
+      pointer-events: none;
+      display: block;
+    }
+    .draw-line-box svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .nav-right-group {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+    }
+    .nav-contact-box {
+      height: 3rem;
+      padding: 0 1.25rem;
+      background-color: var(--white);
+      color: var(--ink);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      box-shadow: 0 .25rem 1rem rgba(20, 17, 16, 0.06);
+    }
+    .nav-dot {
+      width: .45rem;
+      height: .45rem;
+      border-radius: 50%;
+      background-color: var(--tomato);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 991px) {
+      .nav-center-pill {
+        display: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .site-nav {
+        padding: 1rem;
+      }
+      .nav-logo {
+        font-size: 2.6rem;
+      }
+      .nav-contact-box {
+        height: 2.5rem;
+        font-size: .95rem;
+        padding: 0 .9rem;
+      }
+    }
+
+    /* 5.4 Hero (100vh) */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    @media (max-width: 600px) {
+      .hero-video {
+        object-position: 6% 50%;
+      }
+    }
+
+    /* Hero Cursor Card */
+    .hero-cursor-card {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      width: 16rem;
+      height: 16rem;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 1.2rem 3rem rgba(20, 17, 16, 0.22);
+      border: .35rem solid var(--cream);
+    }
+    .hero-cursor-media {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.2);
+      position: relative;
+    }
+    .hero-cursor-media .crop {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .hero-cursor-media .crop.on {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: -3rem;
+      text-align: center;
+    }
+    .hero-meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      background: rgba(250, 243, 228, 0.88);
+      backdrop-filter: blur(6px);
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 500, "wdth" 87.5, "opsz" 20;
+      font-size: 1.05rem;
+      color: var(--ink);
+      border: 1px solid rgba(20, 17, 16, 0.12);
+    }
+    .hero-meta-pill strong {
+      color: var(--tomato);
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      text-transform: uppercase;
+      font-size: .95rem;
+    }
+    .hero-cta-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .375em;
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 500, "wdth" 87.5, "opsz" 40;
+      font-weight: 500;
+      font-size: 2.1rem;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--ink);
+    }
+    .hero-cta-text {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-cta-text .draw-line-box {
+      top: 118%;
+      height: .6em;
+      color: var(--tomato);
+    }
+    .hero-arrow-box {
+      width: 1em;
+      height: 1em;
+      background-color: var(--tomato);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-arrow-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform .525s cubic-bezier(.175, .885, .32, 1.275);
+    }
+    .hero-cta-link:hover .hero-arrow-track {
+      transform: translateY(100%);
+    }
+    .hero-arrow-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-arrow-icon:nth-child(2) {
+      position: absolute;
+      top: -100%;
+      left: 0;
+    }
+    .hero-arrow-icon svg {
+      width: 48%;
+      height: 48%;
+      fill: currentColor;
+    }
+
+    /* Client / Vibe Marquee */
+    .hero-marquee {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .marquee-scroll-wrap {
+      margin-left: -10%;
+      width: 120%;
+      display: flex;
+      align-items: center;
+      will-change: transform;
+    }
+    .marquee-collection {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      will-change: transform;
+    }
+    .marquee-item {
+      width: 9rem;
+      height: 7rem;
+      margin: 0 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .35rem;
+      color: var(--tomato);
+      flex-shrink: 0;
+    }
+    .marquee-item svg {
+      width: 60%;
+      height: 60%;
+      overflow: visible;
+    }
+    .marquee-item-label {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-size: .72rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--ink);
+      opacity: .72;
+    }
+
+    @media (max-width: 600px) {
+      .hero-content {
+        gap: 1.4rem;
+        margin-top: 5rem;
+        padding: 0 1rem;
+      }
+      .hero-cta-link {
+        font-size: 1.6rem;
+      }
+      .hero-cursor-card {
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 7.5rem;
+        height: 7.5rem;
+        top: 13%;
+        left: 50%;
+        translate: -50% 0;
+        transform: rotate(-5deg) !important;
+      }
+      .marquee-item {
+        width: 5.5rem;
+        height: 5rem;
+        margin: 0 1rem;
+      }
+    }
+
+    /* 5.5 "Latest drops" (two columns, pinned) */
+    .featured-section {
+      position: relative;
+      width: 100%;
+    }
+    .featured-pin {
+      height: 100vh;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 38fr 62fr;
+      gap: 2rem;
+      padding: 0 3rem 0 5rem;
+      align-items: center;
+      overflow: hidden;
+    }
+    .featured-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .featured-left .t-eyebrow-s {
+      max-width: 26rem;
+    }
+    .featured-stage {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      perspective: 1400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-stack-root {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+    .featured-card {
+      position: absolute;
+      aspect-ratio: 1.75;
+      width: min(80vh, 52vw);
+      left: 50%;
+      top: calc(50% - 5vh);
+      translate: -50% -50%;
+      padding: 1.75vh;
+      display: block;
+      box-shadow: 0 1.5rem 3.5rem rgba(20, 17, 16, 0.18);
+      will-change: transform, opacity;
+      text-align: left;
+    }
+    .featured-card[data-frame="tomato"] { background-color: var(--tomato); }
+    .featured-card[data-frame="sky"] { background-color: var(--sky); }
+    .featured-card[data-frame="butter"] { background-color: var(--butter); }
+    .featured-card[data-frame="sage"] { background-color: var(--sage); }
+    .featured-card[data-frame="pink"] { background-color: var(--pink); }
+
+    .featured-card-grad {
+      position: absolute;
+      inset: 1.75vh;
+      background: linear-gradient(rgba(0,0,0,0) 45%, rgba(0,0,0,0.62));
+      pointer-events: none;
+      z-index: 3;
+    }
+    .featured-card-meta {
+      position: absolute;
+      top: 3.2vh;
+      left: 3.2vh;
+      z-index: 4;
+      background: rgba(20, 17, 16, 0.72);
+      color: var(--cream);
+      padding: .35rem .75rem;
+      border-radius: 999px;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-size: .85rem;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+    .featured-card-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 2.4em;
+      width: 90%;
+      text-align: center;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-weight: 800;
+      font-stretch: 72%;
+      text-transform: uppercase;
+      font-size: 7.5vh;
+      line-height: .8;
+      letter-spacing: -0.02em;
+      color: var(--cream);
+      text-shadow: 0 .05em .3em rgba(0,0,0,.25);
+      z-index: 4;
+      pointer-events: none;
+    }
+    .featured-card-sub {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 2.2vh;
+      width: 88%;
+      text-align: center;
+      font-family: 'Playfair', serif;
+      font-variation-settings: "wght" 400, "wdth" 100, "opsz" 20;
+      font-size: 1.05rem;
+      color: var(--cream);
+      z-index: 4;
+      opacity: 0.92;
+      pointer-events: none;
+    }
+
+    /* Rotating Sun Badge */
+    .featured-badge {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      width: 9rem;
+      height: 9rem;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .featured-badge svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .featured-badge text {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 80;
+      font-weight: 800;
+      font-stretch: 80%;
+      font-size: 24px;
+      fill: var(--cream);
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 991px) {
+      .featured-pin {
+        height: auto;
+        grid-template-columns: 1fr;
+        padding: 6rem 1.5rem 4rem;
+        gap: 3rem;
+      }
+      .featured-stage {
+        height: auto;
+        perspective: none;
+      }
+      .featured-stack-root {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        height: auto;
+      }
+      .featured-card {
+        position: relative;
+        width: 100%;
+        left: auto;
+        top: auto;
+        translate: none;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 1rem;
+      }
+      .featured-card-grad {
+        inset: 1rem;
+      }
+      .featured-card-title {
+        font-size: 3.4rem;
+        bottom: 1.6em;
+      }
+      .featured-badge {
+        display: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .featured-card-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* 5.6 "Meet the flock" (tall, sticky title, dark theme) */
+    .team-section {
+      position: relative;
+      height: 340vh;
+      width: 100%;
+      transition: color .7s cubic-bezier(.65, .05, 0, 1);
+    }
+    html[data-theme="dark"] .team-section {
+      color: var(--cream);
+    }
+    @media (max-width: 991px) {
+      .team-section {
+        height: 260vh;
+      }
+    }
+    .team-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .team-title-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4rem;
+      text-align: center;
+    }
+    .team-title-group .t-paragraph {
+      max-width: 26rem;
+    }
+    .team-stamp {
+      position: absolute;
+      width: 10rem;
+      left: -3rem;
+      top: -8rem;
+      transform: rotate(-10deg);
+      z-index: 2;
+      cursor: grab;
+      user-select: none;
+    }
+    .team-stamp svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    .team-stamp-text {
+      font-family: 'Yellowtail', cursive;
+      font-size: 50px;
+      fill: var(--tomato);
+    }
+    .team-visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      margin-top: .5rem;
+      position: relative;
+      z-index: 4;
+    }
+    .team-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.25rem;
+      border-radius: 999px;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-size: .95rem;
+      text-transform: uppercase;
+      letter-spacing: .01em;
+      transition: transform .25s ease, background-color .25s ease;
+    }
+    .team-pill-btn.primary {
+      background-color: var(--tomato);
+      color: var(--cream);
+    }
+    .team-pill-btn.secondary {
+      background-color: rgba(250, 243, 228, 0.14);
+      color: inherit;
+      border: 1px solid currentColor;
+    }
+    .team-pill-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Photo Layer */
+    .team-photo-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .team-photo-card {
+      position: absolute;
+      aspect-ratio: 4 / 5;
+      background-color: #e9dcc6;
+      pointer-events: auto;
+      will-change: transform;
+      box-shadow: 0 1.25rem 2.75rem rgba(0, 0, 0, 0.28);
+      cursor: pointer;
+    }
+    .team-photo-card .crop {
+      width: 100%;
+      height: 100%;
+    }
+    .team-sticker {
+      position: absolute;
+      left: 50%;
+      bottom: -0.9rem;
+      transform: translateX(-50%) rotate(var(--sticker-rot, 0deg));
+      font-family: 'Titan One', cursive;
+      font-weight: 400;
+      font-size: 3.4rem;
+      line-height: 1;
+      color: var(--tomato);
+      -webkit-text-stroke: .32rem var(--cream);
+      paint-order: stroke fill;
+      white-space: nowrap;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .team-caption-tag {
+      position: absolute;
+      left: .7rem;
+      bottom: .7rem;
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-weight: 700;
+      font-stretch: 72%;
+      text-transform: uppercase;
+      font-size: .9rem;
+      padding: .25rem .5rem;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      .team-title-group {
+        padding: 0 1.5rem;
+      }
+      .team-stamp {
+        width: 6rem;
+        left: 0;
+        top: -5rem;
+      }
+      .team-photo-card {
+        width: 8rem !important;
+      }
+      /* Left photos 1-6 at 1, 17, 33, 49, 65, 81 % */
+      .team-photo-card[data-side="left"][data-side-idx="1"] { left: -1rem !important; top: 1% !important; }
+      .team-photo-card[data-side="left"][data-side-idx="2"] { left: 4rem !important; top: 17% !important; }
+      .team-photo-card[data-side="left"][data-side-idx="3"] { left: -1rem !important; top: 33% !important; }
+      .team-photo-card[data-side="left"][data-side-idx="4"] { left: 4rem !important; top: 49% !important; }
+      .team-photo-card[data-side="left"][data-side-idx="5"] { left: -1rem !important; top: 65% !important; }
+      .team-photo-card[data-side="left"][data-side-idx="6"] { left: 4rem !important; top: 81% !important; }
+
+      /* Right photos 1-6 at 9, 25, 41, 57, 73, 89 % */
+      .team-photo-card[data-side="right"][data-side-idx="1"] { right: -1rem !important; top: 9% !important; }
+      .team-photo-card[data-side="right"][data-side-idx="2"] { right: 4rem !important; top: 25% !important; }
+      .team-photo-card[data-side="right"][data-side-idx="3"] { right: -1rem !important; top: 41% !important; }
+      .team-photo-card[data-side="right"][data-side-idx="4"] { right: 4rem !important; top: 57% !important; }
+      .team-photo-card[data-side="right"][data-side-idx="5"] { right: -1rem !important; top: 73% !important; }
+      .team-photo-card[data-side="right"][data-side-idx="6"] { right: 4rem !important; top: 89% !important; }
+
+      .team-sticker {
+        font-size: 1.9rem;
+        -webkit-text-stroke: .22rem var(--cream);
+      }
+      .team-caption-tag {
+        display: none;
+      }
+    }
+
+    /* 7. Reduced motion overrides */
+    @media (prefers-reduced-motion: reduce) {
+      .load-wipe {
+        display: none !important;
+      }
+      .team-section {
+        height: auto !important;
+        padding-bottom: 4rem;
+      }
+      .team-sticky {
+        position: relative !important;
+        height: auto !important;
+        padding: 8rem 1.5rem 4rem;
+      }
+      .team-photo-layer {
+        position: relative !important;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        pointer-events: auto;
+      }
+      .team-photo-card {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        width: 100% !important;
+        transform: none !important;
+      }
+    }
+
+    /* Interactive Cheroney Google Maps & Menu Modal Drawer */
+    .cheroney-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(20, 17, 16, 0.72);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .35s ease, visibility .35s ease;
+    }
+    .cheroney-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .cheroney-modal {
+      width: min(64rem, 94vw);
+      max-height: 88vh;
+      background: var(--cream);
+      color: var(--ink);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.45);
+      border: 2px solid var(--ink);
+    }
+    .cheroney-modal-header {
+      padding: 1.25rem 1.75rem;
+      background: var(--ink);
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .cheroney-modal-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .cheroney-modal-brand .script {
+      font-family: 'Yellowtail', cursive;
+      font-size: 2.4rem;
+      color: var(--tomato);
+      transform: rotate(-6deg);
+    }
+    .cheroney-modal-tabs {
+      display: flex;
+      gap: .5rem;
+      padding: .85rem 1.75rem;
+      background: #efe5d0;
+      border-bottom: 1px solid rgba(20, 17, 16, 0.12);
+      flex-wrap: wrap;
+    }
+    .cheroney-tab-btn {
+      padding: .45rem 1rem;
+      border-radius: 999px;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      font-size: .95rem;
+      text-transform: uppercase;
+      background: var(--white);
+      color: var(--ink);
+      transition: background .2s, color .2s;
+    }
+    .cheroney-tab-btn.active {
+      background: var(--tomato);
+      color: var(--white);
+    }
+    .cheroney-modal-close {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--tomato);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+    .cheroney-modal-body {
+      padding: 1.75rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .cheroney-spotlight-card {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 1.5rem;
+      background: var(--white);
+      padding: 1.25rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(20, 17, 16, 0.1);
+      align-items: center;
+    }
+    @media (max-width: 600px) {
+      .cheroney-spotlight-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    .cheroney-spotlight-img-wrap {
+      aspect-ratio: 16 / 10;
+      border-radius: .75rem;
+      overflow: hidden;
+      background: #e9dcc6;
+      position: relative;
+    }
+    .cheroney-spotlight-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cheroney-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      gap: 1rem;
+    }
+    .cheroney-gallery-item {
+      background: var(--white);
+      border-radius: .75rem;
+      overflow: hidden;
+      border: 1px solid rgba(20, 17, 16, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .cheroney-gallery-item .img-box {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #e9dcc6;
+    }
+    .cheroney-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .cheroney-gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .cheroney-gallery-caption {
+      padding: .75rem;
+      font-family: 'Playfair', serif;
+      font-size: .95rem;
+      line-height: 1.35;
+    }
+    .cheroney-gallery-caption strong {
+      display: block;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 700, "wdth" 72;
+      text-transform: uppercase;
+      font-size: .9rem;
+      color: var(--tomato);
+      margin-bottom: .2rem;
+    }
+    .cheroney-menu-filter-bar {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+    .cheroney-filter-chip {
+      padding: .35rem .85rem;
+      border-radius: 999px;
+      border: 1px solid var(--ink);
+      font-size: .85rem;
+      text-transform: uppercase;
+    }
+    .cheroney-filter-chip.active {
+      background: var(--ink);
+      color: var(--cream);
+    }
+    .cheroney-menu-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      gap: .9rem;
+    }
+    .cheroney-menu-card {
+      background: var(--white);
+      padding: 1rem;
+      border-radius: .75rem;
+      border: 1px solid rgba(20, 17, 16, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+    .cheroney-menu-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: .5rem;
+    }
+    .cheroney-menu-card-title {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+    .cheroney-menu-card-tag {
+      font-size: .75rem;
+      padding: .15rem .5rem;
+      border-radius: 999px;
+      background: var(--butter);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 5.1 Load wipe (fixed overlay) -->
+  <div class="load-wipe" id="loadWipe" aria-hidden="true">
+    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+      <path id="wipePath" d="M43 259C296 11.5688 994 -3 922.994 498.259C851.988 999.517 281.229 1004.28 123 767C-35.2287 529.721 179 259 472 259C765 259 792 498.259 659 654C526 809.741 319 755 285 669.001C251 583.001 299 452 496 452C693 452 876.073 639.171 935 937.001" />
+    </svg>
+  </div>
+
+  <!-- 5.2 Cursor label ("View case ->") -->
+  <div class="cursor-label-wrap" id="cursorLabelWrap" data-cursor-marquee-status="not-active" aria-hidden="true">
+    <div class="cursor-label-card">
+      <div class="cursor-label-track">
+        <span class="cursor-label-span">View case →</span>
+        <span class="cursor-label-span">View case →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5.3 Nav (fixed, z-index 50) -->
+  <header class="site-nav">
+    <a href="#top" class="nav-logo" aria-label="Cheroney Home">Cheroney</a>
+
+    <nav class="nav-center-pill" aria-label="Primary Navigation">
+      <a href="#flock" class="nav-link" data-draw-line>
+        <span>About</span>
+        <span class="draw-line-box"></span>
+      </a>
+      <a href="#drops" class="nav-link" data-draw-line>
+        <span>Work</span>
+        <span class="draw-line-box"></span>
+      </a>
+      <a href="#drops" class="nav-link" data-draw-line>
+        <span>Services</span>
+        <span class="draw-line-box"></span>
+      </a>
+    </nav>
+
+    <div class="nav-right-group">
+      <button type="button" class="nav-contact-box" id="openMapsGalleryBtn" title="View Cheroney Google Maps Photos &amp; Menu">
+        <span class="nav-dot" style="background-color: var(--sage);"></span>
+        <span>Maps &amp; Menu</span>
+      </button>
+      <a href="#flock" class="nav-contact-box" data-draw-line>
+        <span class="nav-dot"></span>
+        <span>Contact</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 5.4 Hero (100vh, data-cursor-cards, threshold 300) -->
+    <section class="hero-section" id="heroSection" data-cursor-cards data-threshold="300">
+      <video
+        class="hero-video"
+        id="heroVideo"
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+        poster="https://images.higgs.ai/?default=1&amp;output=webp&amp;url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261110_224241_f6feccd5-1c45-4d22-b369-f927916f9973.png&amp;w=2048&amp;q=85"
+      ></video>
+
+      <!-- Cursor card (z-index 1, behind the text) -->
+      <div class="hero-cursor-card" id="heroCursorCard" aria-hidden="true">
+        <div class="hero-cursor-media" id="heroCursorMedia">
+          <div class="crop on" data-crop="work2:1"></div>
+          <div class="crop" data-crop="work1:0"></div>
+          <div class="crop" data-crop="work2:3"></div>
+          <div class="crop" data-crop="work1:1"></div>
+          <div class="crop" data-crop="work2:2"></div>
+          <div class="crop" data-crop="work1:2"></div>
+          <div class="crop" data-crop="work2:0"></div>
+          <div class="crop" data-crop="work1:3"></div>
+        </div>
+      </div>
+
+      <!-- Content (z-index 2, column flex, centred, gap 2 rem, margin-top -3 rem) -->
+      <div class="hero-content" data-text-reveal-group>
+        <div class="hero-meta-pill">
+          <strong>4.7 ★ Google Maps</strong>
+          <span>· Beside MK Gold Coast, Yendada, Visakhapatnam · 9 AM – 11 PM</span>
+        </div>
+
+        <h1
+          class="t-hero-headline"
+          data-text-reveal="chars"
+          data-font-weight-hover
+          data-rest="700"
+          data-near="200"
+          data-radius="400"
+        >
+          STORIES THAT<br>GET <span
+            class="t-alt-serif"
+            data-font-weight-hover
+            data-rest="300"
+            data-near="800"
+            data-radius="400"
+          >BREWED</span>
+        </h1>
+
+        <a href="#drops" class="hero-cta-link" id="heroSeeReelLink">
+          <span class="hero-cta-text" data-draw-line="always">
+            <span>See the pours</span>
+            <span class="draw-line-box" id="heroAlwaysUnderline"></span>
+          </span>
+          <span class="hero-arrow-box" aria-hidden="true">
+            <span class="hero-arrow-track">
+              <span class="hero-arrow-icon">
+                <svg viewBox="0 0 14 13"><path d="M12.94 5.7 9.95 8 6.9 10.37l.84 1.86V0h-2.55v12.23l.85-1.86L3 8 0 5.7V9.05l6.47 4.95 6.47-4.95z"/></svg>
+              </span>
+              <span class="hero-arrow-icon">
+                <svg viewBox="0 0 14 13"><path d="M12.94 5.7 9.95 8 6.9 10.37l.84 1.86V0h-2.55v12.23l.85-1.86L3 8 0 5.7V9.05l6.47 4.95 6.47-4.95z"/></svg>
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+
+      <!-- Client / Cafe Vibe Marquee -->
+      <div class="hero-marquee" id="heroMarquee" data-direction="left" data-speed="30" data-scroll-speed="10" data-duplicate="2">
+        <div class="marquee-scroll-wrap" id="marqueeScrollWrap">
+          <div class="marquee-collection">
+            <!-- 1. Six-spoke asterisk of round-capped strokes -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round">
+                <line x1="50" y1="12" x2="50" y2="88"/>
+                <line x1="17" y1="31" x2="83" y2="69"/>
+                <line x1="83" y1="31" x2="17" y2="69"/>
+              </svg>
+              <span class="marquee-item-label">Rocket Espresso</span>
+            </div>
+            <!-- 2. Two capsule "D" shapes side by side -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="currentColor">
+                <path d="M14 20h18c15.5 0 28 13.4 28 30s-12.5 30-28 30H14V20zm38 0h18c15.5 0 28 13.4 28 30s-12.5 30-28 30H52V20z"/>
+              </svg>
+              <span class="marquee-item-label">Boho Arches</span>
+            </div>
+            <!-- 3. Three wavy lines -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                <path d="M12 30c12-12 26 12 38 0s26-12 38 0"/>
+                <path d="M12 50c12-12 26 12 38 0s26-12 38 0"/>
+                <path d="M12 70c12-12 26 12 38 0s26-12 38 0"/>
+              </svg>
+              <span class="marquee-item-label">Hot Chocolate</span>
+            </div>
+            <!-- 4. Four diamonds in a diamond pattern -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="currentColor">
+                <polygon points="50,10 64,28 50,46 36,28"/>
+                <polygon points="50,54 64,72 50,90 36,72"/>
+                <polygon points="24,32 38,50 24,68 10,50"/>
+                <polygon points="76,32 90,50 76,68 62,50"/>
+              </svg>
+              <span class="marquee-item-label">Kombucha Bar</span>
+            </div>
+            <!-- 5. A half sun over three bars -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="currentColor">
+                <path d="M20 52a30 30 0 0 1 60 0H20z"/>
+                <rect x="16" y="60" width="68" height="6" rx="3"/>
+                <rect x="24" y="71" width="52" height="6" rx="3"/>
+                <rect x="34" y="82" width="32" height="6" rx="3"/>
+              </svg>
+              <span class="marquee-item-label">Yendada Coast</span>
+            </div>
+            <!-- 6. Two arches -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round">
+                <path d="M16 78V44a16 16 0 0 1 32 0v34"/>
+                <path d="M52 78V44a16 16 0 0 1 32 0v34"/>
+              </svg>
+              <span class="marquee-item-label">Vietnamese Brew</span>
+            </div>
+            <!-- 7. A four-point sparkle star -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 8C53 34 66 47 92 50C66 53 53 66 50 92C47 66 34 53 8 50C34 47 47 34 50 8Z"/>
+              </svg>
+              <span class="marquee-item-label">Nourish &amp; Sip</span>
+            </div>
+            <!-- 8. A circle with a cross inside -->
+            <div class="marquee-item">
+              <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                <circle cx="50" cy="50" r="34"/>
+                <line x1="50" y1="26" x2="50" y2="74"/>
+                <line x1="26" y1="50" x2="74" y2="50"/>
+              </svg>
+              <span class="marquee-item-label">9 AM – 11 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.5 "Latest drops" (two columns, pinned) -->
+    <section class="featured-section" id="drops" data-featured-stack data-scroll-factor="1.2">
+      <div class="featured-pin" id="featuredPin">
+        <!-- Left column -->
+        <div class="featured-left" data-scroll-reveal-group>
+          <p class="t-eyebrow-s" data-scroll-reveal="lines">
+            Made to be savored twice. A handful of what left our Rocket espresso bar and kitchen in Yendada lately.
+          </p>
+          <h2
+            class="t-section-headline"
+            data-scroll-reveal="chars"
+            data-font-weight-hover
+            data-rest="700"
+            data-near="200"
+            data-radius="400"
+          >
+            LATEST <span
+              class="t-alt-serif"
+              data-font-weight-hover
+              data-rest="300"
+              data-near="800"
+              data-radius="400"
+            >DROPS</span>
+          </h2>
+        </div>
+
+        <!-- Right column (stage) -->
+        <div class="featured-stage" id="featuredStage">
+          <div class="featured-stack-root" id="featuredStackRoot">
+            <!-- Slide 1: tomato / work1:0 -->
+            <a
+              href="#case-hot-chocolate"
+              class="featured-card"
+              data-frame="tomato"
+              data-case-index="0"
+              data-cursor-marquee-text="View case →"
+            >
+              <div class="crop" data-crop="work1:0"></div>
+              <div class="featured-card-grad"></div>
+              <span class="featured-card-meta">01 · Signature Pour &amp; Bake</span>
+              <h3 class="featured-card-title">VELVET MOCHA</h3>
+              <p class="featured-card-sub">Signature Hot Chocolate, Latte Art Cappuccino &amp; Warm Walnut Brownie</p>
+            </a>
+
+            <!-- Slide 2: sky / work1:1 -->
+            <a
+              href="#case-boho-arches"
+              class="featured-card"
+              data-frame="sky"
+              data-case-index="1"
+              data-cursor-marquee-text="View case →"
+            >
+              <div class="crop" data-crop="work1:1"></div>
+              <div class="featured-card-grad"></div>
+              <span class="featured-card-meta">02 · The Espresso Bar</span>
+              <h3 class="featured-card-title">BALI ARCHES</h3>
+              <p class="featured-card-sub">Woven Cane Counter, White Rocket Espresso &amp; Illuminated Archways</p>
+            </a>
+
+            <!-- Slide 3: butter / work1:2 -->
+            <a
+              href="#case-bruschetta"
+              class="featured-card"
+              data-frame="butter"
+              data-case-index="2"
+              data-cursor-marquee-text="View case →"
+            >
+              <div class="crop" data-crop="work1:2"></div>
+              <div class="featured-card-grad"></div>
+              <span class="featured-card-meta">03 · Kitchen Plates</span>
+              <h3 class="featured-card-title">FLAKE &amp; BAKE</h3>
+              <p class="featured-card-sub">Cherry Tomato, Black Olive &amp; Herb Bruschetta Trio on Sourdough</p>
+            </a>
+
+            <!-- Slide 4: sage / work1:3 -->
+            <a
+              href="#case-boho-lounge"
+              class="featured-card"
+              data-frame="sage"
+              data-case-index="3"
+              data-cursor-marquee-text="View case →"
+            >
+              <div class="crop" data-crop="work1:3"></div>
+              <div class="featured-card-grad"></div>
+              <span class="featured-card-meta">04 · Yendada Sanctuary</span>
+              <h3 class="featured-card-title">BOHO LOUNGE</h3>
+              <p class="featured-card-sub">Rattan Seating, Checkered Tile Floors &amp; Warm Pendant Glow</p>
+            </a>
+
+            <!-- Slide 5: pink / work2:0 -->
+            <a
+              href="#case-kombucha"
+              class="featured-card"
+              data-frame="pink"
+              data-case-index="4"
+              data-cursor-marquee-text="View case →"
+            >
+              <div class="crop" data-crop="work2:0"></div>
+              <div class="featured-card-grad"></div>
+              <span class="featured-card-meta">05 · Evening Infusions</span>
+              <h3 class="featured-card-title">NIGHT BITES</h3>
+              <p class="featured-card-sub">Two-Flavour Infused Kombucha Mocktails, Vietnamese Brew &amp; Tiramisu</p>
+            </a>
+          </div>
+
+          <!-- Badge: bottom-right 9x9 rem -->
+          <div class="featured-badge" id="featuredBadge" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs>
+                <path id="badgeCirclePath" d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0" />
+              </defs>
+              <circle cx="100" cy="100" r="98" fill="var(--tomato)" />
+              <text textLength="436" lengthAdjust="spacing">
+                <textPath href="#badgeCirclePath" startOffset="0%">SCROLL · SAVE · SHARE · REPEAT ·</textPath>
+              </text>
+              <!-- Cream outline sun: circle r 17 plus eight round-capped rays, stroke 5 -->
+              <g fill="none" stroke="var(--cream)" stroke-width="5" stroke-linecap="round">
+                <circle cx="100" cy="100" r="17" />
+                <line x1="100" y1="68" x2="100" y2="75" />
+                <line x1="100" y1="125" x2="100" y2="132" />
+                <line x1="68" y1="100" x2="75" y2="100" />
+                <line x1="125" y1="100" x2="132" y2="100" />
+                <line x1="77.4" y1="77.4" x2="82.3" y2="82.3" />
+                <line x1="117.7" y1="117.7" x2="122.6" y2="122.6" />
+                <line x1="122.6" y1="77.4" x2="117.7" y2="82.3" />
+                <line x1="82.3" y1="117.7" x2="77.4" y2="122.6" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.6 "Meet the flock" (tall, sticky title, dark theme) -->
+    <section class="team-section" id="flock" data-page-theme="dark">
+      <div class="team-sticky">
+        <div class="team-title-group" data-scroll-reveal-group>
+          <!-- Stamp sticker -->
+          <div class="team-stamp" data-momentum-target>
+            <svg viewBox="0 0 220 130">
+              <ellipse cx="110" cy="65" rx="104" ry="58" fill="var(--cream)" stroke="var(--tomato)" stroke-width="10" />
+              <text x="110" y="79" text-anchor="middle" class="team-stamp-text" transform="rotate(-8 110 65)">Cheroney</text>
+            </svg>
+          </div>
+
+          <p class="t-eyebrow-m" data-scroll-reveal="lines">The people &amp; spaces behind the pours</p>
+
+          <h2
+            class="t-team-headline"
+            data-scroll-reveal="chars"
+            data-font-weight-hover
+            data-rest="700"
+            data-near="200"
+            data-radius="400"
+          >
+            <span
+              class="t-alt-serif"
+              data-font-weight-hover
+              data-rest="300"
+              data-near="800"
+              data-radius="400"
+            >MEET</span> THE <span
+              class="t-alt-serif"
+              data-font-weight-hover
+              data-rest="300"
+              data-near="800"
+              data-radius="400"
+            >FLOCK</span>
+          </h2>
+
+          <p class="t-paragraph" data-scroll-reveal="lines">
+            Beside MK Gold Coast in Yendada, Visakhapatnam. We pull Rocket espresso, infuse two-flavour kombucha and bake fresh from 9 AM to 11 PM before the coffee goes cold.
+          </p>
+
+          <div class="team-visit-actions" data-scroll-reveal="element">
+            <button type="button" class="team-pill-btn primary" id="openModalFromTeamBtn">
+              Explore Google Maps Gallery &amp; Menu
+            </button>
+            <a
+              href="https://share.google/DbSYDy9BybCwlXe0U"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="team-pill-btn secondary"
+            >
+              Open on Google Maps ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo layer (12 cards, exact table coordinates & speeds) -->
+      <div class="team-photo-layer" id="teamPhotoLayer">
+        <!-- Left 1: 2.5vw, 3%, 14rem, -4deg, speed 1, team1:0, Assala (-7deg) -->
+        <div
+          class="team-photo-card"
+          data-side="left"
+          data-side-idx="1"
+          data-speed="1"
+          data-case-index="0"
+          data-momentum-target
+          style="left: 2.5vw; top: 3%; width: 14rem; transform: rotate(-4deg);"
+        >
+          <div class="crop" data-crop="team1:0"></div>
+          <span class="team-sticker" style="--sticker-rot: -7deg;">Assala</span>
+        </div>
+
+        <!-- Left 2: 21vw, 19%, 11rem, 3deg, speed 0.6, bts:0, ON SET -->
+        <div
+          class="team-photo-card"
+          data-side="left"
+          data-side-idx="2"
+          data-speed="0.6"
+          data-case-index="1"
+          data-momentum-target
+          style="left: 21vw; top: 19%; width: 11rem; transform: rotate(3deg);"
+        >
+          <div class="crop" data-crop="bts:0"></div>
+          <span class="team-caption-tag">ESPRESSO BAR</span>
+        </div>
+
+        <!-- Left 3: 3vw, 33%, 13rem, 5deg, speed 1.3, team1:1, Joseph (4deg) -->
+        <div
+          class="team-photo-card"
+          data-side="left"
+          data-side-idx="3"
+          data-speed="1.3"
+          data-case-index="2"
+          data-momentum-target
+          style="left: 3vw; top: 33%; width: 13rem; transform: rotate(5deg);"
+        >
+          <div class="crop" data-crop="team1:1"></div>
+          <span class="team-sticker" style="--sticker-rot: 4deg;">Joseph</span>
+        </div>
+
+        <!-- Left 4: 23vw, 49%, 13.5rem, -3deg, speed 0.8, team2:3, Mila (-5deg) -->
+        <div
+          class="team-photo-card"
+          data-side="left"
+          data-side-idx="4"
+          data-speed="0.8"
+          data-case-index="3"
+          data-momentum-target
+          style="left: 23vw; top: 49%; width: 13.5rem; transform: rotate(-3deg);"
+        >
+          <div class="crop" data-crop="team2:3"></div>
+          <span class="team-sticker" style="--sticker-rot: -5deg;">Mila</span>
+        </div>
+
+        <!-- Left 5: 2vw, 64%, 11.5rem, -6deg, speed 1.15, bts:2, DINNER, IN 9:16 -->
+        <div
+          class="team-photo-card"
+          data-side="left"
+          data-side-idx="5"
+          data-speed="1.15"
+          data-case-index="4"
+          data-momentum-target
+          style="left: 2vw; top: 64%; width: 11.5rem; transform: rotate(-6deg);"
+        >
+          <div class="crop" data-crop="bts:2"></div>
+          <span class="team-caption-tag">DINNER, IN 9:16</span>
+        </div>
+
+        <!-- Left 6: 20vw, 79%, 14rem, 4deg, speed 0.7, team1:2, Daan (6deg) -->
+        <div
+          class="team-photo-card"
+          data-side="left"
+          data-side-idx="6"
+          data-speed="0.7"
+          data-case-index="1"
+          data-momentum-target
+          style="left: 20vw; top: 79%; width: 14rem; transform: rotate(4deg);"
+        >
+          <div class="crop" data-crop="team1:2"></div>
+          <span class="team-sticker" style="--sticker-rot: 6deg;">Daan</span>
+        </div>
+
+        <!-- Right 1: 3vw, 2%, 13.5rem, 4deg, speed 0.75, team2:0, Lotte (5deg) -->
+        <div
+          class="team-photo-card"
+          data-side="right"
+          data-side-idx="1"
+          data-speed="0.75"
+          data-case-index="2"
+          data-momentum-target
+          style="right: 3vw; top: 2%; width: 13.5rem; transform: rotate(4deg);"
+        >
+          <div class="crop" data-crop="team2:0"></div>
+          <span class="team-sticker" style="--sticker-rot: 5deg;">Lotte</span>
+        </div>
+
+        <!-- Right 2: 22vw, 17%, 11rem, -5deg, speed 1.25, bts:1, TAKE ONE -->
+        <div
+          class="team-photo-card"
+          data-side="right"
+          data-side-idx="2"
+          data-speed="1.25"
+          data-case-index="0"
+          data-momentum-target
+          style="right: 22vw; top: 17%; width: 11rem; transform: rotate(-5deg);"
+        >
+          <div class="crop" data-crop="bts:1"></div>
+          <span class="team-caption-tag">YENDADA HUB</span>
+        </div>
+
+        <!-- Right 3: 2.5vw, 32%, 14rem, -3deg, speed 0.9, team2:1, Jules (-6deg) -->
+        <div
+          class="team-photo-card"
+          data-side="right"
+          data-side-idx="3"
+          data-speed="0.9"
+          data-case-index="3"
+          data-momentum-target
+          style="right: 2.5vw; top: 32%; width: 14rem; transform: rotate(-3deg);"
+        >
+          <div class="crop" data-crop="team2:1"></div>
+          <span class="team-sticker" style="--sticker-rot: -6deg;">Jules</span>
+        </div>
+
+        <!-- Right 4: 23vw, 48%, 13rem, 5deg, speed 1.4, team1:3, Yara (4deg) -->
+        <div
+          class="team-photo-card"
+          data-side="right"
+          data-side-idx="4"
+          data-speed="1.4"
+          data-case-index="4"
+          data-momentum-target
+          style="right: 23vw; top: 48%; width: 13rem; transform: rotate(5deg);"
+        >
+          <div class="crop" data-crop="team1:3"></div>
+          <span class="team-sticker" style="--sticker-rot: 4deg;">Yara</span>
+        </div>
+
+        <!-- Right 5: 3vw, 63%, 11.5rem, 6deg, speed 0.65, bts:3, GOLDEN HOUR -->
+        <div
+          class="team-photo-card"
+          data-side="right"
+          data-side-idx="5"
+          data-speed="0.65"
+          data-case-index="1"
+          data-momentum-target
+          style="right: 3vw; top: 63%; width: 11.5rem; transform: rotate(6deg);"
+        >
+          <div class="crop" data-crop="bts:3"></div>
+          <span class="team-caption-tag">GOLDEN HOUR</span>
+        </div>
+
+        <!-- Right 6: 20vw, 78%, 14rem, -4deg, speed 1.05, team2:2, Kenji (-4deg) -->
+        <div
+          class="team-photo-card"
+          data-side="right"
+          data-side-idx="6"
+          data-speed="1.05"
+          data-case-index="0"
+          data-momentum-target
+          style="right: 20vw; top: 78%; width: 14rem; transform: rotate(-4deg);"
+        >
+          <div class="crop" data-crop="team2:2"></div>
+          <span class="team-sticker" style="--sticker-rot: -4deg;">Kenji</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Cheroney Cafe Google Maps Photo Gallery, Case Detail & Menu Modal -->
+  <div class="cheroney-modal-backdrop" id="cheroneyModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="cheroneyModalTitle">
+    <div class="cheroney-modal">
+      <div class="cheroney-modal-header">
+        <div class="cheroney-modal-brand">
+          <span class="script">Cheroney</span>
+          <div>
+            <h3 id="cheroneyModalTitle" style="font-size: 1.25rem; text-transform: uppercase;">Boho Specialty Café &amp; Kitchen · Visakhapatnam</h3>
+            <p class="t-paragraph" style="font-size: .95rem; opacity: .85;">Beside MK Gold Coast, Mubarak Colony, Yendada · 4.7 ★ (484 Google Reviews) · 5.0 ★ (458 Justdial Ratings)</p>
+          </div>
+        </div>
+        <button type="button" class="cheroney-modal-close" id="closeCheroneyModalBtn" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="cheroney-modal-tabs">
+        <button type="button" class="cheroney-tab-btn active" data-modal-tab="spotlight">Featured Drop &amp; Menu</button>
+        <button type="button" class="cheroney-tab-btn" data-modal-tab="gallery">Google Maps Photo Gallery (9)</button>
+        <button type="button" class="cheroney-tab-btn" data-modal-tab="visit">Locations, Hours &amp; Reviews</button>
+      </div>
+
+      <div class="cheroney-modal-body" id="cheroneyModalBody">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Libraries (loaded in exact required order at the end of <body>) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js"></script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* =====================================================================
+       * FAILSAFE & REDUCED MOTION DETECTION
+       * ===================================================================== */
+      var htmlEl = document.documentElement;
+      var wipeOverlay = document.getElementById('loadWipe');
+      var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var isReducedMotion = reducedMotionQuery.matches;
+
+      function revealEverythingImmediately() {
+        htmlEl.setAttribute('data-page-ready', 'true');
+        if (wipeOverlay) {
+          wipeOverlay.setAttribute('data-transition-ready', 'true');
+        }
+        var mainEl = document.querySelector('main');
+        if (mainEl) {
+          mainEl.style.visibility = 'visible';
+          mainEl.style.opacity = '1';
+        }
+        var hiddenEls = document.querySelectorAll('[data-text-reveal], [data-scroll-reveal]');
+        for (var i = 0; i < hiddenEls.length; i++) {
+          hiddenEls[i].style.visibility = 'visible';
+          hiddenEls[i].style.opacity = '1';
+        }
+      }
+
+      // 4-second failsafe timer
+      var failsafeTimer = setTimeout(function () {
+        if (!htmlEl.hasAttribute('data-page-ready')) {
+          revealEverythingImmediately();
+        }
+      }, 4000);
+
+      /* =====================================================================
+       * SECTION 4: ASSETS, SHEET CROP MATH & REAL CHERONEY GOOGLE MAPS PHOTOS
+       * ===================================================================== */
+      var HERO_VIDEO_URL = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261110_231342_88260d66-aa30-4612-9157-d7f1b5a66d8c.mp4';
+
+      var SHEETS = {
+        work1: {
+          url: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261110_224238_b0899b4d-5876-4c63-98d3-8608d8dbe790.png&w=2400&q=85',
+          w: 2688,
+          h: 1520,
+          cells: [
+            [0, 0, 1336, 752],
+            [1352, 0, 1336, 752],
+            [0, 768, 1336, 752],
+            [1352, 768, 1336, 752]
+          ]
+        },
+        work2: {
+          url: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261110_224238_aee93a53-873f-470f-afb3-6395c22ab639.png&w=2400&q=85',
+          w: 2688,
+          h: 1520,
+          cells: [
+            [0, 0, 1335, 749],
+            [1356, 0, 1332, 749],
+            [0, 770, 1335, 750],
+            [1356, 770, 1332, 750]
+          ]
+        },
+        team1: {
+          url: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261110_224239_be9bd6b1-debb-4a95-aadf-1a36e4d2f557.png&w=1600&q=85',
+          w: 1744,
+          h: 2336,
+          cells: [
+            [0, 0, 864, 1156],
+            [881, 0, 863, 1156],
+            [0, 1175, 864, 1161],
+            [881, 1175, 863, 1161]
+          ]
+        },
+        team2: {
+          url: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261110_224238_bfc657e7-cbc1-43fb-a726-e8be5dd42302.png&w=1600&q=85',
+          w: 1744,
+          h: 2336,
+          cells: [
+            [0, 0, 864, 1159],
+            [880, 0, 864, 1159],
+            [0, 1176, 864, 1160],
+            [880, 1176, 864, 1160]
+          ]
+        },
+        bts: {
+          url: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20261110_224238_bf8567fa-9d67-4f1e-b4e0-5662c0bf70e4.png&w=1600&q=85',
+          w: 1744,
+          h: 2336,
+          cells: [
+            [0, 0, 865, 1160],
+            [881, 0, 863, 1160],
+            [0, 1176, 865, 1160],
+            [881, 1176, 863, 1160]
+          ]
+        }
+      };
+
+      // Real photos of Cafe Cheroney from Google Maps / Justdial / Zomato / Reddit / Yo! Vizag
+      var CHERONEY_PHOTOS = {
+        latteBrownie: 'https://i.redd.it/vdcrvaxz3cdh1.jpeg',
+        bohoCounter: 'https://content.jdmagicbox.com/v2/comp/visakhapatnam/c9/0891px891.x891.250514103146.g8c9/catalogue/cheroney-yendada-visakhapatnam-coffee-shops-ce4k26dj6n-250.jpg',
+        bruschetta: 'https://images.jdmagicbox.com/v2/comp/visakhapatnam/c9/0891px891.x891.250514103146.g8c9/catalogue/cheroney-yendada-visakhapatnam-coffee-shops-74nwh8u3zd.jpg',
+        bohoLounge: 'https://content.jdmagicbox.com/v2/comp/visakhapatnam/c9/0891px891.x891.250514103146.g8c9/catalogue/cheroney-yendada-visakhapatnam-coffee-shops-q172pywz47-250.jpg',
+        sagarNagar1: 'https://b.zmtcdn.com/data/pictures/1/22966121/575641f9dbfd9780c393823e4751d4d8.jpg',
+        sagarNagar2: 'https://b.zmtcdn.com/data/pictures/1/22966121/01704c6e8b360b129a8ab7cc379b6b40.jpg',
+        akkayyapalem: 'https://b.zmtcdn.com/data/pictures/2/22966122/84afd8c89e4fa82e9f2d3fbba80b6820.jpeg',
+        yoVizagFeature: 'https://www.yovizag.com/wp-content/uploads/2025/04/Copy-of-Copy-of-FB-For-Yo-Vizag-2025-04-26T181744.962.webp',
+        yoVizagCoffee: 'https://www.yovizag.com/wp-content/uploads/2025/09/Cover-images-WEB-and-FB-Charishma-140.webp'
+      };
+
+      // Map each sheet:cell to a real Cheroney photo + focal point so every card displays real Cheroney imagery with sheet crop fallback underneath
+      var CHERONEY_CELL_MAP = {
+        'work1:0': { src: CHERONEY_PHOTOS.latteBrownie, pos: 'center 68%', alt: 'Cheroney Signature Hot Chocolate, Latte Art & Walnut Brownie' },
+        'work1:1': { src: CHERONEY_PHOTOS.bohoCounter, pos: 'center 42%', alt: 'Cheroney Boho Counter, Illuminated Arches & Rocket Espresso Machine' },
+        'work1:2': { src: CHERONEY_PHOTOS.bruschetta, pos: 'center 50%', alt: 'Cheroney Artisanal Tomato-Olive Bruschetta Platter' },
+        'work1:3': { src: CHERONEY_PHOTOS.bohoLounge, pos: 'center 55%', alt: 'Cheroney Rattan Dining Chairs & Checkered Tile Interior in Yendada' },
+        'work2:0': { src: CHERONEY_PHOTOS.sagarNagar1, pos: 'center 50%', alt: 'Cheroney Kombucha Mocktails & Evening Dining in Sagar Nagar' },
+        'work2:1': { src: CHERONEY_PHOTOS.yoVizagFeature, pos: 'center 50%', alt: 'Cheroney Bali-Inspired Boho Ambience in Visakhapatnam' },
+        'work2:2': { src: CHERONEY_PHOTOS.sagarNagar2, pos: 'center 50%', alt: 'Cheroney Specialty Cold Brew & Table Spread' },
+        'work2:3': { src: CHERONEY_PHOTOS.akkayyapalem, pos: 'center 50%', alt: 'Cheroney Café Interior & Specialty Coffee Bar' },
+        'team1:0': { src: CHERONEY_PHOTOS.latteBrownie, pos: '35% 75%', alt: 'Host Assala — Nourish & Sip Spirit at Cheroney' },
+        'team1:1': { src: CHERONEY_PHOTOS.bohoCounter, pos: '28% 48%', alt: 'Joseph at the White Rocket Espresso Bar' },
+        'team1:2': { src: CHERONEY_PHOTOS.sagarNagar1, pos: 'center center', alt: 'Cheroney Barista Crew' },
+        'team1:3': { src: CHERONEY_PHOTOS.yoVizagCoffee, pos: 'center center', alt: 'Vizag Coffee Culture at Cheroney' },
+        'team2:0': { src: CHERONEY_PHOTOS.bruschetta, pos: '60% 50%', alt: 'Fresh Sourdough & Bruschetta Prep' },
+        'team2:1': { src: CHERONEY_PHOTOS.bohoLounge, pos: '75% 60%', alt: 'Plush Lounge Armchairs at Cheroney Yendada' },
+        'team2:2': { src: CHERONEY_PHOTOS.sagarNagar2, pos: 'center center', alt: 'Evening Table Service at Cheroney' },
+        'team2:3': { src: CHERONEY_PHOTOS.akkayyapalem, pos: 'center center', alt: 'Cheroney Akkayyapalem & Yendada Team' },
+        'bts:0':   { src: CHERONEY_PHOTOS.bohoCounter, pos: '25% 50%', alt: 'Rocket Espresso Machine on Woven Cane Counter' },
+        'bts:1':   { src: CHERONEY_PHOTOS.bohoCounter, pos: '52% 35%', alt: 'Triple Illuminated Boho Archways' },
+        'bts:2':   { src: CHERONEY_PHOTOS.latteBrownie, pos: '50% 45%', alt: 'Walnut Brownie & White Rose Table Setting' },
+        'bts:3':   { src: CHERONEY_PHOTOS.bohoLounge, pos: '30% 45%', alt: 'Warm Woven Pendant Lamps at Golden Hour' }
+      };
+
+      function buildCropBoxes() {
+        var crops = document.querySelectorAll('.crop[data-crop]');
+        for (var i = 0; i < crops.length; i++) {
+          var box = crops[i];
+          var spec = box.getAttribute('data-crop') || '';
+          var parts = spec.split(':');
+          var sheetKey = parts[0];
+          var cellIdx = parseInt(parts[1], 10) || 0;
+          var sheet = SHEETS[sheetKey];
+          if (!sheet || !sheet.cells[cellIdx]) continue;
+
+          var raw = sheet.cells[cellIdx];
+          // Inset by 4 px on every side so white gutters never show
+          var cellX = raw[0] + 4;
+          var cellY = raw[1] + 4;
+          var cellW = raw[2] - 8;
+          var cellH = raw[3] - 8;
+          var ar = (cellW / cellH).toFixed(5);
+
+          var cellDiv = document.createElement('div');
+          cellDiv.className = 'cell';
+          cellDiv.style.setProperty('--ar', ar);
+
+          // Underlying sheet image with exact Section 4 percentage math
+          var sheetImg = document.createElement('img');
+          sheetImg.className = 'sheet-img';
+          sheetImg.src = sheet.url;
+          sheetImg.alt = '';
+          sheetImg.loading = 'lazy';
+          sheetImg.decoding = 'async';
+          sheetImg.style.width = ((sheet.w / cellW) * 100).toFixed(4) + '%';
+          sheetImg.style.height = ((sheet.h / cellH) * 100).toFixed(4) + '%';
+          sheetImg.style.left = ((-cellX / cellW) * 100).toFixed(4) + '%';
+          sheetImg.style.top = ((-cellY / cellH) * 100).toFixed(4) + '%';
+          cellDiv.appendChild(sheetImg);
+
+          // Primary layer: Real Cafe Cheroney photo from Google Maps / listings
+          var realMeta = CHERONEY_CELL_MAP[spec];
+          if (realMeta && realMeta.src) {
+            var realImg = document.createElement('img');
+            realImg.className = 'cheroney-real-img';
+            realImg.src = realMeta.src;
+            realImg.alt = realMeta.alt || 'Cheroney Cafe Visakhapatnam';
+            realImg.loading = 'lazy';
+            realImg.decoding = 'async';
+            realImg.setAttribute('referrerpolicy', 'no-referrer');
+            if (realMeta.pos) {
+              realImg.style.objectPosition = realMeta.pos;
+            }
+            realImg.onerror = function () {
+              this.style.display = 'none';
+            };
+            cellDiv.appendChild(realImg);
+          }
+
+          box.innerHTML = '';
+          box.appendChild(cellDiv);
+        }
+      }
+
+      /* =====================================================================
+       * HERO VIDEO SETUP (Section 5.4 & Section 7)
+       * ===================================================================== */
+      var heroVideo = document.getElementById('heroVideo');
+      function updateHeroVideoForMotion() {
+        if (!heroVideo) return;
+        if (reducedMotionQuery.matches) {
+          heroVideo.pause();
+          heroVideo.removeAttribute('src');
+          heroVideo.load();
+        } else {
+          if (heroVideo.getAttribute('src') !== HERO_VIDEO_URL) {
+            heroVideo.setAttribute('src', HERO_VIDEO_URL);
+          }
+          var playPromise = heroVideo.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function () {});
+          }
+        }
+      }
+      if (reducedMotionQuery.addEventListener) {
+        reducedMotionQuery.addEventListener('change', function (e) {
+          isReducedMotion = e.matches;
+          updateHeroVideoForMotion();
+        });
+      }
+
+      /* =====================================================================
+       * SECTION 6.5: DRAW UNDERLINE (6 hand-drawn stroke variants)
+       * ===================================================================== */
+      var UNDERLINE_PATHS = [
+        'M5 20.9999C26.7762 16.2245 49.5532 11.5572 71.7979 14.6666C84.9553 16.5057 97.0392 21.8432 109.987 24.3888C116.413 25.6523 123.012 25.5143 129.042 22.6388C135.981 19.3303 142.586 15.1422 150.092 13.3333C156.799 11.7168 161.702 14.6225 167.887 16.8333C181.562 21.7212 194.975 22.6234 209.252 21.3888C224.678 20.0548 239.912 17.991 255.42 18.3055C272.027 18.6422 288.409 18.867 305 17.9999',
+        'M5 24.2592C26.233 20.2879 47.7083 16.9968 69.135 13.8421C98.0469 9.5853 128.407 4.02322 158.059 5.14674C172.583 5.69708 187.686 8.66104 201.598 11.9696C207.232 13.3093 215.437 14.9471 220.137 18.3619C224.401 21.4596 220.737 25.6575 217.184 27.6168C208.309 32.5097 197.199 34.281 186.698 34.8486C183.159 35.0399 147.197 36.2657 155.105 26.5837C158.11 22.9053 162.993 20.6229 167.764 18.7924C178.386 14.7164 190.115 12.1115 201.624 10.3984C218.367 7.90626 235.528 7.06127 252.521 7.49276C258.455 7.64343 264.389 7.92791 270.295 8.41825C280.321 9.25056 296 10.8932 305 13.0242',
+        'M5 29.5014C9.61174 24.4515 12.9521 17.9873 20.9532 17.5292C23.7742 17.3676 27.0987 17.7897 29.6575 19.0014C33.2644 20.7093 35.6481 24.0004 39.4178 25.5014C48.3911 29.0744 55.7503 25.7731 63.3048 21.0292C67.9902 18.0869 73.7668 16.1366 79.3721 17.8903C85.1682 19.7036 88.2173 26.2464 94.4121 27.2514C102.584 28.5771 107.023 25.5064 113.276 20.6125C119.927 15.4067 128.83 12.3333 137.249 15.0014C141.418 16.3225 143.116 18.7528 146.581 21.0014C149.621 22.9736 152.78 23.6197 156.284 24.2514C165.142 25.8479 172.315 17.5185 179.144 13.5014C184.459 10.3746 191.785 8.74853 195.868 14.5292C199.252 19.3205 205.597 22.9057 211.621 22.5014C215.553 22.2374 220.183 17.8356 222.979 15.5569C225.4 13.5845 227.457 11.1105 230.742 10.5292C232.718 10.1794 234.784 12.9691 236.164 14.0014C238.543 15.7801 240.717 18.4775 243.356 19.8903C249.488 23.1729 255.706 21.2551 261.079 18.0014C266.571 14.6754 270.439 11.5202 277.146 13.6125C280.725 14.7289 283.221 17.209 286.393 19.0014C292.321 22.3517 298.255 22.5014 305 22.5014',
+        'M17.0039 32.6826C32.2307 32.8412 47.4552 32.8277 62.676 32.8118C67.3044 32.807 96.546 33.0555 104.728 32.0775C113.615 31.0152 104.516 28.3028 102.022 27.2826C89.9573 22.3465 77.3751 19.0254 65.0451 15.0552C57.8987 12.7542 37.2813 8.49399 44.2314 6.10216C50.9667 3.78422 64.2873 5.81914 70.4249 5.96641C105.866 6.81677 141.306 7.58809 176.75 8.59886C217.874 9.77162 258.906 11.0553 300 14.4892',
+        'M4.99805 20.9998C65.6267 17.4649 126.268 13.845 187.208 12.8887C226.483 12.2723 265.751 13.2796 304.998 13.9998',
+        'M5 29.8857C52.3147 26.9322 99.4329 21.6611 146.503 17.1765C151.753 16.6763 157.115 15.9505 162.415 15.6551C163.28 15.6069 165.074 15.4123 164.383 16.4275C161.704 20.3627 157.134 23.7551 153.95 27.4983C153.209 28.3702 148.194 33.4751 150.669 34.6605C153.638 36.0819 163.621 32.6063 165.039 32.2029C178.55 28.3608 191.49 23.5968 204.869 19.5404C231.903 11.3436 259.347 5.83254 288.793 5.12258C294.094 4.99476 299.722 4.82265 305 5.45025'
+      ];
+      var underlineCursor = Math.floor(Math.random() * UNDERLINE_PATHS.length);
+
+      function nextUnderlineSvg() {
+        var d = UNDERLINE_PATHS[underlineCursor % UNDERLINE_PATHS.length];
+        underlineCursor++;
+        var ns = 'http://www.w3.org/2000/svg';
+        var svg = document.createElementNS(ns, 'svg');
+        svg.setAttribute('viewBox', '0 0 310 40');
+        svg.setAttribute('preserveAspectRatio', 'none');
+        var path = document.createElementNS(ns, 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke', 'currentColor');
+        path.setAttribute('stroke-width', '10');
+        path.setAttribute('stroke-linecap', 'round');
+        svg.appendChild(path);
+        return { svg: svg, path: path };
+      }
+
+      function animatePathDraw(path, fromStart, fromEnd, toStart, toEnd, duration, ease, onComplete) {
+        var len = 350;
+        try {
+          len = path.getTotalLength() || 350;
+        } catch (e) {}
+        if (window.gsap && window.DrawSVGPlugin) {
+          gsap.fromTo(
+            path,
+            { drawSVG: (fromStart * 100) + '% ' + (fromEnd * 100) + '%' },
+            {
+              drawSVG: (toStart * 100) + '% ' + (toEnd * 100) + '%',
+              duration: duration,
+              ease: ease || 'power2.inOut',
+              onComplete: onComplete
+            }
+          );
+        } else if (window.gsap) {
+          var state = { s: fromStart, e: fromEnd };
+          path.style.strokeDasharray = len + ' ' + len;
+          var applyDash = function () {
+            var seg = Math.max(0.001, (state.e - state.s) * len);
+            path.style.strokeDasharray = seg + ' ' + (len * 2);
+            path.style.strokeDashoffset = String(-state.s * len);
+          };
+          applyDash();
+          gsap.to(state, {
+            s: toStart,
+            e: toEnd,
+            duration: duration,
+            ease: ease || 'power2.inOut',
+            onUpdate: applyDash,
+            onComplete: onComplete
+          });
+        } else if (onComplete) {
+          onComplete();
+        }
+      }
+
+      function initDrawUnderlines() {
+        var els = document.querySelectorAll('[data-draw-line]');
+        for (var i = 0; i < els.length; i++) {
+          (function (el) {
+            var mode = el.getAttribute('data-draw-line');
+            var box = el.querySelector('.draw-line-box');
+            if (!box) return;
+            if (mode === 'always') return; // Handled ~1.3s after init
+
+            var activeItem = null;
+            var isDrawingIn = false;
+            var pendingLeave = false;
+
+            el.addEventListener('mouseenter', function () {
+              pendingLeave = false;
+              box.innerHTML = '';
+              var created = nextUnderlineSvg();
+              box.appendChild(created.svg);
+              activeItem = created;
+              isDrawingIn = true;
+              animatePathDraw(created.path, 0, 0, 0, 1, 0.5, 'power2.inOut', function () {
+                isDrawingIn = false;
+                if (pendingLeave && activeItem === created) {
+                  eraseLine(created);
+                }
+              });
+            });
+
+            function eraseLine(item) {
+              animatePathDraw(item.path, 0, 1, 1, 1, 0.5, 'power2.inOut', function () {
+                if (item.svg.parentNode === box) {
+                  box.removeChild(item.svg);
+                }
+              });
+            }
+
+            el.addEventListener('mouseleave', function () {
+              if (!activeItem) return;
+              if (isDrawingIn) {
+                pendingLeave = true;
+              } else {
+                eraseLine(activeItem);
+                activeItem = null;
+              }
+            });
+          })(els[i]);
+        }
+      }
+
+      function drawAlwaysHeroUnderline() {
+        var box = document.getElementById('heroAlwaysUnderline');
+        if (!box) return;
+        box.innerHTML = '';
+        var created = nextUnderlineSvg();
+        box.appendChild(created.svg);
+        if (isReducedMotion) return;
+        animatePathDraw(created.path, 0, 0, 0, 1, 0.6, 'power2.inOut');
+      }
+
+      /* =====================================================================
+       * SECTION 6.3 & 6.4: TEXT REVEAL & SCROLL REVEAL (SplitText + fallback)
+       * ===================================================================== */
+      function splitElementText(el, mode) {
+        if (el._splitData) return el._splitData;
+        var hasWeightHover = el.hasAttribute('data-font-weight-hover') || !!el.querySelector('[data-font-weight-hover]');
+
+        if (window.SplitText) {
+          try {
+            var splitType = mode === 'chars' ? 'chars,words,lines' : 'lines,words';
+            var st = new SplitText(el, {
+              type: splitType,
+              linesClass: 'line',
+              charsClass: 'char',
+              mask: 'lines',
+              autoSplit: !hasWeightHover
+            });
+            el._splitData = { chars: st.chars || [], lines: st.lines || [], instance: st };
+            return el._splitData;
+          } catch (err) {}
+        }
+
+        // Clean DOM splitter fallback preserving child spans (like .t-alt-serif)
+        var chars = [];
+        var lines = [];
+        var lineMask = document.createElement('span');
+        lineMask.className = 'line-mask';
+        var lineInner = document.createElement('span');
+        lineInner.className = 'line';
+        lineMask.appendChild(lineInner);
+        lines.push(lineInner);
+
+        var childNodes = Array.prototype.slice.call(el.childNodes);
+        el.innerHTML = '';
+        el.appendChild(lineMask);
+
+        function processNode(node, targetContainer) {
+          if (node.nodeType === 3) {
+            var text = node.nodeValue || '';
+            for (var c = 0; c < text.length; c++) {
+              var ch = text[c];
+              if (ch === ' ') {
+                targetContainer.appendChild(document.createTextNode(' '));
+              } else {
+                var cSpan = document.createElement('span');
+                cSpan.className = 'char';
+                cSpan.textContent = ch;
+                targetContainer.appendChild(cSpan);
+                chars.push(cSpan);
+              }
+            }
+          } else if (node.nodeType === 1) {
+            if (node.tagName === 'BR') {
+              var nextMask = document.createElement('span');
+              nextMask.className = 'line-mask';
+              lineInner = document.createElement('span');
+              lineInner.className = 'line';
+              nextMask.appendChild(lineInner);
+              lines.push(lineInner);
+              el.appendChild(nextMask);
+            } else {
+              var clone = node.cloneNode(false);
+              targetContainer.appendChild(clone);
+              var subChildren = Array.prototype.slice.call(node.childNodes);
+              for (var k = 0; k < subChildren.length; k++) {
+                processNode(subChildren[k], clone);
+              }
+            }
+          }
+        }
+
+        for (var n = 0; n < childNodes.length; n++) {
+          processNode(childNodes[n], lineInner);
+        }
+
+        el._splitData = { chars: chars, lines: lines };
+        return el._splitData;
+      }
+
+      function runLoadTextReveals(baseDelay) {
+        var revealEls = document.querySelectorAll('[data-text-reveal]');
+        if (isReducedMotion || !window.gsap) {
+          for (var r = 0; r < revealEls.length; r++) {
+            revealEls[r].style.visibility = 'visible';
+          }
+          window.dispatchEvent(new CustomEvent('reveal:done'));
+          return;
+        }
+
+        var tl = gsap.timeline({
+          delay: typeof baseDelay === 'number' ? baseDelay : 0.6,
+          onComplete: function () {
+            window.dispatchEvent(new CustomEvent('reveal:done'));
+          }
+        });
+
+        for (var i = 0; i < revealEls.length; i++) {
+          var el = revealEls[i];
+          var mode = el.getAttribute('data-text-reveal') || 'lines';
+          var split = splitElementText(el, mode);
+          el.style.visibility = 'visible';
+          var targets = mode === 'chars' ? split.chars : split.lines;
+          var staggerVal = mode === 'chars' ? 0.0175 : 0.07;
+          if (targets && targets.length) {
+            gsap.set(targets, { yPercent: 135 });
+            tl.to(
+              targets,
+              {
+                yPercent: 0,
+                duration: 1,
+                ease: 'expo.out',
+                stagger: staggerVal
+              },
+              i * 0.12
+            );
+          }
+        }
+      }
+
+      function initScrollReveals() {
+        var groups = document.querySelectorAll('[data-scroll-reveal-group]');
+        if (isReducedMotion || !window.gsap || !window.ScrollTrigger) {
+          var allScrollEls = document.querySelectorAll('[data-scroll-reveal]');
+          for (var s = 0; s < allScrollEls.length; s++) {
+            allScrollEls[s].style.visibility = 'visible';
+          }
+          return;
+        }
+
+        for (var g = 0; g < groups.length; g++) {
+          (function (group) {
+            var items = group.querySelectorAll('[data-scroll-reveal]');
+            var tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: group,
+                start: 'top 85%',
+                once: true
+              }
+            });
+
+            for (var i = 0; i < items.length; i++) {
+              var el = items[i];
+              var mode = el.getAttribute('data-scroll-reveal') || 'lines';
+              var offset = i * 0.12;
+
+              if (mode === 'element') {
+                el.style.visibility = 'visible';
+                gsap.set(el, { y: 24, autoAlpha: 0 });
+                tl.to(el, { y: 0, autoAlpha: 1, duration: 0.8, ease: 'expo.out' }, offset);
+              } else {
+                var split = splitElementText(el, mode);
+                el.style.visibility = 'visible';
+                var targets = mode === 'chars' ? split.chars : split.lines;
+                var staggerVal = mode === 'chars' ? 0.0175 : 0.07;
+                if (targets && targets.length) {
+                  gsap.set(targets, { yPercent: 135 });
+                  tl.to(
+                    targets,
+                    {
+                      yPercent: 0,
+                      duration: 1,
+                      ease: 'expo.out',
+                      stagger: staggerVal
+                    },
+                    offset
+                  );
+                }
+              }
+            }
+          })(groups[g]);
+        }
+      }
+
+      /* =====================================================================
+       * SECTION 6.6: FONT WEIGHT FOLLOWS CURSOR (data-font-weight-hover)
+       * ===================================================================== */
+      function initFontWeightHover() {
+        if (isReducedMotion || !window.gsap) return;
+        if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+
+        var charRecords = [];
+        var pointerPageX = -9999;
+        var pointerPageY = -9999;
+        var lastScrollY = window.scrollY || window.pageYOffset || 0;
+
+        function collectChars() {
+          charRecords = [];
+          var topHeadings = document.querySelectorAll('h1[data-font-weight-hover], h2[data-font-weight-hover]');
+          for (var i = 0; i < topHeadings.length; i++) {
+            var h = topHeadings[i];
+            if (!h._splitData) {
+              splitElementText(h, 'chars');
+            }
+            var chars = h.querySelectorAll('.char');
+            for (var c = 0; c < chars.length; c++) {
+              var chEl = chars[c];
+              var markedAncestor = chEl.closest('[data-font-weight-hover]') || h;
+              var rest = parseFloat(markedAncestor.getAttribute('data-rest') || '700');
+              var near = parseFloat(markedAncestor.getAttribute('data-near') || '200');
+              var radius = parseFloat(markedAncestor.getAttribute('data-radius') || '400');
+              var isAltSerif = markedAncestor.classList.contains('t-alt-serif');
+
+              chEl.style.setProperty('--wght', String(rest));
+              if (isAltSerif) {
+                chEl.style.fontVariationSettings = '"wght" var(--wght), "wdth" 87.5, "opsz" 120';
+              } else {
+                chEl.style.fontVariationSettings = '"wght" var(--wght), "wdth" 72';
+              }
+
+              charRecords.push({
+                el: chEl,
+                rest: rest,
+                near: near,
+                radius: radius,
+                currentTarget: rest,
+                cx: 0,
+                cy: 0,
+                quickWght: gsap.quickTo(chEl, '--wght', { duration: 0.4, ease: 'power2.out' })
+              });
+            }
+          }
+          measureCenters();
+        }
+
+        function measureCenters() {
+          var sx = window.scrollX || window.pageXOffset || 0;
+          var sy = window.scrollY || window.pageYOffset || 0;
+          for (var i = 0; i < charRecords.length; i++) {
+            var rec = charRecords[i];
+            var rect = rec.el.getBoundingClientRect();
+            rec.cx = rect.left + rect.width * 0.5 + sx;
+            rec.cy = rect.top + rect.height * 0.5 + sy;
+          }
+        }
+
+        window.addEventListener('pointermove', function (e) {
+          pointerPageX = e.clientX + (window.scrollX || window.pageXOffset || 0);
+          pointerPageY = e.clientY + (window.scrollY || window.pageYOffset || 0);
+        }, { passive: true });
+
+        window.addEventListener('scroll', function () {
+          var sy = window.scrollY || window.pageYOffset || 0;
+          var delta = sy - lastScrollY;
+          lastScrollY = sy;
+          if (pointerPageY > -5000) {
+            pointerPageY += delta;
+          }
+          measureCenters();
+        }, { passive: true });
+
+        window.addEventListener('resize', measureCenters);
+        window.addEventListener('reveal:done', collectChars);
+        collectChars();
+
+        gsap.ticker.add(function () {
+          if (pointerPageX < -5000 || !charRecords.length) return;
+          for (var i = 0; i < charRecords.length; i++) {
+            var rec = charRecords[i];
+            var dx = pointerPageX - rec.cx;
+            var dy = pointerPageY - rec.cy;
+            var d = Math.hypot(dx, dy);
+            var f = d >= rec.radius ? 0 : 1 - d / rec.radius;
+            var minW = Math.min(rec.rest, rec.near);
+            var maxW = Math.max(rec.rest, rec.near);
+            var rawTarget = rec.rest + (rec.near - rec.rest) * f;
+            var target = Math.max(minW, Math.min(maxW, rawTarget));
+            if (Math.abs(target - rec.currentTarget) >= 1) {
+              rec.currentTarget = target;
+              rec.quickWght(target);
+            }
+          }
+        });
+      }
+
+      /* =====================================================================
+       * SECTION 6.7: HERO CURSOR CARD (desktop >=992px with fine hover pointer)
+       * ===================================================================== */
+      function initHeroCursorCard() {
+        var hero = document.getElementById('heroSection');
+        var card = document.getElementById('heroCursorCard');
+        var media = document.getElementById('heroCursorMedia');
+        if (!hero || !card || !media || !window.gsap) return;
+
+        var mq = window.matchMedia('(min-width: 992px) and (hover: hover) and (pointer: fine)');
+        if (!mq.matches) return;
+
+        var crops = media.querySelectorAll('.crop');
+        var activeIdx = 0;
+        var travelCounter = 0;
+        var threshold = parseFloat(hero.getAttribute('data-threshold') || '300');
+        var hasMoved = false;
+        var isVisible = false;
+        var lastX = 0;
+        var lastY = 0;
+        var idleTimer = null;
+
+        gsap.set(card, { autoAlpha: 0 });
+
+        var qX = gsap.quickTo(card, 'x', { duration: 1, ease: 'power4' });
+        var qY = gsap.quickTo(card, 'y', { duration: 1, ease: 'power4' });
+        var qRot = gsap.quickTo(card, 'rotation', { duration: 1, ease: 'power4' });
+        var qMediaX = gsap.quickTo(media, 'xPercent', { duration: 0.6, ease: 'power2' });
+        var qMediaY = gsap.quickTo(media, 'yPercent', { duration: 0.7, ease: 'power2' });
+
+        function clamp(min, max, val) {
+          return Math.max(min, Math.min(max, val));
+        }
+
+        hero.addEventListener('mousemove', function (e) {
+          var overInteractive = e.target && e.target.closest('a, button');
+          if (overInteractive) {
+            if (isVisible) {
+              isVisible = false;
+              gsap.to(card, { autoAlpha: 0, duration: 0.25, ease: 'power2.out', overwrite: 'auto' });
+            }
+            return;
+          }
+
+          var heroRect = hero.getBoundingClientRect();
+          var x = e.clientX - window.innerWidth / 2;
+          var y = e.clientY - window.innerHeight / 2 - heroRect.top;
+
+          if (!hasMoved) {
+            hasMoved = true;
+            lastX = x;
+            lastY = y;
+            gsap.set(card, { x: x, y: y, rotation: 0 });
+            isVisible = true;
+            gsap.to(card, { autoAlpha: 1, duration: 0.3, overwrite: 'auto' });
+            return;
+          }
+
+          if (!isVisible) {
+            isVisible = true;
+            gsap.to(card, { autoAlpha: 1, duration: 0.25, ease: 'power2.out', overwrite: 'auto' });
+          }
+
+          var dx = (x - lastX) / 2;
+          var dy = (y - lastY) / 2;
+          var rot = (x - lastX) / 4;
+          lastX = x;
+          lastY = y;
+
+          qX(x);
+          qY(y);
+          qRot(rot);
+          qMediaX(-clamp(-8, 8, dx));
+          qMediaY(-clamp(-8, 8, dy));
+
+          travelCounter += Math.abs(dx) + Math.abs(dy);
+          if (travelCounter > threshold && crops.length) {
+            travelCounter = 0;
+            crops[activeIdx].classList.remove('on');
+            activeIdx = (activeIdx + 1) % crops.length;
+            crops[activeIdx].classList.add('on');
+          }
+
+          clearTimeout(idleTimer);
+          idleTimer = setTimeout(function () {
+            qRot(0);
+            qMediaX(0);
+            qMediaY(0);
+          }, 66);
+        });
+
+        hero.addEventListener('mouseleave', function () {
+          clearTimeout(idleTimer);
+          hasMoved = false;
+          isVisible = false;
+          travelCounter = 0;
+          qRot(0);
+          qMediaX(0);
+          qMediaY(0);
+          gsap.to(card, { autoAlpha: 0, duration: 0.3, overwrite: 'auto' });
+        });
+      }
+
+      /* =====================================================================
+       * SECTION 6.8: CLIENT MARQUEE THAT FLIPS WITH SCROLL DIRECTION
+       * ===================================================================== */
+      function initHeroMarquee() {
+        var marquee = document.getElementById('heroMarquee');
+        var scrollWrap = document.getElementById('marqueeScrollWrap');
+        if (!marquee || !scrollWrap || isReducedMotion || !window.gsap || !window.ScrollTrigger) return;
+
+        var origCollection = scrollWrap.querySelector('.marquee-collection');
+        if (!origCollection) return;
+
+        // Append two clones of the collection
+        var clone1 = origCollection.cloneNode(true);
+        var clone2 = origCollection.cloneNode(true);
+        scrollWrap.appendChild(clone1);
+        scrollWrap.appendChild(clone2);
+
+        var collections = scrollWrap.querySelectorAll('.marquee-collection');
+        var speed = parseFloat(marquee.getAttribute('data-speed') || '30');
+        var direction = marquee.getAttribute('data-direction') === 'left' ? -1 : 1;
+
+        var vw = window.innerWidth || 1440;
+        var f = vw <= 479 ? 0.25 : (vw <= 991 ? 0.5 : 1);
+        var colWidth = origCollection.offsetWidth || vw;
+        var loopDuration = Math.max(8, speed * (colWidth / vw) * f);
+
+        gsap.set(collections, { xPercent: -100 });
+        var loopTween = gsap.to(collections, {
+          xPercent: -200,
+          duration: loopDuration,
+          ease: 'none',
+          repeat: -1
+        });
+        loopTween.totalProgress(0.5);
+
+        ScrollTrigger.create({
+          trigger: marquee,
+          start: 'top bottom',
+          end: 'bottom top',
+          onUpdate: function (self) {
+            var scrollDir = self.direction; // 1 down, -1 up
+            loopTween.timeScale(scrollDir === 1 ? -direction : direction);
+          }
+        });
+
+        gsap.fromTo(
+          scrollWrap,
+          { x: '10vw' },
+          {
+            x: '-10vw',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: marquee,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0
+            }
+          }
+        );
+      }
+
+      /* =====================================================================
+       * SECTION 6.9: "LATEST DROPS" 3D STACK (desktop >=992px)
+       * ===================================================================== */
+      function initFeaturedStack() {
+        var section = document.getElementById('drops');
+        var pinEl = document.getElementById('featuredPin');
+        var stackRoot = document.getElementById('featuredStackRoot');
+        var badge = document.getElementById('featuredBadge');
+        if (!section || !pinEl || !stackRoot || !window.gsap || !window.ScrollTrigger) return;
+
+        var slides = Array.prototype.slice.call(stackRoot.querySelectorAll('.featured-card'));
+        var count = slides.length;
+        if (!count) return;
+
+        var mm = gsap.matchMedia();
+        mm.add('(min-width: 992px)', function () {
+          var DEPTH = 120;
+          var OFFSET = 40;
+          var TILT_X = 6;
+          var TILT_Y = 10;
+
+          for (var b = 0; b < count; b++) {
+            gsap.set(slides[b], {
+              z: -b * DEPTH,
+              y: -b * OFFSET,
+              zIndex: count - b,
+              autoAlpha: 1
+            });
+          }
+
+          var tl = gsap.timeline({ paused: true });
+          for (var s = 0; s < count - 1; s++) {
+            tl.to(
+              slides[s],
+              {
+                y: '+=' + (window.innerHeight * 0.9),
+                duration: 1,
+                ease: 'power2.in'
+              },
+              s
+            );
+            tl.to(
+              slides[s],
+              {
+                autoAlpha: 0,
+                duration: 0.25,
+                ease: 'none'
+              },
+              s + 0.7
+            );
+
+            for (var behind = s + 1; behind < count; behind++) {
+              var newIdx = behind - (s + 1);
+              tl.to(
+                slides[behind],
+                {
+                  z: -newIdx * DEPTH,
+                  y: -newIdx * OFFSET,
+                  duration: 1,
+                  ease: 'none'
+                },
+                s
+              );
+            }
+          }
+
+          if (badge) {
+            tl.fromTo(
+              badge,
+              { rotation: 0 },
+              { rotation: 180, duration: count - 1, ease: 'none' },
+              0
+            );
+          }
+
+          ScrollTrigger.create({
+            trigger: section,
+            start: 'top top',
+            end: function () {
+              return '+=' + (window.innerHeight * 1.2 * (count - 1));
+            },
+            pin: pinEl,
+            pinSpacing: true,
+            scrub: 0.3,
+            refreshPriority: 1,
+            invalidateOnRefresh: true,
+            onUpdate: function (self) {
+              tl.progress(self.progress);
+            }
+          });
+
+          if (!isReducedMotion) {
+            var qRotX = gsap.quickTo(stackRoot, 'rotationX', { duration: 0.6, ease: 'power3' });
+            var qRotY = gsap.quickTo(stackRoot, 'rotationY', { duration: 0.6, ease: 'power3' });
+
+            var onMove = function (e) {
+              var rect = pinEl.getBoundingClientRect();
+              var rx = -(((e.clientY - rect.top) / rect.height) - 0.5) * TILT_X;
+              var ry = (((e.clientX - rect.left) / rect.width) - 0.5) * TILT_Y;
+              qRotX(rx);
+              qRotY(ry);
+            };
+            var onLeave = function () {
+              qRotX(0);
+              qRotY(0);
+            };
+
+            pinEl.addEventListener('mousemove', onMove);
+            pinEl.addEventListener('mouseleave', onLeave);
+
+            return function () {
+              pinEl.removeEventListener('mousemove', onMove);
+              pinEl.removeEventListener('mouseleave', onLeave);
+            };
+          }
+        });
+      }
+
+      /* =====================================================================
+       * SECTION 6.10: "VIEW CASE ->" CURSOR LABEL (fine hover pointer only)
+       * ===================================================================== */
+      function initCursorLabel() {
+        var wrap = document.getElementById('cursorLabelWrap');
+        if (!wrap || !window.gsap) return;
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+        var spans = wrap.querySelectorAll('.cursor-label-span');
+        var qX = gsap.quickTo(wrap, 'x', { duration: 0.4, ease: 'power3' });
+        var qY = gsap.quickTo(wrap, 'y', { duration: 0.4, ease: 'power3' });
+        var hasSnapped = false;
+        var lastClientX = -999;
+        var lastClientY = -999;
+        var currentTarget = null;
+        var pauseTimer = null;
+
+        function checkUnderPointer() {
+          if (lastClientX < 0 || lastClientY < 0) return;
+          var hit = document.elementFromPoint(lastClientX, lastClientY);
+          var matched = hit ? hit.closest('[data-cursor-marquee-text]') : null;
+
+          if (matched !== currentTarget) {
+            currentTarget = matched;
+            clearTimeout(pauseTimer);
+            if (matched) {
+              var txt = matched.getAttribute('data-cursor-marquee-text') || 'View case →';
+              var dur = Math.max(1.2, txt.length / 5) + 's';
+              for (var i = 0; i < spans.length; i++) {
+                spans[i].textContent = txt + ' ';
+                spans[i].style.animationDuration = dur;
+                spans[i].style.animationPlayState = 'running';
+              }
+              wrap.setAttribute('data-cursor-marquee-status', 'active');
+            } else {
+              wrap.setAttribute('data-cursor-marquee-status', 'not-active');
+              pauseTimer = setTimeout(function () {
+                for (var j = 0; j < spans.length; j++) {
+                  spans[j].style.animationPlayState = 'paused';
+                }
+              }, 400);
+            }
+          }
+        }
+
+        window.addEventListener('pointermove', function (e) {
+          lastClientX = e.clientX;
+          lastClientY = e.clientY;
+          if (!hasSnapped) {
+            hasSnapped = true;
+            gsap.set(wrap, { x: e.clientX, y: e.clientY });
+          } else {
+            qX(e.clientX);
+            qY(e.clientY);
+          }
+          checkUnderPointer();
+        }, { passive: true });
+
+        window.addEventListener('scroll', checkUnderPointer, { passive: true });
+      }
+
+      /* =====================================================================
+       * SECTION 6.11: TEAM PHOTO PARALLAX
+       * ===================================================================== */
+      function initTeamParallax() {
+        var section = document.getElementById('flock');
+        var cards = document.querySelectorAll('.team-photo-card');
+        if (!section || !cards.length || !window.gsap || !window.ScrollTrigger) return;
+
+        var mm = gsap.matchMedia();
+        mm.add(
+          {
+            isDesktop: '(min-width: 992px) and (prefers-reduced-motion: no-preference)',
+            isTablet: '(min-width: 480px) and (max-width: 991px) and (prefers-reduced-motion: no-preference)',
+            isMobile: '(max-width: 479px) and (prefers-reduced-motion: no-preference)'
+          },
+          function (context) {
+            var k = context.conditions.isDesktop ? 1 : (context.conditions.isTablet ? 0.5 : 0.3);
+            var distance = 320 * k;
+
+            for (var i = 0; i < cards.length; i++) {
+              var card = cards[i];
+              var speed = parseFloat(card.getAttribute('data-speed') || '1');
+              gsap.fromTo(
+                card,
+                { y: distance * speed },
+                {
+                  y: -distance * speed,
+                  ease: 'none',
+                  scrollTrigger: {
+                    trigger: section,
+                    start: 'clamp(top bottom)',
+                    end: 'clamp(bottom top)',
+                    scrub: true,
+                    invalidateOnRefresh: true,
+                    refreshPriority: -1
+                  }
+                }
+              );
+            }
+          }
+        );
+      }
+
+      /* =====================================================================
+       * SECTION 6.12: MOMENTUM HOVER (InertiaPlugin + physics spring fallback)
+       * ===================================================================== */
+      function initMomentumHover() {
+        var section = document.getElementById('flock');
+        if (!section || isReducedMotion || !window.gsap) return;
+        if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+        var pX = 0;
+        var pY = 0;
+        var prevX = 0;
+        var prevY = 0;
+        var vx = 0;
+        var vy = 0;
+
+        window.addEventListener('pointermove', function (e) {
+          pX = e.clientX;
+          pY = e.clientY;
+        }, { passive: true });
+
+        gsap.ticker.add(function () {
+          vx = pX - prevX;
+          vy = pY - prevY;
+          prevX = pX;
+          prevY = pY;
+        });
+
+        function clamp(min, max, v) {
+          return Math.max(min, Math.min(max, v));
+        }
+
+        var targets = section.querySelectorAll('[data-momentum-target]');
+        for (var i = 0; i < targets.length; i++) {
+          (function (target) {
+            target.addEventListener('pointerenter', function (e) {
+              var rect = target.getBoundingClientRect();
+              var cx = rect.left + rect.width / 2;
+              var cy = rect.top + rect.height / 2;
+              var F = e.clientX - cx;
+              var R = e.clientY - cy;
+              var dist = Math.hypot(F, R) || 1;
+              var torque = (F * vy - R * vx) / dist;
+
+              var velX = clamp(-1080, 1080, vx * 30);
+              var velY = clamp(-1080, 1080, vy * 30);
+              var velRot = clamp(-60, 60, torque * 20);
+
+              if (window.InertiaPlugin) {
+                try {
+                  gsap.to(target, {
+                    inertia: {
+                      x: { velocity: velX, end: 0 },
+                      y: { velocity: velY, end: 0 },
+                      rotation: { velocity: velRot, end: 0 },
+                      resistance: 200
+                    }
+                  });
+                  return;
+                } catch (err) {}
+              }
+
+              // Fallback impulse + elastic spring back
+              gsap.timeline()
+                .to(target, {
+                  x: velX * 0.045,
+                  y: velY * 0.045,
+                  rotation: '+=' + (velRot * 0.18),
+                  duration: 0.22,
+                  ease: 'power2.out'
+                })
+                .to(target, {
+                  x: 0,
+                  y: 0,
+                  duration: 0.85,
+                  ease: 'elastic.out(1, 0.5)'
+                });
+            });
+          })(targets[i]);
+        }
+      }
+
+      /* =====================================================================
+       * SECTION 6.13: PAGE THEME SWITCH
+       * ===================================================================== */
+      function initPageThemeSwitch() {
+        if (!window.gsap || !window.ScrollTrigger) return;
+        var themeSections = document.querySelectorAll('[data-page-theme]');
+        for (var i = 0; i < themeSections.length; i++) {
+          (function (sec) {
+            var themeVal = sec.getAttribute('data-page-theme') || 'dark';
+            ScrollTrigger.create({
+              trigger: sec,
+              start: 'top 55%',
+              end: 'bottom 45%',
+              refreshPriority: -1,
+              onToggle: function (self) {
+                if (self.isActive) {
+                  htmlEl.setAttribute('data-theme', themeVal);
+                } else {
+                  htmlEl.removeAttribute('data-theme');
+                }
+              }
+            });
+          })(themeSections[i]);
+        }
+      }
+
+      /* =====================================================================
+       * SECTION 6.1 & 5.3: LENIS SMOOTH SCROLL & IN-PAGE LINKS
+       * ===================================================================== */
+      var lenisInstance = null;
+      function initSmoothScroll() {
+        if (!isReducedMotion && window.Lenis && window.gsap && window.ScrollTrigger) {
+          lenisInstance = new Lenis({
+            lerp: 0.165,
+            wheelMultiplier: 1.25
+          });
+          lenisInstance.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(function (time) {
+            lenisInstance.raf(time * 1000);
+          });
+          gsap.ticker.lagSmoothing(0);
+        }
+
+        // In-page # links scroll smoothly with Lenis (or native under reduced motion)
+        var anchorLinks = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < anchorLinks.length; i++) {
+          anchorLinks[i].addEventListener('click', function (e) {
+            var href = this.getAttribute('href');
+            if (!href || href.indexOf('#case-') === 0) return; // Case cards open modal
+            var targetEl = document.querySelector(href);
+            if (targetEl) {
+              e.preventDefault();
+              if (lenisInstance && !isReducedMotion) {
+                lenisInstance.scrollTo(targetEl, { duration: 1.4 });
+              } else {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          });
+        }
+      }
+
+      /* =====================================================================
+       * INTERACTIVE CHERONEY CAFE GOOGLE MAPS GALLERY & MENU MODAL
+       * ===================================================================== */
+      var CHERONEY_CASES = [
+        {
+          id: 'velvet-mocha',
+          title: 'VELVET MOCHA & WALNUT BROWNIE',
+          subtitle: 'Signature Rich Hot Chocolate, Cappuccino & Warm Walnut Brownie',
+          badge: '01 · Most Loved on Google Maps & Reddit',
+          photo: CHERONEY_PHOTOS.latteBrownie,
+          description: 'Praised across Google Maps and r/Visakhapatnam as the best hot chocolate and walnut brownie pairing in town. Served in stoneware cups with silky microfoam latte art beside sunlit rattan seating.',
+          highlights: ['Signature Rich Hot Chocolate', 'Single-Origin Cappuccino', 'Warm Walnut Fudge Brownie', 'House Tiramisu'],
+          priceNote: '₹240 – ₹420 · Served 9:00 AM – 11:00 PM'
+        },
+        {
+          id: 'bali-arches',
+          title: 'BALI ARCHES & ROCKET ESPRESSO BAR',
+          subtitle: 'Vizag’s First Boho-Themed Specialty Coffee Counter',
+          badge: '02 · Architectural Highlight in Yendada',
+          photo: CHERONEY_PHOTOS.bohoCounter,
+          description: 'Featured by Yo! Vizag for making guests feel like they have stepped into a holiday in Bali, espresso in hand. A custom woven cane counter anchors the room beneath three glowing arched display niches and a white Rocket Espresso machine.',
+          highlights: ['White Rocket Espresso Machine', 'Vietnamese Iced Brew', 'Classic Italian Affogato', 'Artisanal Pastry Case'],
+          priceNote: 'Beside MK Gold Coast, Yendada · Free Wi-Fi & Laptop Friendly'
+        },
+        {
+          id: 'flake-bake',
+          title: 'FLAKE & BAKE — SAVORY KITCHEN PLATES',
+          subtitle: 'Artisanal Tomato-Olive Bruschetta, Club Sandwiches & Pasta',
+          badge: '03 · All-Day Brunch & Kitchen',
+          photo: CHERONEY_PHOTOS.bruschetta,
+          description: 'Toasted sourdough bruschetta topped with herb pesto, cherry tomatoes, and black olives, plated on handcrafted ceramic platters alongside gourmet club sandwiches and Italian pastas.',
+          highlights: ['Tomato-Olive Herb Bruschetta', 'Toasted Sourdough Club Sandwich', 'Creamy Pesto & Arrabbiata Pasta', 'Vegan & Vegetarian Friendly'],
+          priceNote: '₹320 – ₹650 · Freshly plated to order'
+        },
+        {
+          id: 'boho-lounge',
+          title: 'BOHO LOUNGE — YENDADA SANCTUARY',
+          subtitle: 'Woven Rattan Chairs, Plush Armchairs & Checkered Tile Floors',
+          badge: '04 · Best Date & Work Café in Vizag',
+          photo: CHERONEY_PHOTOS.bohoLounge,
+          description: 'Designed with soothing earthy hues, woven bamboo pendant lights, and spacious wooden tables—equally suited for a quiet solo laptop session, a reading club meetup, or a golden-hour date in Yendada.',
+          highlights: ['Indoor Rattan & Plush Lounge Seating', 'Free Lot & Street Parking', 'Table Reservations Available', '9:00 AM – 11:00 PM Daily'],
+          priceNote: '₹400 – ₹1,200 per person (₹1,600 for two)'
+        },
+        {
+          id: 'night-bites',
+          title: 'NIGHT BITES & KOMBUCHA INFUSIONS',
+          subtitle: 'Two-Flavour Infused Cheroney Kombucha, Cold Brews & Mocktails',
+          badge: '05 · Boho-Inspired Craft Drinks',
+          photo: CHERONEY_PHOTOS.sagarNagar1,
+          description: 'Home to Cheroney’s signature two-flavour infused Kombucha mocktail, coffee mocktails, slushies, and refreshing mojitos served late into the evening.',
+          highlights: ['Two-Flavour Cheroney Kombucha', 'Espresso Tonic & Cold Brew', 'Boho Citrus Mojitos & Slushies', 'Evening Dessert Platters'],
+          priceNote: 'Available at Yendada (Sagar Nagar) & Akkayyapalem'
+        }
+      ];
+
+      var CHERONEY_MENU_ITEMS = [
+        { name: 'Signature Rich Hot Chocolate', category: 'coffee', tag: 'Bestseller', desc: 'Velvety dark cocoa steamed to order with microfoam art.' },
+        { name: 'Vietnamese Iced Brew', category: 'coffee', tag: 'Yo! Vizag Pick', desc: 'Bold slow-drip roast layered over sweetened condensed milk and ice.' },
+        { name: 'Classic Affogato', category: 'coffee', tag: 'Specialty', desc: 'Double shot pulled on our Rocket Espresso machine over vanilla gelato.' },
+        { name: 'Cappuccino & Flat White', category: 'coffee', tag: 'Daily Pour', desc: 'Customisable specialty espresso with silky textured milk.' },
+        { name: 'Cheroney Dual-Flavour Kombucha', category: 'drinks', tag: 'House Exclusive', desc: 'Signature fermented craft mocktail infused with two botanical fruit notes.' },
+        { name: 'Boho Coffee Mocktail & Mojito', category: 'drinks', tag: 'Refreshing', desc: 'Cold-brew tonic infusions, fruit slushies, and mint-lime mojitos.' },
+        { name: 'Tomato-Olive Herb Bruschetta', category: 'food', tag: 'Kitchen Star', desc: 'Crisp sourdough topped with basil herb mash, cherry tomatoes, and black olives.' },
+        { name: 'Cheroney Club Sandwich', category: 'food', tag: 'All-Day', desc: 'Triple-deck toasted sandwich with house dressing and crisp greens.' },
+        { name: 'Artisanal Café Pasta', category: 'food', tag: 'Comfort', desc: 'Hand-tossed pasta with fresh herbs, olive oil, and parmesan.' },
+        { name: 'Warm Walnut Brownie', category: 'dessert', tag: 'Reddit Favorite', desc: 'Fudgy dark chocolate square studded with toasted walnuts.' },
+        { name: 'House Tiramisu', category: 'dessert', tag: 'Chef Special', desc: 'Espresso-soaked savoiardi layered with mascarpone cream and cocoa.' }
+      ];
+
+      var GALLERY_ITEMS = [
+        { src: CHERONEY_PHOTOS.bohoCounter, title: 'Boho Counter & Arches', caption: 'Woven cane bar, white Rocket espresso machine, pastry display, and triple illuminated arches in Yendada.' },
+        { src: CHERONEY_PHOTOS.bohoLounge, title: 'Yendada Dining Hall', caption: 'Rattan dining chairs, plush armchairs, woven pendant lamps, and geometric checkered flooring.' },
+        { src: CHERONEY_PHOTOS.latteBrownie, title: 'Cappuccino, Hot Chocolate & Walnut Brownie', caption: 'Table #28 by the window with stoneware cups, walnut brownie, and white rose bouquet.' },
+        { src: CHERONEY_PHOTOS.bruschetta, title: 'Artisanal Bruschetta Platter', caption: 'Three sourdough bruschettas topped with cherry tomatoes, black olives, and fresh herbs.' },
+        { src: CHERONEY_PHOTOS.sagarNagar1, title: 'Sagar Nagar / Yendada Ambience', caption: 'Warm evening lighting and boho-inspired interiors beside MK Gold Coast.' },
+        { src: CHERONEY_PHOTOS.sagarNagar2, title: 'Signature Table Spread', caption: 'Craft beverages and freshly plated continental dishes at Cheroney.' },
+        { src: CHERONEY_PHOTOS.akkayyapalem, title: 'Cheroney Akkayyapalem', caption: 'Expanding Cheroney’s Boho coffee and continental kitchen across Visakhapatnam.' },
+        { src: CHERONEY_PHOTOS.yoVizagFeature, title: 'Yo! Vizag Feature', caption: 'Featured among Visakhapatnam’s standout new boho-inspired cafés.' },
+        { src: CHERONEY_PHOTOS.yoVizagCoffee, title: 'Vizag Coffee Culture', caption: 'Redefining specialty coffee, cold brews, and kombucha mocktails in Vizag.' }
+      ];
+
+      var modalBackdrop = document.getElementById('cheroneyModalBackdrop');
+      var modalBody = document.getElementById('cheroneyModalBody');
+      var activeCaseIdx = 0;
+      var activeModalTab = 'spotlight';
+      var activeMenuFilter = 'all';
+
+      function renderModalContent() {
+        if (!modalBody) return;
+        var tabBtns = document.querySelectorAll('[data-modal-tab]');
+        for (var t = 0; t < tabBtns.length; t++) {
+          tabBtns[t].classList.toggle('active', tabBtns[t].getAttribute('data-modal-tab') === activeModalTab);
+        }
+
+        if (activeModalTab === 'spotlight') {
+          var c = CHERONEY_CASES[activeCaseIdx] || CHERONEY_CASES[0];
+          var casePillsHtml = CHERONEY_CASES.map(function (item, idx) {
+            return '<button type="button" class="cheroney-filter-chip ' + (idx === activeCaseIdx ? 'active' : '') + '" data-select-case="' + idx + '">' + item.title.split('—')[0].trim() + '</button>';
+          }).join('');
+
+          var filteredMenu = CHERONEY_MENU_ITEMS.filter(function (m) {
+            return activeMenuFilter === 'all' || m.category === activeMenuFilter;
+          });
+
+          var menuHtml = filteredMenu.map(function (m) {
+            return (
+              '<div class="cheroney-menu-card">' +
+                '<div class="cheroney-menu-card-top">' +
+                  '<span class="cheroney-menu-card-title">' + m.name + '</span>' +
+                  '<span class="cheroney-menu-card-tag">' + m.tag + '</span>' +
+                '</div>' +
+                '<p class="t-paragraph" style="font-size:.95rem;">' + m.desc + '</p>' +
+              '</div>'
+            );
+          }).join('');
+
+          modalBody.innerHTML =
+            '<div class="cheroney-menu-filter-bar">' + casePillsHtml + '</div>' +
+            '<div class="cheroney-spotlight-card">' +
+              '<div class="cheroney-spotlight-img-wrap">' +
+                '<img src="' + c.photo + '" alt="' + c.title + '" referrerpolicy="no-referrer">' +
+              '</div>' +
+              '<div style="display:flex;flex-direction:column;gap:.75rem;">' +
+                '<span style="font-size:.8rem;text-transform:uppercase;color:var(--tomato);">' + c.badge + '</span>' +
+                '<h4 style="font-size:2rem;line-height:.95;text-transform:uppercase;">' + c.title + '</h4>' +
+                '<p class="t-paragraph" style="font-size:1.05rem;">' + c.description + '</p>' +
+                '<p style="font-size:.9rem;opacity:.8;">' + c.priceNote + '</p>' +
+                '<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.25rem;">' +
+                  '<a href="https://share.google/DbSYDy9BybCwlXe0U" target="_blank" rel="noopener noreferrer" class="team-pill-btn primary" style="font-size:.85rem;padding:.5rem 1rem;">View on Google Maps ↗</a>' +
+                  '<button type="button" class="team-pill-btn secondary" data-switch-tab="gallery" style="font-size:.85rem;padding:.5rem 1rem;color:var(--ink);">See All 9 Photos</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-top:.5rem;">' +
+              '<h4 style="font-size:1.5rem;text-transform:uppercase;">Verified Cheroney Menu Highlights</h4>' +
+              '<div class="cheroney-menu-filter-bar">' +
+                '<button type="button" class="cheroney-filter-chip ' + (activeMenuFilter === 'all' ? 'active' : '') + '" data-menu-filter="all">All (11)</button>' +
+                '<button type="button" class="cheroney-filter-chip ' + (activeMenuFilter === 'coffee' ? 'active' : '') + '" data-menu-filter="coffee">Specialty Coffee</button>' +
+                '<button type="button" class="cheroney-filter-chip ' + (activeMenuFilter === 'drinks' ? 'active' : '') + '" data-menu-filter="drinks">Kombucha &amp; Mocktails</button>' +
+                '<button type="button" class="cheroney-filter-chip ' + (activeMenuFilter === 'food' ? 'active' : '') + '" data-menu-filter="food">Kitchen Plates</button>' +
+                '<button type="button" class="cheroney-filter-chip ' + (activeMenuFilter === 'dessert' ? 'active' : '') + '" data-menu-filter="dessert">Desserts</button>' +
+              '</div>' +
+            '</div>' +
+            '<div class="cheroney-menu-list">' + menuHtml + '</div>';
+
+        } else if (activeModalTab === 'gallery') {
+          var cardsHtml = GALLERY_ITEMS.map(function (g) {
+            return (
+              '<div class="cheroney-gallery-item">' +
+                '<div class="img-box"><img src="' + g.src + '" alt="' + g.title + '" referrerpolicy="no-referrer" loading="lazy"></div>' +
+                '<div class="cheroney-gallery-caption"><strong>' + g.title + '</strong>' + g.caption + '</div>' +
+              '</div>'
+            );
+          }).join('');
+          modalBody.innerHTML =
+            '<p class="t-paragraph">Real photographs of <strong>Cheroney</strong> in Yendada (Sagar Nagar) and Akkayyapalem, Visakhapatnam from Google Maps, Justdial, District, Reddit, and Yo! Vizag.</p>' +
+            '<div class="cheroney-gallery-grid">' + cardsHtml + '</div>';
+
+        } else {
+          modalBody.innerHTML =
+            '<div class="cheroney-menu-list">' +
+              '<div class="cheroney-menu-card">' +
+                '<span class="cheroney-menu-card-title" style="color:var(--tomato);">Yendada / Sagar Nagar Flagship</span>' +
+                '<p class="t-paragraph" style="font-size:1rem;">Ground Floor, Building beside MK Gold Coast, Mubarak Colony, Yendada, Visakhapatnam, Andhra Pradesh 530045</p>' +
+                '<p style="font-size:.9rem;margin-top:.35rem;"><strong>Hours:</strong> Mon–Sun, 9:00 AM – 11:00 PM<br><strong>Spend:</strong> ₹400–₹1,200 per person</p>' +
+                '<a href="https://share.google/DbSYDy9BybCwlXe0U" target="_blank" rel="noopener noreferrer" class="team-pill-btn primary" style="margin-top:.5rem;align-self:flex-start;font-size:.85rem;padding:.45rem .9rem;">Open Google Maps Share Link ↗</a>' +
+              '</div>' +
+              '<div class="cheroney-menu-card">' +
+                '<span class="cheroney-menu-card-title" style="color:var(--tomato);">Akkayyapalem / Kailasapuram Branch</span>' +
+                '<p class="t-paragraph" style="font-size:1rem;">B1, Port Quarters, Kailasapuram / Akkayyapalem, Visakhapatnam, Andhra Pradesh 530024</p>' +
+                '<p style="font-size:.9rem;margin-top:.35rem;"><strong>Cuisines:</strong> Specialty Coffee, Continental, Desserts, Kombucha Mocktails<br><strong>Table Bookings:</strong> Available via <a href="https://www.district.in/dining/visakhapatnam/cheroney-sagar-nagar-vizag" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">District</a></p>' +
+              '</div>' +
+              '<div class="cheroney-menu-card">' +
+                '<span class="cheroney-menu-card-title" style="color:var(--tomato);">Verified Guest Reviews</span>' +
+                '<p class="t-paragraph" style="font-size:.95rem;">“Assala, our host, keep up the ‘Nourish &amp; Sip’ spirit of Cheroney’s… Amazing vibe &amp; even more amazing food.” — Google Maps Review (4.7 ★ / 484 reviews)</p>' +
+                '<p class="t-paragraph" style="font-size:.95rem;margin-top:.4rem;">“Joseph is the best guy and the food, tiramisu, sandwich, hot chocolate and cappuccino and cakes are perfect.” — Google Maps Review</p>' +
+              '</div>' +
+            '</div>';
+        }
+      }
+
+      function openCheroneyModal(caseIdx, tab) {
+        if (typeof caseIdx === 'number') activeCaseIdx = caseIdx;
+        if (tab) activeModalTab = tab;
+        renderModalContent();
+        if (modalBackdrop) {
+          modalBackdrop.classList.add('open');
+        }
+      }
+
+      function closeCheroneyModal() {
+        if (modalBackdrop) {
+          modalBackdrop.classList.remove('open');
+        }
+      }
+
+      function initModalInteractions() {
+        var openBtn1 = document.getElementById('openMapsGalleryBtn');
+        var openBtn2 = document.getElementById('openModalFromTeamBtn');
+        var closeBtn = document.getElementById('closeCheroneyModalBtn');
+
+        if (openBtn1) {
+          openBtn1.addEventListener('click', function () {
+            openCheroneyModal(0, 'gallery');
+          });
+        }
+        if (openBtn2) {
+          openBtn2.addEventListener('click', function () {
+            openCheroneyModal(0, 'gallery');
+          });
+        }
+        if (closeBtn) {
+          closeBtn.addEventListener('click', closeCheroneyModal);
+        }
+        if (modalBackdrop) {
+          modalBackdrop.addEventListener('click', function (e) {
+            if (e.target === modalBackdrop) closeCheroneyModal();
+          });
+        }
+
+        // Case cards & team photo cards click -> open modal at that case
+        var caseTriggerEls = document.querySelectorAll('[data-case-index]');
+        for (var i = 0; i < caseTriggerEls.length; i++) {
+          caseTriggerEls[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            var idx = parseInt(this.getAttribute('data-case-index') || '0', 10);
+            openCheroneyModal(idx, 'spotlight');
+          });
+        }
+
+        // Modal tabs & dynamic filter delegation
+        var tabBtns = document.querySelectorAll('[data-modal-tab]');
+        for (var j = 0; j < tabBtns.length; j++) {
+          tabBtns[j].addEventListener('click', function () {
+            activeModalTab = this.getAttribute('data-modal-tab') || 'spotlight';
+            renderModalContent();
+          });
+        }
+
+        if (modalBody) {
+          modalBody.addEventListener('click', function (e) {
+            var caseBtn = e.target.closest('[data-select-case]');
+            if (caseBtn) {
+              activeCaseIdx = parseInt(caseBtn.getAttribute('data-select-case') || '0', 10);
+              renderModalContent();
+              return;
+            }
+            var filterBtn = e.target.closest('[data-menu-filter]');
+            if (filterBtn) {
+              activeMenuFilter = filterBtn.getAttribute('data-menu-filter') || 'all';
+              renderModalContent();
+              return;
+            }
+            var switchTabBtn = e.target.closest('[data-switch-tab]');
+            if (switchTabBtn) {
+              activeModalTab = switchTabBtn.getAttribute('data-switch-tab') || 'gallery';
+              renderModalContent();
+            }
+          });
+        }
+
+        window.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeCheroneyModal();
+        });
+      }
+
+      /* =====================================================================
+       * SECTION 6.2: MASTER LOAD SEQUENCE & PAGE INIT
+       * ===================================================================== */
+      var hasBooted = false;
+      function bootPage() {
+        if (hasBooted) return;
+        hasBooted = true;
+        clearTimeout(failsafeTimer);
+
+        buildCropBoxes();
+        updateHeroVideoForMotion();
+        initModalInteractions();
+
+        if (!window.gsap) {
+          revealEverythingImmediately();
+          return;
+        }
+
+        // Register GSAP plugins safely
+        var plugins = [];
+        if (window.ScrollTrigger) plugins.push(window.ScrollTrigger);
+        if (window.SplitText) plugins.push(window.SplitText);
+        if (window.DrawSVGPlugin) plugins.push(window.DrawSVGPlugin);
+        if (window.InertiaPlugin) plugins.push(window.InertiaPlugin);
+        if (plugins.length) {
+          gsap.registerPlugin.apply(gsap, plugins);
+        }
+
+        htmlEl.setAttribute('data-page-ready', 'true');
+        var mainEl = document.querySelector('main');
+        var wipePath = document.getElementById('wipePath');
+
+        function runAllPageSystems() {
+          initSmoothScroll();
+          initDrawUnderlines();
+          initScrollReveals();
+          initFontWeightHover();
+          initHeroCursorCard();
+          initHeroMarquee();
+          initFeaturedStack();
+          initCursorLabel();
+          initTeamParallax();
+          initMomentumHover();
+          initPageThemeSwitch();
+          if (window.ScrollTrigger) {
+            ScrollTrigger.refresh();
+          }
+        }
+
+        if (isReducedMotion) {
+          if (wipeOverlay) wipeOverlay.setAttribute('data-transition-ready', 'true');
+          if (mainEl) gsap.set(mainEl, { autoAlpha: 1 });
+          runLoadTextReveals(0);
+          runAllPageSystems();
+          drawAlwaysHeroUnderline();
+          return;
+        }
+
+        // Master Load Timeline (Section 6.2)
+        var masterTl = gsap.timeline();
+
+        // 0s: main autoAlpha 0; wipe path drawSVG "0% 100%" and strokeWidth "30%"
+        if (mainEl) {
+          gsap.set(mainEl, { autoAlpha: 0 });
+        }
+        if (wipePath) {
+          gsap.set(wipePath, { strokeWidth: '30%' });
+          if (window.DrawSVGPlugin) {
+            gsap.set(wipePath, { drawSVG: '0% 100%' });
+          }
+        }
+
+        // 0.4s ("reveal" label)
+        masterTl.addLabel('reveal', 0.4);
+        masterTl.add(function () {
+          if (mainEl) gsap.set(mainEl, { autoAlpha: 1 });
+          runLoadTextReveals(0.6);
+          runAllPageSystems();
+        }, 'reveal');
+
+        if (wipePath) {
+          if (window.DrawSVGPlugin) {
+            masterTl.to(
+              wipePath,
+              {
+                drawSVG: '100% 100%',
+                strokeWidth: '5%',
+                duration: 1.25,
+                ease: 'power1.inOut',
+                onComplete: function () {
+                  if (wipeOverlay) wipeOverlay.setAttribute('data-transition-ready', 'true');
+                }
+              },
+              'reveal'
+            );
+          } else {
+            var pathLen = 3200;
+            try { pathLen = wipePath.getTotalLength() || 3200; } catch (e) {}
+            wipePath.style.strokeDasharray = pathLen + ' ' + pathLen;
+            wipePath.style.strokeDashoffset = '0';
+            masterTl.to(
+              wipePath,
+              {
+                strokeDashoffset: -pathLen,
+                strokeWidth: '5%',
+                duration: 1.25,
+                ease: 'power1.inOut',
+                onComplete: function () {
+                  if (wipeOverlay) wipeOverlay.setAttribute('data-transition-ready', 'true');
+                }
+              },
+              'reveal'
+            );
+          }
+        }
+
+        // ~1.3s after init: hero link's always-on underline draws in (0.6s)
+        masterTl.add(function () {
+          drawAlwaysHeroUnderline();
+        }, 'reveal+=1.3');
+      }
+
+      // Start when document.fonts.ready resolves, or after 1.5s, whichever comes first
+      var fontsPromise = (document.fonts && document.fonts.ready)
+        ? document.fonts.ready.catch(function () {})
+        : Promise.resolve();
+      var timeoutPromise = new Promise(function (resolve) {
+        setTimeout(resolve, 1500);
+      });
+
+      Promise.race([fontsPromise, timeoutPromise]).then(bootPage);
+    })();
+  </script>
+</body>
+</html>
