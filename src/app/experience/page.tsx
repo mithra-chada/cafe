@@ -19,7 +19,7 @@ export default function ExperiencePage() {
         {/* Header Hero */}
         <section className="exp-hero-header">
           <div className="exp-hero-inner">
-            <span className="boho-pill-eyebrow">YENDADA COASTAL SANCTUARY</span>
+            <span className="boho-pill-eyebrow">YENDADA · VISAKHAPATNAM</span>
             <h1 className="exp-title-main">
               THE BOHO <span className="t-alt-serif">EXPERIENCE</span>
             </h1>

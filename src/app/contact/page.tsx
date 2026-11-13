@@ -24,7 +24,7 @@ export default function ContactPage() {
               FIND YOUR WAY TO <span className="t-alt-serif">CHERONEY</span>
             </h1>
             <p className="contact-subtitle">
-              Located on the coastal corridor beside MK Gold Coast in Yendada, Sagar Nagar. An intimate haven for specialty brews, hand-tossed pizzas, and slow afternoons.
+              Located on the coastal corridor beside MK Gold Coast in Yendada, Sagar Nagar. Specialty coffee bar, hand-tossed pizzas, and slow afternoons.
             </p>
           </div>
         </section>

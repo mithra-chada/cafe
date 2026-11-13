@@ -3120,12 +3120,29 @@
       background-color: var(--cream);
       border: 1.5px solid rgba(20, 17, 16, 0.14);
       border-radius: 1rem;
-      padding: 1.35rem;
+      padding: 1.15rem;
       cursor: pointer;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
       transition: transform 160ms ease-out, border-color 160ms ease-out;
+    }
+    .zone-deck-img-wrap {
+      width: 100%;
+      height: 7.5rem;
+      border-radius: 0.65rem;
+      overflow: hidden;
+      margin-bottom: 0.35rem;
+      background-color: rgba(20, 17, 16, 0.05);
+    }
+    .zone-deck-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .zone-deck-card:hover .zone-deck-img {
+      transform: scale(1.03);
     }
     .zone-deck-card:hover {
       border-color: var(--ink);

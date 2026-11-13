@@ -26,10 +26,10 @@ export default function PitchPage() {
           <div className="pitch-hero-inner">
             <span className="boho-pill-eyebrow">EXECUTIVE PROPOSAL FOR CHERONEY FOUNDERS</span>
             <h1 className="pitch-title-main">
-              HOW THIS DIGITAL PLATFORM <span className="t-alt-serif">ELEVATES</span> CHERONEY
+              HOW DIRECT DIGITAL ORDERING <span className="t-alt-serif">PROTECTS</span> CHERONEY'S MARGINS
             </h1>
             <p className="pitch-subtitle">
-              Cheroney is already one of Visakhapatnam’s most loved aesthetic cafe sanctuaries. Here is how this custom digital infrastructure turns brand love into zero-commission revenue, search dominance, and seamless guest reservations.
+              Cheroney already holds 4.7 stars and 480+ Google reviews in Yendada. Here is how this custom digital platform cuts aggregator commissions by 22% while keeping direct guest reservations and customer relationships with the cafe.
             </p>
           </div>
         </section>
@@ -159,7 +159,7 @@ export default function PitchPage() {
         <section className="pitch-closing-section">
           <div className="pitch-container">
             <div className="pitch-cta-box">
-              <h2 className="pitch-cta-title">Ready to Elevate Cheroney’s Brand &amp; Margins?</h2>
+              <h2 className="pitch-cta-title">Review the Digital Platform &amp; Revenue Model</h2>
               <p className="pitch-cta-desc">
                 This platform is already fully engineered with Next.js 15, mobile-first responsive architecture, authentic boho aesthetics, and zero external software subscriptions.
               </p>

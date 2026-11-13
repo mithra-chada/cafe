@@ -294,7 +294,7 @@ export default function MenuPage() {
                   <h2 className="pairings-heading">Signature Tasting Pairings</h2>
                 </div>
                 <p className="pairings-note">
-                  Thoughtfully calibrated flavour harmonies from our baristas and kitchen.
+                  Flavour harmonies calibrated by our baristas and kitchen in Yendada.
                 </p>
               </div>
 
@@ -596,7 +596,7 @@ export default function MenuPage() {
                     <input
                       id="customerNameInput"
                       type="text"
-                      placeholder="E.g., Arjun / Priya"
+                      placeholder="E.g., Chaitanya / Kavya"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
                       className="folio-text-input"

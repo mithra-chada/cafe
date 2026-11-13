@@ -5,7 +5,13 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileQuickBar from '@/components/MobileQuickBar';
-import { SITE_META, RESERVATION_ZONES, TIME_SLOT_GROUPS } from '@/data/cafe';
+import { SITE_META, RESERVATION_ZONES, TIME_SLOT_GROUPS, CHERONEY_PHOTOS } from '@/data/cafe';
+
+const ZONE_PHOTOS: Record<string, string> = {
+  'boho-lounge': CHERONEY_PHOTOS.bohoLounge,
+  'window-breeze': CHERONEY_PHOTOS.sagarNagar2,
+  'espresso-bar': CHERONEY_PHOTOS.bohoCounter
+};
 
 const OCCASIONS = [
   {
@@ -350,6 +356,14 @@ export default function ReservePage() {
                         className={`zone-deck-card ${selectedZone === zone.id ? 'active' : ''}`}
                         onClick={() => setSelectedZone(zone.id)}
                       >
+                        <div className="zone-deck-img-wrap">
+                          <img
+                            src={ZONE_PHOTOS[zone.id] || CHERONEY_PHOTOS.bohoLounge}
+                            alt={zone.name}
+                            className="zone-deck-img"
+                            loading="lazy"
+                          />
+                        </div>
                         <div className="zone-deck-head">
                           <span className="zone-radio-mark">{selectedZone === zone.id ? '●' : '○'}</span>
                           <h3 className="zone-deck-name">{zone.name}</h3>
