@@ -7,8 +7,11 @@ export const SITE_META = {
   hours: "9:00 AM – 11:00 PM Daily",
   ratingGoogle: "4.7 ★ (484 Google Reviews)",
   ratingJustdial: "5.0 ★ (458 Justdial Ratings)",
-  telephone: "+91 891 000 0000",
-  priceRange: "₹400 – ₹1,200"
+  telephone: "+91 70751 47888",
+  whatsapp: "+91 70751 47888",
+  whatsappRaw: "917075147888",
+  priceRange: "₹400 – ₹1,200",
+  instagramUrl: "https://instagram.com/cheroney.vizag"
 };
 
 export const HERO_VIDEO_URL = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261110_231342_88260d66-aa30-4612-9157-d7f1b5a66d8c.mp4';
@@ -219,4 +222,155 @@ export const UNDERLINE_PATHS = [
   'M4.99805 20.9998C65.6267 17.4649 126.268 13.845 187.208 12.8887C226.483 12.2723 265.751 13.2796 304.998 13.9998',
   'M5 29.8857C52.3147 26.9322 99.4329 21.6611 146.503 17.1765C151.753 16.6763 157.115 15.9505 162.415 15.6551C163.28 15.6069 165.074 15.4123 164.383 16.4275C161.704 20.3627 157.134 23.7551 153.95 27.4983C153.209 28.3702 148.194 33.4751 150.669 34.6605C153.638 36.0819 163.621 32.6063 165.039 32.2029C178.55 28.3608 191.49 23.5968 204.869 19.5404C231.903 11.3436 259.347 5.83254 288.793 5.12258C294.094 4.99476 299.722 4.82265 305 5.45025'
 ];
+
+export interface GoogleReview {
+  id: string;
+  author: string;
+  role: string;
+  rating: number;
+  date: string;
+  text: string;
+  favoriteItem: string;
+  vibeTag: string;
+}
+
+export const GOOGLE_REVIEWS: GoogleReview[] = [
+  {
+    id: 'rev-1',
+    author: 'Harsha Vardhan',
+    role: 'Local Guide · 84 Reviews',
+    rating: 5,
+    date: '3 weeks ago',
+    text: 'One of the best aesthetic cafes in Vizag right now! The hot chocolate and walnut brownie are heavenly. The boho interior beside MK Gold Coast gives proper Bali vibes. Perfect for evening dates.',
+    favoriteItem: 'Signature Rich Hot Chocolate',
+    vibeTag: 'Bali Aesthetic'
+  },
+  {
+    id: 'rev-2',
+    author: 'Sneha Reddy',
+    role: 'Verified Google Reviewer',
+    rating: 5,
+    date: '1 month ago',
+    text: 'Such a dreamy cafe in Yendada! Loved their Rocket espresso cappuccino and truffle pasta. Staff is super hospitable. Great WiFi and quiet corners if you want to work during afternoons.',
+    favoriteItem: 'Wild Truffle Fettuccine',
+    vibeTag: 'Work & Cozy'
+  },
+  {
+    id: 'rev-3',
+    author: 'Praveen Kumar',
+    role: 'Local Guide · 120 Reviews',
+    rating: 5,
+    date: '2 months ago',
+    text: 'The Cranberry Espresso Fizz was surprising and refreshing! Thin crust pizza and club sandwiches are top notch. Beautiful warm lighting and great music playlist. A must-visit place in Vizag.',
+    favoriteItem: 'Cranberry Espresso Fizz',
+    vibeTag: 'Date Night'
+  },
+  {
+    id: 'rev-4',
+    author: 'Ananya S.',
+    role: 'Food & Lifestyle Enthusiast',
+    rating: 5,
+    date: '3 weeks ago',
+    text: 'Aesthetic 10/10, coffee 10/10. Definitely the most Instagram-worthy cafe in Sagar Nagar. Celebrated a friend’s birthday here in the evening, the staff was so courteous and attentive!',
+    favoriteItem: 'House Tiramisu & Sourdough',
+    vibeTag: 'Birthday & Flock'
+  },
+  {
+    id: 'rev-5',
+    author: 'Rohan Varma',
+    role: 'Coffee Aficionado',
+    rating: 5,
+    date: '1 month ago',
+    text: 'Visited on a Sunday evening. The dual-flavour kombucha and Alfredo pasta were fantastic. Love the earthy decor, rattan chairs, and peaceful vibe away from city chaos.',
+    favoriteItem: 'Botanical Kombucha',
+    vibeTag: 'Sunday Chill'
+  },
+  {
+    id: 'rev-6',
+    author: 'Kavya M.',
+    role: 'Verified Customer',
+    rating: 5,
+    date: '2 weeks ago',
+    text: 'Best hot chocolate in Vizag hands down. Cozy ambiance with checkered floors and soft lighting. Great place to sit, read, or catch up with friends beside the coastal breeze.',
+    favoriteItem: 'Almond Croissant & Cocoa',
+    vibeTag: 'Coastal Breeze'
+  }
+];
+
+export interface MenuItem {
+  id: string;
+  name: string;
+  category: 'coffee' | 'drinks' | 'brunch' | 'pizzas-pasta' | 'comfort' | 'desserts';
+  price: number;
+  desc: string;
+  diet: 'veg' | 'non-veg' | 'vegan';
+  tag?: string;
+  calories?: string;
+}
+
+export const FULL_MENU_DATA: MenuItem[] = [
+  // Specialty Coffee
+  { id: 'c1', name: 'Double Rocket Espresso', category: 'coffee', price: 160, desc: 'Pure 100% Arabica extracted on our white Rocket dual-boiler espresso machine.', diet: 'vegan', tag: 'Specialty Roast' },
+  { id: 'c2', name: 'Cranberry Espresso Fizz', category: 'coffee', price: 260, desc: 'Chilled cranberry reduction, sparkling soda, and a fresh double shot float with rosemary.', diet: 'vegan', tag: 'Signature Drop' },
+  { id: 'c3', name: 'Vietnamese Iced Slow Drip', category: 'coffee', price: 240, desc: 'Traditional Phin drip brew over sweet condensed milk and hand-cracked ice.', diet: 'veg', tag: 'Yo! Vizag Pick' },
+  { id: 'c4', name: 'Spanish Cortado Latte', category: 'coffee', price: 230, desc: 'Silky microfoam balanced with sweet condensed milk and double espresso.', diet: 'veg' },
+  { id: 'c5', name: 'Classic Affogato Al Caffe', category: 'coffee', price: 250, desc: 'Artisanal Madagascar vanilla gelato drowned in a piping hot double ristretto.', diet: 'veg', tag: 'House Favorite' },
+  { id: 'c6', name: 'Cold Brew Reserve (18h Steep)', category: 'coffee', price: 220, desc: 'Single-origin Araku Valley beans steeped cold for 18 hours. Ultra smooth.', diet: 'vegan' },
+  { id: 'c7', name: 'Flat White & Textured Cappuccino', category: 'coffee', price: 210, desc: 'Velvety steamed oat or whole milk poured with custom latte art in stoneware.', diet: 'veg' },
+  { id: 'c8', name: 'Signature Rich Hot Chocolate', category: 'coffee', price: 280, desc: 'Pure 65% Belgian dark chocolate ganache melted into silky steamed milk.', diet: 'veg', tag: 'Vizag #1 Rated' },
+
+  // Botanical & Drinks
+  { id: 'd1', name: 'Dual-Flavour Botanical Kombucha', category: 'drinks', price: 260, desc: 'Naturally fermented sparkling probiotic tea with wild berries and elderflower.', diet: 'vegan', tag: 'House Exclusive' },
+  { id: 'd2', name: 'Ceremonial Matcha Latte', category: 'drinks', price: 290, desc: 'First-harvest Uji matcha whisked with warm oat milk and organic agave.', diet: 'vegan' },
+  { id: 'd3', name: 'Boho Citrus Mint Mojito', category: 'drinks', price: 220, desc: 'Muddled fresh kaffir lime, mint leaves, raw cane syrup, and sparkling spring water.', diet: 'vegan' },
+  { id: 'd4', name: 'Espresso Tonic with Grapefruit', category: 'drinks', price: 250, desc: 'Artisanal Indian tonic water paired with chilled espresso and charred grapefruit wheel.', diet: 'vegan' },
+  { id: 'd5', name: 'Wild Berry Hibiscus Cooler', category: 'drinks', price: 210, desc: 'Cold brewed Egyptian hibiscus flowers with crushed blueberries and mint.', diet: 'vegan' },
+
+  // All-Day Brunch & Bakes
+  { id: 'b1', name: 'Warm Almond Frangipane Croissant', category: 'brunch', price: 240, desc: 'Twice-baked flaky butter pastry filled with rich almond cream and toasted flakes.', diet: 'veg', tag: 'Morning Essential' },
+  { id: 'b2', name: 'Truffle Avocado Sourdough Toast', category: 'brunch', price: 340, desc: 'Hass avocado mash on toasted country sourdough with white truffle oil, radish, and feta.', diet: 'veg', tag: 'Healthy Craft' },
+  { id: 'b3', name: 'Cheroney Breakfast Shakshuka', category: 'brunch', price: 360, desc: 'Spiced slow-cooked tomato bell pepper sauce with poached eggs and warm sourdough baguette.', diet: 'non-veg' },
+  { id: 'b4', name: 'Blueberry Ricotta Brioche French Toast', category: 'brunch', price: 320, desc: 'Custard-soaked brioche with house blueberry compote and pure maple drizzle.', diet: 'veg' },
+
+  // Wood-Fired Pizza & Handmade Pasta
+  { id: 'p1', name: 'Wild Mushroom Truffle Fettuccine', category: 'pizzas-pasta', price: 440, desc: 'Handmade fresh egg fettuccine with sauteed porcini, cremini mushrooms, and parmesan truffle cream.', diet: 'veg', tag: 'Chef’s Special' },
+  { id: 'p2', name: 'Napoli Burrata & Pesto Pizza (11")', category: 'pizzas-pasta', price: 480, desc: 'Slow-fermented 48-hour sourdough crust, whole burrata crown, basil pesto, and San Marzano sauce.', diet: 'veg', tag: 'Table Star' },
+  { id: 'p3', name: 'Smoked Chicken & Sun-dried Tomato Penne', category: 'pizzas-pasta', price: 460, desc: 'Tender house-smoked chicken breast tossed in pink aurora sauce with parmesan shavings.', diet: 'non-veg' },
+  { id: 'p4', name: 'Classic Margherita con Bufala (11")', category: 'pizzas-pasta', price: 390, desc: 'Buffalo mozzarella, hand-crushed tomatoes, extra virgin olive oil, and fresh basil.', diet: 'veg' },
+  { id: 'p5', name: 'Handcrafted Potato Gnocchi Arrabbiata', category: 'pizzas-pasta', price: 420, desc: 'Pillow-soft potato gnocchi seared in browned butter with fiery garlic chili pomodoro.', diet: 'vegan' },
+
+  // Comfort Plates & Small Bites
+  { id: 'm1', name: 'Cheroney Triple-Deck Club Sandwich', category: 'comfort', price: 340, desc: 'Toasted sourdough with grilled herb chicken, crisp bacon, avocado, and garlic aioli.', diet: 'non-veg', tag: 'All-Day Favorite' },
+  { id: 'm2', name: 'Artisanal Tomato-Olive Bruschetta', category: 'comfort', price: 290, desc: 'Three crisp sourdough slices topped with basil pesto, heirloom cherry tomatoes, and kalamata olives.', diet: 'vegan' },
+  { id: 'm3', name: 'Cheroney Loaded Boho Nachos', category: 'comfort', price: 310, desc: 'Corn chips layered with warm cheddar sauce, guacamole, refried beans, and pico de gallo.', diet: 'veg' },
+  { id: 'm4', name: 'Smoked Paprika Chicken Sliders (3 pcs)', category: 'comfort', price: 360, desc: 'Mini butter brioche buns, smoked paprika chicken patties, pickled jalapeño, and secret sauce.', diet: 'non-veg' },
+  { id: 'm5', name: 'Crispy Truffle Parmesan Fries', category: 'comfort', price: 230, desc: 'Hand-cut potato fries tossed with white truffle oil, grated grana padano, and rosemary salt.', diet: 'veg' },
+
+  // Desserts
+  { id: 'ds1', name: 'Warm Walnut Fudge Brownie', category: 'desserts', price: 240, desc: 'Dense 70% dark chocolate brownie packed with toasted walnuts and warm chocolate drizzle.', diet: 'veg', tag: 'Reddit Hit' },
+  { id: 'ds2', name: 'Cheroney Tiramisu Glass Jar', category: 'desserts', price: 290, desc: 'Savoiardi ladyfingers soaked in Rocket espresso, whipped mascarpone cream, and cocoa powder.', diet: 'veg', tag: 'House Special' },
+  { id: 'ds3', name: 'San Sebastian Basque Burnt Cheesecake', category: 'desserts', price: 320, desc: 'Caramelized burnt crust with an oozing, silky cream cheese center. Plated with berry coulis.', diet: 'veg' }
+];
+
+export const RESERVATION_ZONES = [
+  { id: 'boho-lounge', name: 'Boho Living Lounge', desc: 'Plush low-slung seating, woven bamboo pendants, intimate ambient 2700K lighting. Perfect for dates & private conversations.' },
+  { id: 'window-breeze', name: 'Window Ocean Breeze', desc: 'Sunlit tables with coastal natural light and streetscape views. Great for brunch & reading.' },
+  { id: 'espresso-bar', name: 'Rocket Espresso Bar', desc: 'Front-row counter seating. Watch our baristas pull espresso shots and dial in fresh beans.' }
+];
+
+export const TIME_SLOT_GROUPS = [
+  {
+    group: 'Morning Brew & Brunch (9:00 AM – 12:00 PM)',
+    slots: ['09:00 AM', '10:00 AM', '11:00 AM']
+  },
+  {
+    group: 'Afternoon Work & High Tea (12:00 PM – 5:00 PM)',
+    slots: ['12:30 PM', '02:00 PM', '03:30 PM', '04:30 PM']
+  },
+  {
+    group: 'Sunset Golden Hour & Dinner (5:00 PM – 11:00 PM)',
+    slots: ['05:30 PM', '06:30 PM', '07:30 PM', '08:30 PM', '09:30 PM', '10:00 PM']
+  }
+];
+
 

@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import MobileQuickBar from '@/components/MobileQuickBar';
 import {
   SITE_META,
   HERO_VIDEO_URL,
@@ -1155,39 +1157,46 @@ export default function CheroneyClient() {
 
       {/* 5.3 Nav (fixed, z-index 50) */}
       <header className="site-nav">
-        <a href="#top" className="nav-logo" aria-label="Cheroney Home">
+        <Link href="/" className="nav-logo" aria-label="Cheroney Home">
           Cheroney
-        </a>
+        </Link>
 
         <nav className="nav-center-pill" aria-label="Primary Navigation">
-          <a href="#flock" className="nav-link" data-draw-line>
-            <span>About</span>
+          <Link href="/menu" className="nav-link" data-draw-line>
+            <span>Menu &amp; Bakes</span>
             <span className="draw-line-box"></span>
-          </a>
-          <a href="#drops" className="nav-link" data-draw-line>
-            <span>Work</span>
+          </Link>
+          <Link href="/reserve" className="nav-link" data-draw-line>
+            <span>Book Table</span>
             <span className="draw-line-box"></span>
-          </a>
-          <a href="#drops" className="nav-link" data-draw-line>
-            <span>Services</span>
+          </Link>
+          <Link href="/experience" className="nav-link" data-draw-line>
+            <span>The Space &amp; Reviews</span>
             <span className="draw-line-box"></span>
-          </a>
+          </Link>
+          <Link href="/contact" className="nav-link" data-draw-line>
+            <span>Location</span>
+            <span className="draw-line-box"></span>
+          </Link>
+          <Link href="/pitch" className="nav-link" data-draw-line>
+            <span>Pitch</span>
+            <span className="draw-line-box"></span>
+          </Link>
         </nav>
 
         <div className="nav-right-group">
-          <button
-            type="button"
+          <Link
+            href="/reserve"
             className="nav-contact-box"
-            onClick={() => openModal(0, 'gallery')}
-            title="View Cheroney Google Maps Photos & Menu"
+            style={{ backgroundColor: 'var(--tomato)', color: 'var(--cream)', border: 'none' }}
           >
+            <span className="nav-dot" style={{ backgroundColor: 'var(--cream)' }}></span>
+            <span>Reserve Table</span>
+          </Link>
+          <Link href="/menu" className="nav-contact-box" data-draw-line>
             <span className="nav-dot" style={{ backgroundColor: 'var(--sage)' }}></span>
-            <span>Maps &amp; Menu</span>
-          </button>
-          <a href="#flock" className="nav-contact-box" data-draw-line>
-            <span className="nav-dot"></span>
-            <span>Contact</span>
-          </a>
+            <span>Digital Menu</span>
+          </Link>
         </div>
       </header>
 
@@ -1786,6 +1795,7 @@ export default function CheroneyClient() {
           </div>
         </div>
       </div>
+      <MobileQuickBar />
     </>
   );
 }
