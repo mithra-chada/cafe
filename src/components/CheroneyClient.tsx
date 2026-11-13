@@ -475,9 +475,17 @@ export default function CheroneyClient() {
         });
       }
 
+      let isPointerMoving = false;
+      let idleTimer: NodeJS.Timeout | null = null;
+
       window.addEventListener('pointermove', (e) => {
         pointerPageX = e.clientX + (window.scrollX || 0);
         pointerPageY = e.clientY + (window.scrollY || 0);
+        isPointerMoving = true;
+        if (idleTimer) clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => {
+          isPointerMoving = false;
+        }, 120);
       }, { passive: true });
 
       window.addEventListener('scroll', () => {
@@ -486,8 +494,12 @@ export default function CheroneyClient() {
         lastScrollY = sy;
         if (pointerPageY > -5000) {
           pointerPageY += delta;
+          isPointerMoving = true;
+          if (idleTimer) clearTimeout(idleTimer);
+          idleTimer = setTimeout(() => {
+            isPointerMoving = false;
+          }, 120);
         }
-        measureCenters();
       }, { passive: true });
 
       window.addEventListener('resize', measureCenters);
@@ -495,7 +507,7 @@ export default function CheroneyClient() {
       collectChars();
 
       gsap.ticker.add(() => {
-        if (pointerPageX < -5000 || !charRecords.length) return;
+        if (!isPointerMoving || pointerPageX < -5000 || !charRecords.length) return;
         for (let i = 0; i < charRecords.length; i++) {
           const rec = charRecords[i];
           const dx = pointerPageX - rec.cx;
@@ -753,7 +765,7 @@ export default function CheroneyClient() {
           end: () => '+=' + window.innerHeight * 1.2 * (count - 1),
           pin: pinEl,
           pinSpacing: true,
-          scrub: 0.3,
+          scrub: 0.35,
           refreshPriority: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
@@ -846,7 +858,14 @@ export default function CheroneyClient() {
         checkUnderPointer();
       }, { passive: true });
 
-      window.addEventListener('scroll', checkUnderPointer, { passive: true });
+      let scrollCheckTimer: NodeJS.Timeout | null = null;
+      window.addEventListener('scroll', () => {
+        if (scrollCheckTimer) return;
+        scrollCheckTimer = setTimeout(() => {
+          scrollCheckTimer = null;
+          checkUnderPointer();
+        }, 100);
+      }, { passive: true });
     }
 
     /* =====================================================================
@@ -861,12 +880,12 @@ export default function CheroneyClient() {
       mm.add(
         {
           isDesktop: '(min-width: 992px) and (prefers-reduced-motion: no-preference)',
-          isTablet: '(min-width: 480px) and (max-width: 991px) and (prefers-reduced-motion: no-preference)',
-          isMobile: '(max-width: 479px) and (prefers-reduced-motion: no-preference)'
+          isTablet: '(min-width: 601px) and (max-width: 991px) and (prefers-reduced-motion: no-preference)',
+          isMobile: '(max-width: 600px) and (prefers-reduced-motion: no-preference)'
         },
         (context) => {
-          const k = context.conditions?.isDesktop ? 1 : context.conditions?.isTablet ? 0.5 : 0.3;
-          const distance = 320 * k;
+          const k = context.conditions?.isDesktop ? 1 : context.conditions?.isTablet ? 0.45 : 0.22;
+          const distance = 260 * k;
 
           cards.forEach((card) => {
             const speed = parseFloat(card.getAttribute('data-speed') || '1');
@@ -876,6 +895,7 @@ export default function CheroneyClient() {
               {
                 y: -distance * speed,
                 ease: 'none',
+                force3D: true,
                 scrollTrigger: {
                   trigger: section,
                   start: 'clamp(top bottom)',
@@ -892,67 +912,55 @@ export default function CheroneyClient() {
     }
 
     /* =====================================================================
-     * SECTION 6.12: MOMENTUM HOVER
+     * SECTION 6.12: MOMENTUM HOVER (Stamp wobble; photo cards rely on pure CSS hover & parallax)
      * ===================================================================== */
     function initMomentumHover() {
       const section = document.getElementById('flock');
       if (!section || isReducedMotion) return;
       if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
-      let pX = 0;
-      let pY = 0;
+      const stamp = section.querySelector<HTMLElement>('.team-stamp');
+      if (!stamp) return;
+
       let prevX = 0;
       let prevY = 0;
       let vx = 0;
       let vy = 0;
 
-      window.addEventListener('pointermove', (e) => {
-        pX = e.clientX;
-        pY = e.clientY;
+      section.addEventListener('pointermove', (e) => {
+        vx = e.movementX || (e.clientX - prevX);
+        vy = e.movementY || (e.clientY - prevY);
+        prevX = e.clientX;
+        prevY = e.clientY;
       }, { passive: true });
-
-      gsap.ticker.add(() => {
-        vx = pX - prevX;
-        vy = pY - prevY;
-        prevX = pX;
-        prevY = pY;
-      });
 
       function clamp(min: number, max: number, v: number) {
         return Math.max(min, Math.min(max, v));
       }
 
-      const targets = section.querySelectorAll<HTMLElement>('[data-momentum-target]');
-      targets.forEach((target) => {
-        target.addEventListener('pointerenter', (e) => {
-          const rect = target.getBoundingClientRect();
-          const cx = rect.left + rect.width / 2;
-          const cy = rect.top + rect.height / 2;
-          const F = e.clientX - cx;
-          const R = e.clientY - cy;
-          const dist = Math.hypot(F, R) || 1;
-          const torque = (F * vy - R * vx) / dist;
+      stamp.addEventListener('pointerenter', (e) => {
+        const rect = stamp.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const F = e.clientX - cx;
+        const R = e.clientY - cy;
+        const dist = Math.hypot(F, R) || 1;
+        const torque = (F * vy - R * vx) / dist;
 
-          const velX = clamp(-1080, 1080, vx * 30);
-          const velY = clamp(-1080, 1080, vy * 30);
-          const velRot = clamp(-60, 60, torque * 20);
+        const velRot = clamp(-35, 35, torque * 12);
 
-          // Impulse + elastic spring back
-          gsap.timeline()
-            .to(target, {
-              x: velX * 0.045,
-              y: velY * 0.045,
-              rotation: '+=' + velRot * 0.18,
-              duration: 0.22,
-              ease: 'power2.out'
-            })
-            .to(target, {
-              x: 0,
-              y: 0,
-              duration: 0.85,
-              ease: 'elastic.out(1, 0.5)'
-            });
-        });
+        // Tactile stamp tilt & elastic spring back
+        gsap.timeline()
+          .to(stamp, {
+            rotation: '+=' + velRot * 0.16,
+            duration: 0.2,
+            ease: 'power2.out'
+          })
+          .to(stamp, {
+            rotation: 0,
+            duration: 0.8,
+            ease: 'elastic.out(1, 0.4)'
+          });
       });
     }
 
@@ -984,13 +992,14 @@ export default function CheroneyClient() {
 
       try {
         lenisInstance = new Lenis({
-          duration: 1.2,
+          duration: 0.85,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           orientation: 'vertical',
           gestureOrientation: 'vertical',
           smoothWheel: true,
-          wheelMultiplier: 1,
-          touchMultiplier: 2,
+          wheelMultiplier: 1.05,
+          touchMultiplier: 1.0,
+          syncTouch: false,
           infinite: false
         });
 
@@ -1000,7 +1009,7 @@ export default function CheroneyClient() {
           lenisInstance?.raf(time * 1000);
         });
 
-        gsap.ticker.lagSmoothing(0);
+        gsap.ticker.lagSmoothing(500, 33);
       } catch (err) {}
 
       // Anchor Links Smooth Scroll
@@ -1013,7 +1022,7 @@ export default function CheroneyClient() {
           if (targetEl) {
             e.preventDefault();
             if (lenisInstance && !isReducedMotion) {
-              lenisInstance.scrollTo(targetEl, { duration: 1.4 });
+              lenisInstance.scrollTo(targetEl, { duration: 1.0 });
             } else {
               targetEl.scrollIntoView({ behavior: 'smooth' });
             }
@@ -1500,7 +1509,6 @@ export default function CheroneyClient() {
                 data-side-idx={tc.sideIdx}
                 data-speed={tc.speed}
                 data-case-index={tc.caseIdx}
-                data-momentum-target
                 onClick={() => openModal(tc.caseIdx, 'spotlight')}
                 style={tc.style}
               >
