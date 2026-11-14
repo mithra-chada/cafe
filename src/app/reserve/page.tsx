@@ -17,25 +17,25 @@ const OCCASIONS = [
   {
     id: 'date',
     title: 'Romantic Date Night',
-    icon: '🕯️',
+    tag: 'COUPLE',
     desc: 'Soft 2700K ambient lighting, intimate corner table, and slow jazz.'
   },
   {
     id: 'brunch',
     title: 'Friends Social & Brunch',
-    icon: '🥐',
+    tag: 'SOCIAL',
     desc: 'Spacious table, artisanal sourdough platters, and kombucha mocktails.'
   },
   {
     id: 'solo-work',
     title: 'Solo Brew & Laptop',
-    icon: '☕',
+    tag: 'WORK',
     desc: 'High-speed Wi-Fi, accessible power outlets, and single-origin pour-overs.'
   },
   {
     id: 'celebration',
     title: 'Birthday & Celebration',
-    icon: '✨',
+    tag: 'GROUP',
     desc: 'Reserved group seating, customized pastry platter, and attentive service.'
   }
 ];
@@ -100,7 +100,7 @@ export default function ReservePage() {
 
     // Build pre-formatted WhatsApp message directly to +91 7075147888
     const msgLines = [
-      '☕ *CHERONEY TABLE RESERVATION REQUEST*',
+      '*CHERONEY TABLE RESERVATION REQUEST*',
       `• *Booking Ref:* ${ref}`,
       `• *Guest Name:* ${voucher.guestName}`,
       `• *Contact:* ${voucher.guestPhone}`,
@@ -145,9 +145,9 @@ export default function ReservePage() {
             </p>
 
             <div className="reserve-trust-pills">
-              <span className="trust-pill">⭐ 4.7 Google Rating (484+ Reviews)</span>
-              <span className="trust-pill">🕒 15-Minute Grace Period</span>
-              <span className="trust-pill">📍 Beside MK Gold Coast</span>
+              <span className="trust-pill">4.7 Google Rating (484+ Reviews)</span>
+              <span className="trust-pill">15-Minute Grace Period</span>
+              <span className="trust-pill">Beside MK Gold Coast</span>
             </div>
           </div>
         </section>
@@ -248,7 +248,7 @@ export default function ReservePage() {
                         className={`occasion-card ${selectedOccasion === occ.title ? 'active' : ''}`}
                         onClick={() => setSelectedOccasion(occ.title)}
                       >
-                        <span className="occ-icon">{occ.icon}</span>
+                        <span className="occ-tag">{occ.tag}</span>
                         <h3 className="occ-title">{occ.title}</h3>
                         <p className="occ-desc">{occ.desc}</p>
                       </div>

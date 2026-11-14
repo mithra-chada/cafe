@@ -55,7 +55,7 @@ export default function PitchPage() {
                 <span className="pillar-num">02</span>
                 <h2 className="pillar-title">Replace Clunky PDF QR Menus</h2>
                 <p className="pillar-text">
-                  Most cafes make guests download heavy 15MB PDFs that require constant pinching, zooming, and squinting on phones. Cheroney’s interactive digital menu loads in <strong>0.8 seconds</strong>, features instant dietary filtering (🌱 Veg / 🍗 Non-Veg), and works smoothly on every smartphone.
+                  Most cafes make guests download heavy 15MB PDFs that require constant pinching, zooming, and squinting on phones. Cheroney’s interactive digital menu loads in <strong>0.8 seconds</strong>, features instant dietary filtering (VEG / NON-VEG), and works smoothly on every smartphone.
                 </p>
                 <div className="pillar-badge">
                   <span>Sub-Second Mobile Load Times</span>

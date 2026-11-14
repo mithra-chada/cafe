@@ -1767,305 +1767,129 @@
       border: 1px solid rgba(20, 17, 16, 0.14);
     }
 
-    /* 5. MENU PAGE SPECIFIC STYLES (LUXURY ATELIER & EDITORIAL SPREAD) */
+    /* 5. MENU PAGE SPECIFIC STYLES (VISUAL CULINARY CATALOG & REAL PHOTOGRAPHY) */
     .menu-page-main {
+      padding-top: 7.5rem;
       padding-bottom: 7rem;
     }
     .menu-hero-header {
-      background-color: #f1e7d2;
-      padding: 4.5rem 2rem 3rem;
-      border-bottom: 1.5px solid rgba(20, 17, 16, 0.12);
+      background-color: var(--cream);
+      padding: 3.5rem 2rem 2.5rem;
       text-align: center;
     }
     .menu-hero-inner {
-      max-width: 58rem;
+      max-width: 54rem;
       margin: 0 auto;
     }
-    .hero-eyebrow-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: var(--cream);
-      border: 1px solid rgba(20, 17, 16, 0.16);
-      border-radius: 999px;
-      padding: 0.35rem 1rem;
+    .menu-eyebrow-pill {
+      display: inline-block;
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
       font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--tomato);
+      background-color: rgba(239, 74, 35, 0.08);
+      border: 1px solid rgba(239, 74, 35, 0.2);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
       margin-bottom: 1.25rem;
     }
-    .hero-eyebrow-chip .dot-live {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background-color: var(--tomato);
-      box-shadow: 0 0 0 3px rgba(239, 74, 35, 0.2);
-    }
-    .menu-title-main {
+    .menu-headline {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 900, "wdth" 72;
-      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
       line-height: 0.95;
       text-transform: uppercase;
       margin-bottom: 1.25rem;
+      color: var(--ink);
     }
-    .menu-subtitle {
+    .menu-subhead {
       font-family: 'Playfair', serif;
       font-size: 1.15rem;
       line-height: 1.6;
-      color: rgba(20, 17, 16, 0.82);
-      margin-bottom: 2.25rem;
+      color: rgba(20, 17, 16, 0.8);
+      margin-bottom: 2rem;
     }
-    .menu-control-strip {
+    .menu-filter-bar {
       display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
+      gap: 1rem;
     }
-    .menu-search-box {
+    .menu-search-input-wrap {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      background-color: var(--cream);
-      border: 1.5px solid rgba(20, 17, 16, 0.18);
+      gap: 0.5rem;
+      background-color: var(--white);
+      border: 1.5px solid rgba(20, 17, 16, 0.16);
       border-radius: 999px;
-      padding: 0.65rem 1.25rem;
+      padding: 0.55rem 1.25rem;
       width: 100%;
-      max-width: 32rem;
+      max-width: 24rem;
       transition: border-color 160ms ease-out;
     }
-    .menu-search-box:focus-within {
+    .menu-search-input-wrap:focus-within {
       border-color: var(--ink);
     }
-    .menu-search-input {
+    .menu-search-input-field {
       flex: 1;
       border: none;
       background: transparent;
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 600, "wdth" 72;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       outline: none;
       color: var(--ink);
     }
-    .clear-search-btn {
+    .menu-search-clear {
       background: none;
       border: none;
-      font-size: 0.85rem;
-      cursor: pointer;
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
       color: rgba(20, 17, 16, 0.5);
-      padding: 0.2rem;
+      cursor: pointer;
     }
-    .diet-toggle-group {
+    .menu-diet-tabs {
       display: flex;
-      flex-wrap: wrap;
       gap: 0.5rem;
-      justify-content: center;
     }
-    .diet-btn {
-      padding: 0.4rem 0.95rem;
+    .diet-tab-btn {
+      padding: 0.45rem 1rem;
       border-radius: 999px;
-      border: 1.5px solid rgba(20, 17, 16, 0.16);
-      background-color: var(--cream);
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 700, "wdth" 72;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: transform 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
-    }
-    .diet-btn:hover {
-      border-color: var(--ink);
-    }
-    .diet-btn.active {
-      background-color: var(--ink);
-      color: var(--cream);
-      border-color: var(--ink);
-    }
-    .diet-btn:active {
-      transform: scale(0.97);
-    }
-    .menu-view-switcher {
-      display: flex;
-      gap: 0.4rem;
-      background-color: rgba(20, 17, 16, 0.06);
-      padding: 0.3rem;
-      border-radius: 999px;
-    }
-    .view-toggle-btn {
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      border: none;
-      background: transparent;
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 700, "wdth" 72;
-      font-size: 0.78rem;
-      cursor: pointer;
-      color: rgba(20, 17, 16, 0.7);
-      transition: background-color 160ms ease-out, color 160ms ease-out;
-    }
-    .view-toggle-btn.active {
-      background-color: var(--cream);
-      color: var(--ink);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    .view-toggle-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* Curated Tasting Pairings Showcase */
-    .pairings-showcase-section {
-      background-color: #f7eedb;
-      border-bottom: 1.5px solid rgba(20, 17, 16, 0.1);
-      padding: 3.5rem 2rem;
-    }
-    .pairings-inner {
-      max-width: 88rem;
-      margin: 0 auto;
-    }
-    .pairings-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-    .section-mini-tag {
-      display: block;
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--tomato);
-      margin-bottom: 0.35rem;
-    }
-    .pairings-heading {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 850, "wdth" 72;
-      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
-    .pairings-note {
-      font-family: 'Playfair', serif;
-      font-size: 0.95rem;
-      color: rgba(20, 17, 16, 0.7);
-      max-width: 24rem;
-    }
-    .pairings-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-      gap: 1.5rem;
-    }
-    .pairing-card {
-      background-color: var(--cream);
       border: 1.5px solid rgba(20, 17, 16, 0.14);
-      border-radius: 1.25rem;
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 0.85rem;
-      transition: transform 200ms ease-out, border-color 200ms ease-out;
-    }
-    .pairing-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(20, 17, 16, 0.3);
-    }
-    .pairing-badge-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .pairing-badge {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.7rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      background-color: var(--butter);
-      color: var(--ink);
-    }
-    .pairing-savings {
+      background-color: var(--white);
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 700, "wdth" 72;
-      font-size: 0.75rem;
-      color: var(--tomato);
-    }
-    .pairing-title {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 1.3rem;
-      line-height: 1.15;
-      text-transform: uppercase;
-    }
-    .pairing-items-list {
-      font-family: 'Playfair', serif;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--tomato);
-    }
-    .pairing-desc {
-      font-family: 'Playfair', serif;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      color: rgba(20, 17, 16, 0.78);
-    }
-    .pairing-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1rem;
-      border-top: 1px dashed rgba(20, 17, 16, 0.12);
-      margin-top: auto;
-    }
-    .pairing-price-block {
-      display: flex;
-      flex-direction: column;
-    }
-    .price-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      color: rgba(20, 17, 16, 0.55);
-    }
-    .pairing-price {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 900, "wdth" 72;
-      font-size: 1.35rem;
-      color: var(--ink);
-    }
-    .add-pairing-btn {
-      padding: 0.55rem 1.15rem;
-      border-radius: 999px;
-      border: 1.5px solid var(--ink);
-      background-color: var(--ink);
-      color: var(--cream);
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
       font-size: 0.8rem;
       text-transform: uppercase;
+      letter-spacing: 0.03em;
       cursor: pointer;
-      transition: transform 160ms ease-out;
+      transition: transform 140ms ease-out, background-color 140ms ease-out, color 140ms ease-out;
     }
-    .add-pairing-btn:active {
+    .diet-tab-btn.active {
+      background-color: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+    .diet-tab-btn:active {
       transform: scale(0.97);
     }
 
-    /* Category Navigation Ribbon */
-    .menu-category-nav {
+    /* Sticky Category Ribbon */
+    .menu-category-ribbon {
       position: sticky;
-      top: 4.5rem;
-      z-index: 75;
+      top: 4.75rem;
+      z-index: 45;
       background-color: var(--cream);
+      border-top: 1px solid rgba(20, 17, 16, 0.08);
       border-bottom: 1.5px solid rgba(20, 17, 16, 0.12);
       padding: 0.75rem 2rem;
-      box-shadow: 0 4px 12px rgba(20, 17, 16, 0.03);
+      box-shadow: 0 4px 15px rgba(20, 17, 16, 0.04);
     }
-    .category-scroll-track {
+    .category-ribbon-track {
       max-width: 88rem;
       margin: 0 auto;
       display: flex;
@@ -2074,384 +1898,269 @@
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
-    .category-scroll-track::-webkit-scrollbar {
+    .category-ribbon-track::-webkit-scrollbar {
       display: none;
     }
-    .category-nav-pill {
+    .category-pill {
       white-space: nowrap;
       padding: 0.5rem 1.25rem;
       border-radius: 999px;
       border: 1.5px solid rgba(20, 17, 16, 0.14);
-      background-color: transparent;
+      background-color: var(--white);
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: transform 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
+    }
+    .category-pill:hover {
+      border-color: var(--ink);
+    }
+    .category-pill.active {
+      background-color: var(--tomato);
+      color: var(--cream);
+      border-color: var(--tomato);
+    }
+    .category-pill:active {
+      transform: scale(0.97);
+    }
+
+    /* Menu Catalog Container */
+    .menu-catalog-container {
+      padding: 3.5rem 2rem;
+    }
+    .menu-catalog-content {
+      max-width: 88rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4.5rem;
+    }
+    .menu-section-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+    .category-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      border-bottom: 1.5px solid rgba(20, 17, 16, 0.12);
+      padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .cat-header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .cat-order-tag {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tomato);
+    }
+    .cat-display-title {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 900, "wdth" 72;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+    .cat-display-sub {
+      font-family: 'Playfair', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: rgba(20, 17, 16, 0.7);
+    }
+    .cat-banner-photo-wrap {
+      width: 14rem;
+      height: 6rem;
+      border-radius: 0.85rem;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(20, 17, 16, 0.1);
+    }
+    .cat-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* VISUAL MENU GRID */
+    .visual-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+      gap: 1.75rem;
+    }
+    .menu-dish-card {
+      background-color: var(--white);
+      border: 1.5px solid rgba(20, 17, 16, 0.12);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(20, 17, 16, 0.03);
+      transition: transform 200ms ease-out, border-color 200ms ease-out, box-shadow 200ms ease-out;
+    }
+    .menu-dish-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(20, 17, 16, 0.3);
+      box-shadow: 0 10px 25px rgba(20, 17, 16, 0.08);
+    }
+    .dish-card-img-wrap {
+      width: 100%;
+      height: 12.5rem;
+      overflow: hidden;
+      background-color: rgba(20, 17, 16, 0.05);
+      border-bottom: 1px solid rgba(20, 17, 16, 0.08);
+    }
+    .dish-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu-dish-card:hover .dish-card-img {
+      transform: scale(1.04);
+    }
+    .dish-card-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.65rem;
+    }
+    .dish-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dish-diet-pill {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+    }
+    .dish-diet-pill.veg {
+      background-color: rgba(46, 125, 50, 0.1);
+      color: #2e7d32;
+      border: 1px solid rgba(46, 125, 50, 0.25);
+    }
+    .dish-diet-pill.non-veg {
+      background-color: rgba(198, 40, 40, 0.1);
+      color: #c62828;
+      border: 1px solid rgba(198, 40, 40, 0.25);
+    }
+    .dish-tag-pill {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background-color: var(--butter);
+      color: var(--ink);
+    }
+    .dish-title {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 850, "wdth" 72;
+      font-size: 1.25rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .dish-desc {
+      font-family: 'Playfair', serif;
+      font-size: 0.94rem;
+      line-height: 1.48;
+      color: rgba(20, 17, 16, 0.78);
+      margin-bottom: auto;
+    }
+    .dish-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px dashed rgba(20, 17, 16, 0.12);
+      margin-top: 0.75rem;
+    }
+    .dish-price {
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 900, "wdth" 72;
+      font-size: 1.35rem;
+      color: var(--tomato);
+    }
+    .dish-add-btn {
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--ink);
+      background-color: var(--cream);
+      color: var(--ink);
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.03em;
       cursor: pointer;
-      transition: transform 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
-    }
-    .category-nav-pill:hover {
-      border-color: var(--ink);
-    }
-    .category-nav-pill.active {
-      background-color: var(--tomato);
-      color: var(--cream);
-      border-color: var(--tomato);
-    }
-    .category-nav-pill:active {
-      transform: scale(0.97);
-    }
-
-    /* EDITORIAL TWO-COLUMN PAPER MENU SPREAD */
-    .menu-catalog-section {
-      padding: 3.5rem 2rem;
-    }
-    .menu-catalog-inner {
-      max-width: 88rem;
-      margin: 0 auto;
-    }
-    .editorial-spread-container {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-    .editorial-category-block {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-    }
-    .editorial-section-header {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-    .sec-number-tag {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 900, "wdth" 72;
-      font-size: 1.15rem;
-      color: var(--tomato);
-      background-color: rgba(239, 74, 35, 0.1);
-      padding: 0.25rem 0.65rem;
-      border-radius: 0.4rem;
-    }
-    .sec-title-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-    .editorial-sec-title {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 900, "wdth" 72;
-      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-      line-height: 1.05;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-    .editorial-sec-sub {
-      font-family: 'Playfair', serif;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: rgba(20, 17, 16, 0.68);
-    }
-    .editorial-header-divider {
-      flex: 1;
-      height: 1px;
-      background-color: rgba(20, 17, 16, 0.12);
-    }
-    .editorial-dish-columns {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.25rem 4rem;
-    }
-    @media (max-width: 900px) {
-      .editorial-dish-columns {
-        grid-template-columns: 1fr;
-        gap: 1.75rem;
-      }
-    }
-    .editorial-menu-row {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid rgba(20, 17, 16, 0.08);
-    }
-    .dish-top-line {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.5rem;
-      width: 100%;
-    }
-    .dish-name-group {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-shrink: 0;
-    }
-    .diet-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .diet-dot.veg {
-      background-color: #2e7d32;
-    }
-    .diet-dot.vegan {
-      background-color: #388e3c;
-    }
-    .diet-dot.non-veg {
-      background-color: #c62828;
-    }
-    .dish-name {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 1.08rem;
-      line-height: 1.2;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-    .dish-tag-chip {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      background-color: var(--butter);
-      color: var(--ink);
-    }
-    .dish-dotted-leader {
-      flex: 1;
-      border-bottom: 1.5px dotted rgba(20, 17, 16, 0.28);
-      margin: 0 0.75rem;
-      align-self: baseline;
-      margin-bottom: 0.28rem;
-      min-width: 1.5rem;
-    }
-    .dish-price-action {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-shrink: 0;
-    }
-    .dish-price {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 900, "wdth" 72;
-      font-size: 1.15rem;
-      color: var(--tomato);
-      white-space: nowrap;
-    }
-    .dish-add-pill {
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid rgba(20, 17, 16, 0.2);
-      background-color: var(--cream);
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      cursor: pointer;
       transition: transform 140ms ease-out, background-color 140ms ease-out, color 140ms ease-out;
     }
-    .dish-add-pill:hover {
+    .dish-add-btn:hover {
       background-color: var(--ink);
       color: var(--cream);
-      border-color: var(--ink);
     }
-    .dish-add-pill:active {
+    .dish-add-btn:active {
       transform: scale(0.97);
     }
-    .inline-stepper {
+    .dish-stepper {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       background-color: var(--ink);
       color: var(--cream);
       border-radius: 999px;
-      padding: 0.2rem 0.45rem;
+      padding: 0.25rem 0.55rem;
     }
     .stepper-btn {
-      width: 1.4rem;
-      height: 1.4rem;
+      width: 1.6rem;
+      height: 1.6rem;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.18);
+      background-color: rgba(255, 255, 255, 0.2);
       color: var(--cream);
       border: none;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 0.9rem;
-      line-height: 1;
+      font-size: 0.95rem;
       transition: transform 120ms ease-out;
     }
     .stepper-btn:active {
       transform: scale(0.9);
     }
-    .stepper-val {
+    .stepper-count {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.8rem;
+      font-size: 0.88rem;
       padding: 0 0.35rem;
     }
-    .dish-tasting-notes {
-      font-family: 'Playfair', serif;
-      font-size: 0.92rem;
-      line-height: 1.45;
-      color: rgba(20, 17, 16, 0.76);
-      padding-left: 1rem;
-    }
 
-    /* VISUAL CARDS VIEW */
-    .cards-catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
-      gap: 1.5rem;
-    }
-    .visual-dish-card {
-      background-color: #f7eedb;
-      border: 1.5px solid rgba(20, 17, 16, 0.14);
-      border-radius: 1.15rem;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      transition: transform 200ms ease-out, border-color 200ms ease-out;
-    }
-    .visual-dish-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(20, 17, 16, 0.3);
-    }
-    .visual-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .visual-meta-left {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .diet-label {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      color: rgba(20, 17, 16, 0.6);
-    }
-    .visual-tag-badge {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      background-color: var(--butter);
-      color: var(--ink);
-    }
-    .visual-card-name {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 1.22rem;
-      line-height: 1.15;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-    .visual-card-desc {
-      font-family: 'Playfair', serif;
-      font-size: 0.94rem;
-      line-height: 1.45;
-      color: rgba(20, 17, 16, 0.78);
-    }
-    .visual-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 0.85rem;
-      border-top: 1px dashed rgba(20, 17, 16, 0.12);
-      margin-top: auto;
-    }
-    .visual-card-price {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 900, "wdth" 72;
-      font-size: 1.25rem;
-      color: var(--tomato);
-    }
-    .visual-add-btn {
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      border: 1.5px solid rgba(20, 17, 16, 0.2);
-      background-color: var(--cream);
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out;
-    }
-    .visual-add-btn:hover {
-      background-color: var(--ink);
-      color: var(--cream);
-      border-color: var(--ink);
-    }
-    .visual-add-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* Empty State */
-    .menu-empty-state {
-      text-align: center;
-      padding: 4.5rem 2rem;
-      background-color: #f7eedb;
-      border-radius: 1.5rem;
-      border: 1.5px dashed rgba(20, 17, 16, 0.18);
-    }
-    .empty-icon {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-    .empty-title {
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 1.35rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .empty-sub {
-      font-family: 'Playfair', serif;
-      font-size: 1rem;
-      color: rgba(20, 17, 16, 0.7);
-      margin-bottom: 1.5rem;
-    }
-    .reset-filter-btn {
-      padding: 0.65rem 1.4rem;
-      border-radius: 999px;
-      background-color: var(--ink);
-      color: var(--cream);
-      border: none;
-      font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 800, "wdth" 72;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: transform 160ms ease-out;
-    }
-    .reset-filter-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* FLOATING FOLIO BAR */
-    .floating-folio-bar {
+    /* Floating Order Tray Bar */
+    .sticky-order-bar {
       position: fixed;
       bottom: 2rem;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 95;
+      z-index: 90;
       background-color: var(--ink);
       color: var(--cream);
       padding: 0.85rem 1.6rem;
@@ -2460,25 +2169,24 @@
       border: 1.5px solid rgba(255, 255, 255, 0.15);
       width: calc(100% - 2.5rem);
       max-width: 36rem;
-      transition: transform 180ms ease-out;
     }
     @media (max-width: 768px) {
-      .floating-folio-bar {
+      .sticky-order-bar {
         bottom: 5.5rem;
       }
     }
-    .folio-bar-inner {
+    .order-bar-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
     }
-    .folio-summary-group {
+    .order-bar-info {
       display: flex;
       align-items: baseline;
       gap: 0.65rem;
     }
-    .folio-badge-count {
+    .order-count-pill {
       background-color: var(--tomato);
       color: var(--cream);
       padding: 0.2rem 0.55rem;
@@ -2488,24 +2196,24 @@
       font-size: 0.75rem;
       text-transform: uppercase;
     }
-    .folio-sum-total {
+    .order-total-price {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 900, "wdth" 72;
       font-size: 1.25rem;
       color: var(--cream);
     }
-    .folio-sub-note {
+    .order-note-hint {
       font-family: 'Playfair', serif;
       font-style: italic;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: rgba(255, 255, 255, 0.65);
     }
     @media (max-width: 480px) {
-      .folio-sub-note {
+      .order-note-hint {
         display: none;
       }
     }
-    .folio-trigger-btn {
+    .order-review-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
@@ -2513,21 +2221,21 @@
       color: var(--cream);
       border: none;
       border-radius: 999px;
-      padding: 0.55rem 1.15rem;
+      padding: 0.6rem 1.25rem;
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
       font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       cursor: pointer;
       transition: transform 160ms ease-out;
     }
-    .folio-trigger-btn:active {
+    .order-review-btn:active {
       transform: scale(0.97);
     }
 
-    /* ARTISANAL LEATHER & PAPER ORDER FOLIO DRAWER */
-    .folio-drawer-backdrop {
+    /* Order Folio Drawer */
+    .order-drawer-backdrop {
       position: fixed;
       inset: 0;
       background-color: rgba(20, 17, 16, 0.65);
@@ -2537,11 +2245,7 @@
       justify-content: flex-end;
       animation: fadeInFolio 180ms ease-out;
     }
-    @keyframes fadeInFolio {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .folio-drawer-paper {
+    .order-drawer-sheet {
       background-color: var(--cream);
       width: 100%;
       max-width: 32rem;
@@ -2553,11 +2257,7 @@
       box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.25);
       animation: slideInFolio 220ms cubic-bezier(0.23, 1, 0.32, 1);
     }
-    @keyframes slideInFolio {
-      from { transform: translateX(100%); }
-      to { transform: translateX(0); }
-    }
-    .folio-paper-header {
+    .drawer-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -2565,7 +2265,7 @@
       border-bottom: 1.5px solid rgba(20, 17, 16, 0.12);
       margin-bottom: 1.5rem;
     }
-    .folio-stamp {
+    .drawer-eyebrow {
       display: block;
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
@@ -2575,7 +2275,7 @@
       color: var(--tomato);
       margin-bottom: 0.35rem;
     }
-    .folio-header-title {
+    .drawer-title {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 900, "wdth" 72;
       font-size: 1.65rem;
@@ -2583,12 +2283,12 @@
       text-transform: uppercase;
       margin-bottom: 0.35rem;
     }
-    .folio-header-sub {
+    .drawer-subtitle {
       font-family: 'Playfair', serif;
       font-size: 0.88rem;
       color: rgba(20, 17, 16, 0.7);
     }
-    .folio-close-btn {
+    .drawer-close {
       width: 2.25rem;
       height: 2.25rem;
       border-radius: 50%;
@@ -2597,58 +2297,46 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
       color: var(--ink);
-      transition: transform 160ms ease-out, background-color 160ms ease-out;
     }
-    .folio-close-btn:hover {
-      background-color: rgba(20, 17, 16, 0.15);
-    }
-    .folio-close-btn:active {
-      transform: scale(0.95);
-    }
-    .folio-receipt-body {
+    .drawer-items-list {
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .folio-receipt-items {
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
     }
-    .folio-receipt-line {
+    .drawer-item-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.75rem 0;
       border-bottom: 1px dashed rgba(20, 17, 16, 0.12);
     }
-    .receipt-col-info {
+    .drawer-item-details {
       display: flex;
       flex-direction: column;
       max-width: 60%;
     }
-    .receipt-item-title {
+    .drawer-item-name {
       font-family: 'Archivo', sans-serif;
-      font-variation-settings: "wght" 700, "wdth" 72;
+      font-variation-settings: "wght" 750, "wdth" 72;
       font-size: 0.98rem;
       line-height: 1.2;
       text-transform: uppercase;
     }
-    .receipt-item-rate {
+    .drawer-item-unit {
       font-family: 'Playfair', serif;
       font-size: 0.82rem;
       color: rgba(20, 17, 16, 0.6);
     }
-    .receipt-col-action {
+    .drawer-item-stepper {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-    .receipt-btn-mini {
+    .stepper-mini-btn {
       width: 1.6rem;
       height: 1.6rem;
       border-radius: 50%;
@@ -2659,19 +2347,15 @@
       justify-content: center;
       cursor: pointer;
       font-size: 0.9rem;
-      transition: transform 120ms ease-out;
     }
-    .receipt-btn-mini:active {
-      transform: scale(0.9);
-    }
-    .receipt-qty-num {
+    .stepper-mini-qty {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
       font-size: 0.88rem;
       min-width: 1.2rem;
       text-align: center;
     }
-    .receipt-line-total {
+    .drawer-item-subtotal {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 900, "wdth" 72;
       font-size: 1.05rem;
@@ -2679,7 +2363,7 @@
       min-width: 3.5rem;
       text-align: right;
     }
-    .folio-guest-options {
+    .drawer-order-options {
       background-color: #f7eedb;
       border-radius: 1rem;
       padding: 1.25rem;
@@ -2687,37 +2371,35 @@
       flex-direction: column;
       gap: 1rem;
       border: 1px solid rgba(20, 17, 16, 0.08);
+      margin-top: 1.5rem;
     }
-    .folio-type-tabs {
+    .order-mode-toggle {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.5rem;
     }
-    .folio-tab {
+    .order-mode-btn {
       padding: 0.55rem;
       border-radius: 0.6rem;
       border: 1.5px solid rgba(20, 17, 16, 0.12);
-      background-color: var(--cream);
+      background-color: var(--white);
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 700, "wdth" 72;
       font-size: 0.82rem;
       cursor: pointer;
-      transition: transform 140ms ease-out, background-color 140ms ease-out, color 140ms ease-out;
+      transition: background-color 140ms ease-out, color 140ms ease-out;
     }
-    .folio-tab.active {
+    .order-mode-btn.active {
       background-color: var(--ink);
       color: var(--cream);
       border-color: var(--ink);
     }
-    .folio-tab:active {
-      transform: scale(0.97);
-    }
-    .folio-input-block {
+    .drawer-field {
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
     }
-    .folio-label {
+    .drawer-label {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 800, "wdth" 72;
       font-size: 0.75rem;
@@ -2725,53 +2407,46 @@
       letter-spacing: 0.04em;
       color: rgba(20, 17, 16, 0.7);
     }
-    .folio-text-input {
+    .drawer-input {
       padding: 0.65rem 0.95rem;
       border-radius: 0.5rem;
       border: 1.5px solid rgba(20, 17, 16, 0.16);
-      background-color: var(--cream);
+      background-color: var(--white);
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 600, "wdth" 72;
       font-size: 0.9rem;
       outline: none;
-      transition: border-color 160ms ease-out;
     }
-    .folio-text-input:focus {
-      border-color: var(--ink);
-    }
-    .folio-paper-footer {
+    .drawer-footer {
       padding-top: 1.5rem;
       border-top: 1.5px solid rgba(20, 17, 16, 0.12);
       margin-top: 1.5rem;
     }
-    .folio-bill-total {
+    .drawer-total-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 1.25rem;
     }
-    .total-label-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-    .grand-label {
+    .drawer-total-label {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 900, "wdth" 72;
       font-size: 1.2rem;
       text-transform: uppercase;
+      display: block;
     }
-    .tax-inclusive-tag {
+    .drawer-tax-note {
       font-family: 'Playfair', serif;
       font-size: 0.78rem;
       color: rgba(20, 17, 16, 0.55);
     }
-    .grand-amount {
+    .drawer-total-val {
       font-family: 'Archivo', sans-serif;
       font-variation-settings: "wght" 900, "wdth" 72;
       font-size: 1.85rem;
       color: var(--tomato);
     }
-    .folio-whatsapp-cta {
+    .drawer-whatsapp-btn {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -2787,23 +2462,148 @@
       text-transform: uppercase;
       text-decoration: none;
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
-      transition: transform 160ms ease-out, box-shadow 160ms ease-out;
+      transition: transform 160ms ease-out;
     }
-    .folio-whatsapp-cta:hover {
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-    }
-    .folio-whatsapp-cta:active {
+    .drawer-whatsapp-btn:active {
       transform: scale(0.97);
     }
-    .folio-security-note {
+    .drawer-security-note {
       font-size: 0.74rem;
       color: rgba(20, 17, 16, 0.6);
       text-align: center;
       margin-top: 0.75rem;
     }
 
-    /* 6. RESERVATION PAGE SPECIFIC STYLES (LUXURY TABLE CONCIERGE) */
+    /* Mobile Drawer Styles for Floating Navbar */
+    .nav-mobile-toggle-btn {
+      display: none;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: var(--white);
+      border: 1px solid rgba(20, 17, 16, 0.12);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      cursor: pointer;
+    }
+    @media (max-width: 1024px) {
+      .nav-mobile-toggle-btn {
+        display: flex;
+      }
+    }
+    .toggle-line {
+      width: 1.1rem;
+      height: 2px;
+      background-color: var(--ink);
+      transition: transform 160ms ease-out;
+    }
+    .site-mobile-drawer {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(20, 17, 16, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 110;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .mobile-drawer-sheet {
+      background-color: var(--cream);
+      width: 100%;
+      max-width: 24rem;
+      height: 100%;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -0.5rem 0 2rem rgba(0, 0, 0, 0.2);
+    }
+    .drawer-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1.5px solid rgba(20, 17, 16, 0.12);
+      margin-bottom: 1.5rem;
+    }
+    .drawer-brand-logo {
+      font-family: 'Yellowtail', cursive;
+      font-size: 2.5rem;
+      color: var(--tomato);
+      transform: rotate(-6deg);
+    }
+    .drawer-close-btn {
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background-color: rgba(20, 17, 16, 0.08);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .drawer-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+    .drawer-nav-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      background-color: var(--white);
+      border: 1px solid rgba(20, 17, 16, 0.08);
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-size: 1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .drawer-nav-item.active {
+      border-color: var(--tomato);
+      color: var(--tomato);
+    }
+    .drawer-footer-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-top: 1.5rem;
+      border-top: 1.5px solid rgba(20, 17, 16, 0.12);
+    }
+    .drawer-action-btn {
+      padding: 0.85rem;
+      border-radius: 999px;
+      font-family: 'Archivo', sans-serif;
+      font-variation-settings: "wght" 800, "wdth" 72;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      text-align: center;
+      text-decoration: none;
+    }
+    .drawer-action-btn.primary {
+      background-color: var(--tomato);
+      color: var(--cream);
+    }
+    .drawer-action-btn.secondary {
+      background-color: var(--white);
+      color: var(--ink);
+      border: 1.5px solid rgba(20, 17, 16, 0.2);
+    }
+    .drawer-hours-note {
+      font-size: 0.75rem;
+      text-align: center;
+      color: rgba(20, 17, 16, 0.6);
+      margin-top: 0.25rem;
+    }
+/* 6. RESERVATION PAGE SPECIFIC STYLES (LUXURY TABLE CONCIERGE) */
     .reserve-page-main {
+      padding-top: 7.5rem;
       padding-bottom: 7rem;
     }
     .reserve-hero-header {
@@ -3509,6 +3309,7 @@
 
     /* 7. EXPERIENCE PAGE SPECIFIC STYLES */
     .experience-page-main {
+      padding-top: 7.5rem;
       padding-bottom: 6rem;
     }
     .exp-hero-header {
@@ -3934,6 +3735,7 @@
 
     /* 8. CONTACT PAGE SPECIFIC STYLES */
     .contact-page-main {
+      padding-top: 7.5rem;
       padding-bottom: 6rem;
     }
     .contact-hero-header {
@@ -4156,6 +3958,7 @@
 
     /* 9. PITCH DECK SPECIFIC STYLES */
     .pitch-page-main {
+      padding-top: 7.5rem;
       padding-bottom: 6rem;
     }
     .pitch-hero-header {

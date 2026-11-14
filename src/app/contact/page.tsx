@@ -107,31 +107,31 @@ export default function ContactPage() {
                 <h2 className="contact-card-heading">Guest Amenities</h2>
                 <div className="amenities-grid-box">
                   <div className="amenity-item">
-                    <span className="amenity-icon">⚡</span>
+                    <span className="amenity-tag">POWER</span>
                     <div>
                       <strong>Power Outlets</strong>
                       <p>Dedicated charging at lounge &amp; study tables</p>
                     </div>
                   </div>
                   <div className="amenity-item">
-                    <span className="amenity-icon">📶</span>
+                    <span className="amenity-tag">WIFI</span>
                     <div>
                       <strong>High-Speed Wi-Fi</strong>
                       <p>100+ Mbps fiber for remote workers</p>
                     </div>
                   </div>
                   <div className="amenity-item">
-                    <span className="amenity-icon">🐾</span>
+                    <span className="amenity-tag">PETS</span>
                     <div>
                       <strong>Pet-Friendly</strong>
-                      <p>Four-legged friends welcome at outdoor tables</p>
+                      <p>Four-legged companions welcome at outdoor tables</p>
                     </div>
                   </div>
                   <div className="amenity-item">
-                    <span className="amenity-icon">🚗</span>
+                    <span className="amenity-tag">PARK</span>
                     <div>
                       <strong>Free Parking</strong>
-                      <p>Spacious dedicated lot &amp; valet assistance</p>
+                      <p>Spacious curbside &amp; building lot parking</p>
                     </div>
                   </div>
                 </div>
