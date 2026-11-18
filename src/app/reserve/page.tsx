@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import MobileQuickBar from '@/components/MobileQuickBar';
-import { SITE_META, RESERVATION_ZONES, TIME_SLOT_GROUPS, CHERONEY_PHOTOS } from '@/data/cafe';
+import { SITE_META, RESERVATION_ZONES, CHERONEY_PHOTOS } from '@/data/cafe';
 
 const ZONE_PHOTOS: Record<string, string> = {
   'boho-lounge': CHERONEY_PHOTOS.bohoLounge,
@@ -13,116 +12,34 @@ const ZONE_PHOTOS: Record<string, string> = {
   'espresso-bar': CHERONEY_PHOTOS.bohoCounter
 };
 
-const OCCASIONS = [
-  {
-    id: 'date',
-    title: 'Romantic Date Night',
-    tag: 'COUPLE',
-    desc: 'Soft 2700K ambient lighting, intimate corner table, and slow jazz.'
-  },
-  {
-    id: 'brunch',
-    title: 'Friends Social & Brunch',
-    tag: 'SOCIAL',
-    desc: 'Spacious table, artisanal sourdough platters, and kombucha mocktails.'
-  },
-  {
-    id: 'solo-work',
-    title: 'Solo Brew & Laptop',
-    tag: 'WORK',
-    desc: 'High-speed Wi-Fi, accessible power outlets, and single-origin pour-overs.'
-  },
-  {
-    id: 'celebration',
-    title: 'Birthday & Celebration',
-    tag: 'GROUP',
-    desc: 'Reserved group seating, customized pastry platter, and attentive service.'
-  }
-];
-
 export default function ReservePage() {
-  // Generate next 7 days for the date ribbon
-  const dateOptions = useMemo(() => {
-    const list = [];
-    const today = new Date();
-    for (let i = 0; i < 7; i++) {
-      const d = new Date(today);
-      d.setDate(today.getDate() + i);
-      const iso = d.toISOString().split('T')[0];
-      const weekday = i === 0 ? 'Today' : i === 1 ? 'Tomorrow' : d.toLocaleDateString('en-US', { weekday: 'short' });
-      const dayNum = d.getDate();
-      const month = d.toLocaleDateString('en-US', { month: 'short' });
-      list.push({ iso, weekday, label: `${dayNum} ${month}` });
-    }
-    return list;
-  }, []);
-
-  const [selectedDate, setSelectedDate] = useState(() => {
-    const today = new Date();
-    return today.toISOString().split('T')[0];
-  });
-  const [partySize, setPartySize] = useState(2);
+  const [partySize, setPartySize] = useState('2 Guests');
   const [selectedZone, setSelectedZone] = useState('boho-lounge');
-  const [selectedSlot, setSelectedSlot] = useState('06:30 PM');
-  const [selectedOccasion, setSelectedOccasion] = useState('Romantic Date Night');
+  const [selectedDay, setSelectedDay] = useState('Today');
+  const [selectedSlot, setSelectedSlot] = useState('Sunset & Evening (5:00 PM – 8:00 PM)');
   const [guestName, setGuestName] = useState('');
   const [guestPhone, setGuestPhone] = useState('');
-  const [specialNotes, setSpecialNotes] = useState('');
-  const [confirmedVoucher, setConfirmedVoucher] = useState<any | null>(null);
+  const [specialRequest, setSpecialRequest] = useState('');
 
-  // Generate Booking Reference
-  const generateRef = () => {
-    return 'CH-' + Math.floor(100000 + Math.random() * 900000);
-  };
-
-  const handleBookingSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!guestName.trim()) {
-      alert('Please provide your name for the table reservation.');
-      return;
-    }
-
-    const ref = generateRef();
+  const buildWhatsAppLink = () => {
     const zoneObj = RESERVATION_ZONES.find((z) => z.id === selectedZone);
-    const voucher = {
-      ref,
-      guestName: guestName.trim(),
-      guestPhone: guestPhone.trim() || 'Not specified',
-      date: selectedDate,
-      timeSlot: selectedSlot,
-      partySize,
-      zoneName: zoneObj ? zoneObj.name : 'Boho Living Lounge',
-      occasion: selectedOccasion,
-      specialNotes: specialNotes.trim()
-    };
+    const zoneName = zoneObj ? zoneObj.name : 'Boho Living Lounge';
 
-    setConfirmedVoucher(voucher);
+    const lines = [
+      `*CHERONEY CAFE — TABLE RESERVATION*`,
+      `Guest Name: ${guestName.trim() || 'Guest'}`,
+      `Contact: ${guestPhone.trim() || 'Not specified'}`,
+      `Party Size: ${partySize}`,
+      `Date: ${selectedDay}`,
+      `Preferred Slot: ${selectedSlot}`,
+      `Seating Area: ${zoneName}`,
+      specialRequest.trim() ? `Special Notes: ${specialRequest.trim()}` : null,
+      ``,
+      `Location: Beside MK Gold Coast, Yendada, Vizag`,
+      `Please confirm slot availability. Thank you!`
+    ].filter(Boolean);
 
-    // Build pre-formatted WhatsApp message directly to +91 7075147888
-    const msgLines = [
-      '*CHERONEY TABLE RESERVATION REQUEST*',
-      `• *Booking Ref:* ${ref}`,
-      `• *Guest Name:* ${voucher.guestName}`,
-      `• *Contact:* ${voucher.guestPhone}`,
-      `• *Date:* ${voucher.date}`,
-      `• *Time Slot:* ${voucher.timeSlot}`,
-      `• *Party Size:* ${voucher.partySize} ${voucher.partySize === 1 ? 'Guest' : 'Guests'}`,
-      `• *Seating Zone:* ${voucher.zoneName}`,
-      `• *Occasion:* ${voucher.occasion}`
-    ];
-
-    if (voucher.specialNotes) {
-      msgLines.push(`• *Special Notes:* ${voucher.specialNotes}`);
-    }
-
-    msgLines.push('\nPlease confirm availability and table assignment. Thank you!');
-
-    const encoded = encodeURIComponent(msgLines.join('\n'));
-    const waUrl = `https://wa.me/${SITE_META.whatsappRaw}?text=${encoded}`;
-
-    if (typeof window !== 'undefined') {
-      window.open(waUrl, '_blank');
-    }
+    return `https://wa.me/${SITE_META.whatsappRaw}?text=${encodeURIComponent(lines.join('\n'))}`;
   };
 
   return (
@@ -130,344 +47,192 @@ export default function ReservePage() {
       <Navbar />
 
       <main className="reserve-page-main">
-        {/* Concierge Hero Header */}
+        {/* Serene Editorial Header */}
         <section className="reserve-hero-header">
           <div className="reserve-hero-inner">
-            <div className="hero-eyebrow-chip">
-              <span className="dot-live" />
-              <span>TABLE CONCIERGE · YENDADA</span>
-            </div>
+            <span className="boho-pill-eyebrow">YENDADA · VISAKHAPATNAM</span>
             <h1 className="reserve-title-main">
-              RESERVE YOUR <span className="t-alt-serif">TABLE</span>
+              RESERVE A <span className="t-alt-serif">TABLE</span>
             </h1>
             <p className="reserve-subtitle">
-              Secure your sanctuary beside the coastal ocean breeze. Direct table bookings are confirmed immediately via WhatsApp to ensure your seating is reserved ahead of time.
+              Book your preferred corner, quiet work booth, or espresso bar seating beside the coastal breeze.
             </p>
-
-            <div className="reserve-trust-pills">
-              <span className="trust-pill">4.7 Google Rating (484+ Reviews)</span>
-              <span className="trust-pill">15-Minute Grace Period</span>
-              <span className="trust-pill">Beside MK Gold Coast</span>
-            </div>
           </div>
         </section>
 
-        <section className="reserve-form-section">
-          <div className="reserve-container">
-            {confirmedVoucher ? (
-              /* Embossed Luxury Digital Table Pass */
-              <div className="booking-pass-card">
-                <div className="pass-top-seal">
-                  <div className="wax-seal-badge">
-                    <span>CHERONEY</span>
-                    <small>VERIFIED</small>
-                  </div>
-                  <div className="pass-meta-right">
-                    <span className="pass-status-pill">RESERVATION DISPATCHED</span>
-                    <span className="pass-reference">{confirmedVoucher.ref}</span>
+        {/* Streamlined 1-Screen Concierge */}
+        <section className="reserve-concierge-section">
+          <div className="reserve-concierge-container">
+            <div className="reserve-clean-grid">
+              {/* Left Column: Form Controls */}
+              <div className="reserve-form-side">
+                {/* 1. Seating Area Selector */}
+                <div className="reserve-block">
+                  <label className="concierge-field-label">1. Choose Seating Area</label>
+                  <div className="reserve-zone-deck">
+                    {RESERVATION_ZONES.map((zone) => {
+                      const photo = ZONE_PHOTOS[zone.id] || CHERONEY_PHOTOS.bohoLounge;
+                      const isSelected = selectedZone === zone.id;
+
+                      return (
+                        <button
+                          key={zone.id}
+                          type="button"
+                          className={`reserve-zone-pill-btn ${isSelected ? 'selected' : ''}`}
+                          onClick={() => setSelectedZone(zone.id)}
+                        >
+                          <img
+                            src={photo}
+                            alt={zone.name}
+                            className="zone-pill-thumbnail"
+                          />
+                          <div className="zone-pill-meta">
+                            <span className="zone-pill-title">{zone.name}</span>
+                            <span className="zone-pill-perk">{zone.desc}</span>
+                          </div>
+                          <span className="zone-pill-radio">{isSelected ? '●' : '○'}</span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
 
-                <div className="pass-greeting">
-                  <h2 className="pass-title">Your Table Awaits, {confirmedVoucher.guestName}</h2>
-                  <p className="pass-sub">
-                    Your reservation has been formatted and opened directly in WhatsApp with our staff at <strong>{SITE_META.whatsapp}</strong>.
-                  </p>
+                {/* 2. Party Size & Day Selection */}
+                <div className="reserve-block-row">
+                  <div className="reserve-half-block">
+                    <label className="concierge-field-label">2. Party Size</label>
+                    <div className="concierge-pill-group">
+                      {['2 Guests', '4 Guests', '6+ Guests'].map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          className={`concierge-pill ${partySize === opt ? 'active' : ''}`}
+                          onClick={() => setPartySize(opt)}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="reserve-half-block">
+                    <label className="concierge-field-label">3. Day</label>
+                    <div className="concierge-pill-group">
+                      {['Today', 'Tomorrow', 'Weekend'].map((day) => (
+                        <button
+                          key={day}
+                          type="button"
+                          className={`concierge-pill ${selectedDay === day ? 'active' : ''}`}
+                          onClick={() => setSelectedDay(day)}
+                        >
+                          {day}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                <div className="pass-spec-grid">
-                  <div className="pass-spec-item">
-                    <span className="spec-label">DATE</span>
-                    <span className="spec-value">{confirmedVoucher.date}</span>
-                  </div>
-                  <div className="pass-spec-item">
-                    <span className="spec-label">TIME SLOT</span>
-                    <span className="spec-value">{confirmedVoucher.timeSlot}</span>
-                  </div>
-                  <div className="pass-spec-item">
-                    <span className="spec-label">PARTY SIZE</span>
-                    <span className="spec-value">{confirmedVoucher.partySize} {confirmedVoucher.partySize === 1 ? 'Guest' : 'Guests'}</span>
-                  </div>
-                  <div className="pass-spec-item">
-                    <span className="spec-label">SEATING ZONE</span>
-                    <span className="spec-value">{confirmedVoucher.zoneName}</span>
-                  </div>
-                  <div className="pass-spec-item">
-                    <span className="spec-label">OCCASION</span>
-                    <span className="spec-value">{confirmedVoucher.occasion}</span>
-                  </div>
-                  <div className="pass-spec-item">
-                    <span className="spec-label">LOCATION</span>
-                    <span className="spec-value">Beside MK Gold Coast, Yendada</span>
+                {/* 3. Preferred Time Slot */}
+                <div className="reserve-block">
+                  <label className="concierge-field-label">4. Time Window</label>
+                  <div className="concierge-pill-group time-slots">
+                    {[
+                      'Morning Brew (9:00 AM – 12:00 PM)',
+                      'Afternoon Sourdough (12:00 PM – 4:00 PM)',
+                      'Sunset & Evening (5:00 PM – 8:00 PM)',
+                      'Late Night (8:00 PM – 10:30 PM)'
+                    ].map((slot) => (
+                      <button
+                        key={slot}
+                        type="button"
+                        className={`concierge-pill ${selectedSlot === slot ? 'active' : ''}`}
+                        onClick={() => setSelectedSlot(slot)}
+                      >
+                        {slot}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
-                {confirmedVoucher.specialNotes && (
-                  <div className="pass-notes-box">
-                    <span className="notes-label">SPECIAL REQUESTS</span>
-                    <p className="notes-text">"{confirmedVoucher.specialNotes}"</p>
+                {/* 4. Guest Details */}
+                <div className="reserve-block-row">
+                  <div className="reserve-half-block">
+                    <label className="concierge-field-label" htmlFor="resName">Your Name</label>
+                    <input
+                      id="resName"
+                      type="text"
+                      placeholder="e.g. Aditi Rao"
+                      value={guestName}
+                      onChange={(e) => setGuestName(e.target.value)}
+                      className="concierge-input"
+                    />
                   </div>
-                )}
 
-                <div className="pass-actions">
+                  <div className="reserve-half-block">
+                    <label className="concierge-field-label" htmlFor="resPhone">WhatsApp Number</label>
+                    <input
+                      id="resPhone"
+                      type="tel"
+                      placeholder="e.g. +91 98765 43210"
+                      value={guestPhone}
+                      onChange={(e) => setGuestPhone(e.target.value)}
+                      className="concierge-input"
+                    />
+                  </div>
+                </div>
+
+                {/* Direct Action Button */}
+                <div className="reserve-submit-wrap">
                   <a
-                    href={SITE_META.mapsUrl}
+                    href={buildWhatsAppLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="pass-btn primary"
+                    className="concierge-confirm-btn"
                   >
-                    <span>Open Directions on Google Maps</span>
-                    <span>↗</span>
+                    <span>Confirm Reservation via WhatsApp ({SITE_META.whatsapp})</span>
+                    <span>→</span>
                   </a>
-                  <button
-                    type="button"
-                    onClick={() => setConfirmedVoucher(null)}
-                    className="pass-btn secondary"
-                  >
-                    Modify or Book Another Table
-                  </button>
+                  <p className="concierge-reassurance">
+                    Instant confirmation. No booking deposit required. Free cancellation.
+                  </p>
                 </div>
               </div>
-            ) : (
-              /* High-End 4-Step Concierge Experience */
-              <form className="concierge-booking-form" onSubmit={handleBookingSubmit}>
-                {/* Step 1: Mood & Occasion */}
-                <div className="concierge-step-card">
-                  <div className="step-badge-row">
-                    <span className="step-number">01</span>
-                    <div>
-                      <h2 className="step-title">Select Atmosphere &amp; Occasion</h2>
-                      <p className="step-desc">Help us tailor your table placement and ambiance.</p>
-                    </div>
+
+              {/* Right Column: Visual Summary & Atmosphere */}
+              <div className="reserve-summary-side">
+                <div className="reserve-summary-card">
+                  <div className="summary-img-wrap">
+                    <img
+                      src={CHERONEY_PHOTOS.bohoLounge}
+                      alt="Cheroney Boho Seating in Yendada"
+                      className="summary-card-img"
+                    />
                   </div>
-
-                  <div className="occasion-cards-grid">
-                    {OCCASIONS.map((occ) => (
-                      <div
-                        key={occ.id}
-                        className={`occasion-card ${selectedOccasion === occ.title ? 'active' : ''}`}
-                        onClick={() => setSelectedOccasion(occ.title)}
-                      >
-                        <span className="occ-tag">{occ.tag}</span>
-                        <h3 className="occ-title">{occ.title}</h3>
-                        <p className="occ-desc">{occ.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Step 2: Date & Party Size */}
-                <div className="concierge-step-card">
-                  <div className="step-badge-row">
-                    <span className="step-number">02</span>
-                    <div>
-                      <h2 className="step-title">Choose Date &amp; Guests</h2>
-                      <p className="step-desc">Pick your preferred day and party size.</p>
-                    </div>
-                  </div>
-
-                  {/* 7-Day Interactive Date Ribbon */}
-                  <div className="date-ribbon-block">
-                    <label className="concierge-field-label">Preferred Date</label>
-                    <div className="date-ribbon-scroll">
-                      {dateOptions.map((opt) => (
-                        <button
-                          key={opt.iso}
-                          type="button"
-                          className={`date-ribbon-pill ${selectedDate === opt.iso ? 'active' : ''}`}
-                          onClick={() => setSelectedDate(opt.iso)}
-                        >
-                          <span className="ribbon-weekday">{opt.weekday}</span>
-                          <span className="ribbon-label">{opt.label}</span>
-                        </button>
-                      ))}
-                    </div>
-
-                    {/* Custom Date Input for future bookings */}
-                    <div className="custom-date-row">
-                      <span className="custom-date-hint">Or choose future date:</span>
-                      <input
-                        type="date"
-                        value={selectedDate}
-                        onChange={(e) => setSelectedDate(e.target.value)}
-                        min={new Date().toISOString().split('T')[0]}
-                        className="concierge-date-picker"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Party Size Stepper & Presets */}
-                  <div className="party-size-block">
-                    <label className="concierge-field-label">Number of Guests</label>
-                    <div className="party-stepper-row">
-                      <div className="stepper-counter-box">
-                        <button
-                          type="button"
-                          className="counter-btn"
-                          onClick={() => setPartySize((p) => Math.max(1, p - 1))}
-                          aria-label="Decrease party size"
-                        >
-                          −
-                        </button>
-                        <span className="counter-display">
-                          {partySize} {partySize === 1 ? 'Guest' : 'Guests'}
-                        </span>
-                        <button
-                          type="button"
-                          className="counter-btn"
-                          onClick={() => setPartySize((p) => Math.min(20, p + 1))}
-                          aria-label="Increase party size"
-                        >
-                          +
-                        </button>
-                      </div>
-
-                      <div className="party-preset-chips">
-                        {[1, 2, 4, 6, 8].map((size) => (
-                          <button
-                            key={size}
-                            type="button"
-                            className={`preset-chip ${partySize === size ? 'active' : ''}`}
-                            onClick={() => setPartySize(size)}
-                          >
-                            {size === 1 ? '1 Solo' : size === 2 ? '2 Couple' : size === 4 ? '4 Friends' : `${size}+`}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 3: Seating Zone & Time Slot */}
-                <div className="concierge-step-card">
-                  <div className="step-badge-row">
-                    <span className="step-number">03</span>
-                    <div>
-                      <h2 className="step-title">Seating Zone &amp; Time Slot</h2>
-                      <p className="step-desc">Select your preferred space and dining wave.</p>
-                    </div>
-                  </div>
-
-                  {/* Zone Cards */}
-                  <div className="zones-deck-grid">
-                    {RESERVATION_ZONES.map((zone) => (
-                      <div
-                        key={zone.id}
-                        className={`zone-deck-card ${selectedZone === zone.id ? 'active' : ''}`}
-                        onClick={() => setSelectedZone(zone.id)}
-                      >
-                        <div className="zone-deck-img-wrap">
-                          <img
-                            src={ZONE_PHOTOS[zone.id] || CHERONEY_PHOTOS.bohoLounge}
-                            alt={zone.name}
-                            className="zone-deck-img"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div className="zone-deck-head">
-                          <span className="zone-radio-mark">{selectedZone === zone.id ? '●' : '○'}</span>
-                          <h3 className="zone-deck-name">{zone.name}</h3>
-                        </div>
-                        <p className="zone-deck-desc">{zone.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Grouped Time Waves */}
-                  <div className="time-waves-section">
-                    <label className="concierge-field-label">Select Time Slot</label>
-                    <div className="time-groups-list">
-                      {TIME_SLOT_GROUPS.map((grp, gIdx) => (
-                        <div key={gIdx} className="time-group-item">
-                          <span className="time-group-title">{grp.group}</span>
-                          <div className="time-slots-flow">
-                            {grp.slots.map((slot) => (
-                              <button
-                                key={slot}
-                                type="button"
-                                className={`time-slot-btn ${selectedSlot === slot ? 'active' : ''}`}
-                                onClick={() => setSelectedSlot(slot)}
-                              >
-                                {slot}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Step 4: Guest Contact Details */}
-                <div className="concierge-step-card">
-                  <div className="step-badge-row">
-                    <span className="step-number">04</span>
-                    <div>
-                      <h2 className="step-title">Guest Details &amp; Confirmation</h2>
-                      <p className="step-desc">Direct confirmation sent to our staff via WhatsApp.</p>
-                    </div>
-                  </div>
-
-                  <div className="concierge-fields-grid">
-                    <div className="concierge-field">
-                      <label htmlFor="guestNameInput" className="concierge-field-label">Guest Full Name *</label>
-                      <input
-                        id="guestNameInput"
-                        type="text"
-                        placeholder="E.g., Harsha Vardhan"
-                        value={guestName}
-                        onChange={(e) => setGuestName(e.target.value)}
-                        className="concierge-input"
-                        required
-                      />
-                    </div>
-
-                    <div className="concierge-field">
-                      <label htmlFor="guestPhoneInput" className="concierge-field-label">Mobile Number (Optional)</label>
-                      <input
-                        id="guestPhoneInput"
-                        type="tel"
-                        placeholder="E.g., 98765 43210"
-                        value={guestPhone}
-                        onChange={(e) => setGuestPhone(e.target.value)}
-                        className="concierge-input"
-                      />
-                    </div>
-
-                    <div className="concierge-field full-width">
-                      <label htmlFor="specialNotesInput" className="concierge-field-label">Special Requests (Optional)</label>
-                      <textarea
-                        id="specialNotesInput"
-                        rows={3}
-                        placeholder="E.g., Window corner table requested, anniversary dessert, high chair needed..."
-                        value={specialNotes}
-                        onChange={(e) => setSpecialNotes(e.target.value)}
-                        className="concierge-textarea"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Summary Callout */}
-                  <div className="reservation-dispatch-summary">
-                    <div className="dispatch-summary-inner">
-                      <div className="dispatch-summary-text">
-                        <span className="dispatch-strong">Your Reservation Summary:</span>
-                        <p className="dispatch-sub">
-                          {partySize} {partySize === 1 ? 'Guest' : 'Guests'} on {selectedDate} at {selectedSlot} · {selectedOccasion} · {RESERVATION_ZONES.find((z) => z.id === selectedZone)?.name}
-                        </p>
-                      </div>
-                      <button type="submit" className="confirm-booking-cta">
-                        <span>Dispatch via WhatsApp ({SITE_META.whatsapp})</span>
-                        <span className="cta-arrow">↗</span>
-                      </button>
-                    </div>
-                    <p className="concierge-footnote">
-                      Dispatched instantly to <strong>{SITE_META.whatsapp}</strong>. No middleman, zero booking charges.
+                  <div className="summary-card-body">
+                    <span className="summary-card-badge">THE CHERONEY PROMISE</span>
+                    <h3 className="summary-card-title">Quiet Coastal Sanctuary</h3>
+                    <p className="summary-card-desc">
+                      Every reserved table is held with fresh drinking water, ambient 2700K warm lighting, and accessible laptop power outlets.
                     </p>
+
+                    <div className="summary-details-list">
+                      <div className="summary-row">
+                        <span className="summary-label">Location:</span>
+                        <span className="summary-val">Beside MK Gold Coast, Yendada</span>
+                      </div>
+                      <div className="summary-row">
+                        <span className="summary-label">Hours:</span>
+                        <span className="summary-val">9:00 AM – 11:00 PM Daily</span>
+                      </div>
+                      <div className="summary-row">
+                        <span className="summary-label">Parking:</span>
+                        <span className="summary-val">Dedicated Curbside &amp; Lot</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </form>
-            )}
+              </div>
+            </div>
           </div>
         </section>
       </main>

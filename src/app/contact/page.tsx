@@ -16,139 +16,110 @@ export default function ContactPage() {
       <Navbar />
 
       <main className="contact-page-main">
-        {/* Header */}
+        {/* Serene Editorial Header */}
         <section className="contact-hero-header">
           <div className="contact-hero-inner">
             <span className="boho-pill-eyebrow">YENDADA · VISAKHAPATNAM</span>
             <h1 className="contact-title-main">
-              FIND YOUR WAY TO <span className="t-alt-serif">CHERONEY</span>
+              LOCATION &amp; <span className="t-alt-serif">HOURS</span>
             </h1>
             <p className="contact-subtitle">
-              Located on the coastal corridor beside MK Gold Coast in Yendada, Sagar Nagar. Specialty coffee bar, hand-tossed pizzas, and slow afternoons.
+              Located on the coastal corridor beside MK Gold Coast in Yendada, Sagar Nagar. Open daily from 9:00 AM to 11:00 PM.
             </p>
           </div>
         </section>
 
-        {/* Details Grid */}
+        {/* Details & Map Split */}
         <section className="contact-details-section">
           <div className="contact-container">
-            <div className="contact-info-grid">
-              {/* Address Card */}
-              <div className="contact-card primary">
-                <span className="card-badge-pill">OUR VENUE</span>
-                <h2 className="contact-card-heading">The Yendada Sanctuary</h2>
-                <p className="contact-card-address">
-                  Ground Floor, Beside MK Gold Coast, Mubarak Colony, Yendada, Sagar Nagar, Visakhapatnam, Andhra Pradesh 530045
-                </p>
-                <div className="card-btn-stack">
-                  <a
-                    href={SITE_META.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-primary-btn"
-                  >
-                    Open on Google Maps ↗
-                  </a>
-                  <a
-                    href={`https://wa.me/${SITE_META.whatsappRaw}?text=${encodeURIComponent('Hello Cheroney! I am on my way and need help with directions/parking.')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-secondary-btn"
-                  >
-                    Message on WhatsApp ({SITE_META.whatsapp})
-                  </a>
-                </div>
-              </div>
+            <div className="contact-clean-split">
+              {/* Left Column: Address, Hours, Amenities */}
+              <div className="contact-info-panel">
+                {/* Address Card */}
+                <div className="contact-clean-card">
+                  <span className="clean-card-label">ADDRESS &amp; LANDMARK</span>
+                  <h2 className="clean-card-title">Cheroney Specialty Coffee</h2>
+                  <p className="clean-card-text">
+                    Ground Floor, Beside MK Gold Coast, Mubarak Colony, Yendada, Sagar Nagar, Visakhapatnam, Andhra Pradesh 530045
+                  </p>
 
-              {/* Operating Hours Card */}
-              <div className="contact-card">
-                <span className="card-badge-pill">EVERY DAY</span>
-                <h2 className="contact-card-heading">Operating Hours</h2>
-                <div className="hours-listing">
-                  <div className="hour-entry">
-                    <span className="day-name">Monday – Sunday</span>
-                    <span className="time-val">9:00 AM – 11:00 PM</span>
-                  </div>
-                  <div className="hour-entry">
-                    <span className="day-name">Morning Espresso Bar</span>
-                    <span className="time-val">Pulls start at 9:00 AM</span>
-                  </div>
-                  <div className="hour-entry">
-                    <span className="day-name">Kitchen Orders</span>
-                    <span className="time-val">Open until 10:30 PM</span>
+                  <div className="clean-btn-group">
+                    <a
+                      href={SITE_META.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="clean-action-btn primary"
+                    >
+                      Open in Google Maps ↗
+                    </a>
+                    <a
+                      href={`https://wa.me/${SITE_META.whatsappRaw}?text=${encodeURIComponent('Hello Cheroney! I am on my way and need help with directions or table availability.')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="clean-action-btn secondary"
+                    >
+                      WhatsApp Us ({SITE_META.whatsapp})
+                    </a>
                   </div>
                 </div>
-                <div className="live-pill-notice">
-                  <span className="live-pulse" />
-                  <span>Open 7 days a week for breakfast, lunch &amp; late-night dates</span>
-                </div>
-              </div>
 
-              {/* Transit & Commute Card */}
-              <div className="contact-card">
-                <span className="card-badge-pill">COMMUTE</span>
-                <h2 className="contact-card-heading">How to Reach Us</h2>
-                <ul className="transit-steps-list">
-                  <li>
-                    <strong>From Rushikonda Beach (10 min):</strong> Head southwest along Beach Road, take the right at Sagar Nagar junction towards Yendada.
-                  </li>
-                  <li>
-                    <strong>From Siripuram / MVP Colony (12 min):</strong> Drive along National Highway 16 or Beach Road towards Gitam University / Sagar Nagar.
-                  </li>
-                  <li>
-                    <strong>Landmark:</strong> Directly beside MK Gold Coast apartment towers with ample curbside &amp; lot parking.
-                  </li>
-                </ul>
-              </div>
-
-              {/* Amenities Card */}
-              <div className="contact-card">
-                <span className="card-badge-pill">FACILITIES</span>
-                <h2 className="contact-card-heading">Guest Amenities</h2>
-                <div className="amenities-grid-box">
-                  <div className="amenity-item">
-                    <span className="amenity-tag">POWER</span>
-                    <div>
-                      <strong>Power Outlets</strong>
-                      <p>Dedicated charging at lounge &amp; study tables</p>
+                {/* Operating Hours Card */}
+                <div className="contact-clean-card">
+                  <span className="clean-card-label">DAILY SCHEDULE</span>
+                  <h3 className="clean-card-title">Operating Hours</h3>
+                  <div className="hours-tabular-list">
+                    <div className="hours-row">
+                      <span className="hours-day">Monday – Sunday</span>
+                      <span className="hours-time">9:00 AM – 11:00 PM</span>
                     </div>
-                  </div>
-                  <div className="amenity-item">
-                    <span className="amenity-tag">WIFI</span>
-                    <div>
-                      <strong>High-Speed Wi-Fi</strong>
-                      <p>100+ Mbps fiber for remote workers</p>
+                    <div className="hours-row">
+                      <span className="hours-day">Espresso Bar</span>
+                      <span className="hours-time">Pulls start at 9:00 AM</span>
                     </div>
-                  </div>
-                  <div className="amenity-item">
-                    <span className="amenity-tag">PETS</span>
-                    <div>
-                      <strong>Pet-Friendly</strong>
-                      <p>Four-legged companions welcome at outdoor tables</p>
-                    </div>
-                  </div>
-                  <div className="amenity-item">
-                    <span className="amenity-tag">PARK</span>
-                    <div>
-                      <strong>Free Parking</strong>
-                      <p>Spacious curbside &amp; building lot parking</p>
+                    <div className="hours-row">
+                      <span className="hours-day">Kitchen Orders</span>
+                      <span className="hours-time">Open until 10:30 PM</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Direct Reservation CTA Banner */}
-            <div className="contact-bottom-cta">
-              <div className="cta-banner-content">
-                <h3 className="cta-banner-title">Visiting This Evening?</h3>
-                <p className="cta-banner-sub">
-                  Weekend evenings in Yendada fill up quickly. Secure your favorite table in the Boho Lounge or Window Corner ahead of time.
-                </p>
+                {/* Amenities Badges */}
+                <div className="contact-amenities-bar">
+                  <div className="amenity-chip">
+                    <span className="amenity-chip-tag">WIFI</span>
+                    <span className="amenity-chip-label">High-Speed Fiber</span>
+                  </div>
+                  <div className="amenity-chip">
+                    <span className="amenity-chip-tag">POWER</span>
+                    <span className="amenity-chip-label">Plugs at Every Booth</span>
+                  </div>
+                  <div className="amenity-chip">
+                    <span className="amenity-chip-tag">PETS</span>
+                    <span className="amenity-chip-label">Pet-Friendly Seating</span>
+                  </div>
+                  <div className="amenity-chip">
+                    <span className="amenity-chip-tag">PARKING</span>
+                    <span className="amenity-chip-label">Dedicated Lot &amp; Valet</span>
+                  </div>
+                </div>
               </div>
-              <Link href="/reserve" className="cta-banner-btn">
-                Reserve Table Now →
-              </Link>
+
+              {/* Right Column: Google Maps Embed */}
+              <div className="contact-map-panel">
+                <div className="contact-map-frame">
+                  <iframe
+                    title="Cheroney Google Maps Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.814529068593!2d83.3512!3d17.7656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395b28e833ad89%3A0xc3f5cf7b77ce4d4c!2sCheroney!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: '420px' }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="map-iframe"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -159,4 +130,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

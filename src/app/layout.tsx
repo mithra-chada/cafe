@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { SITE_META, CHERONEY_PHOTOS } from '@/data/cafe';
+import SmoothScrollAndTransitions from '@/components/SmoothScrollAndTransitions';
 
 export const metadata: Metadata = {
   title: SITE_META.title,
@@ -99,7 +100,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScrollAndTransitions />
+        {children}
+      </body>
     </html>
   );
 }

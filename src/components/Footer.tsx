@@ -34,12 +34,11 @@ export default function Footer() {
         <div className="footer-col links">
           <h4 className="footer-col-title">EXPLORE</h4>
           <ul className="footer-nav-list">
-            <li><Link href="/">Home &amp; Hero Deck</Link></li>
-            <li><Link href="/menu">Full Digital Menu</Link></li>
-            <li><Link href="/reserve">Reserve Table / Slot</Link></li>
-            <li><Link href="/experience">The Space &amp; Google Reviews</Link></li>
-            <li><Link href="/contact">Location, Hours &amp; Parking</Link></li>
-            <li><Link href="/pitch">Founder&apos;s Pitch Deck</Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/menu">Digital Menu</Link></li>
+            <li><Link href="/reserve">Reserve a Table</Link></li>
+            <li><Link href="/experience">The Space &amp; Atmosphere</Link></li>
+            <li><Link href="/contact">Location &amp; Hours</Link></li>
           </ul>
         </div>
 

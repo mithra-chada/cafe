@@ -15,11 +15,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/menu', label: 'Menu & Bakes' },
-    { href: '/reserve', label: 'Book Table' },
-    { href: '/experience', label: 'The Space & Reviews' },
-    { href: '/contact', label: 'Location' },
-    { href: '/pitch', label: 'Pitch' }
+    { href: '/menu', label: 'Menu' },
+    { href: '/experience', label: 'The Space' },
+    { href: '/contact', label: 'Location & Hours' },
   ];
 
   return (
@@ -57,10 +55,6 @@ export default function Navbar() {
             <span className="nav-dot" style={{ backgroundColor: 'var(--cream)' }}></span>
             <span>Reserve Table</span>
           </Link>
-          <Link href="/menu" className="nav-contact-box">
-            <span className="nav-dot" style={{ backgroundColor: 'var(--sage)' }}></span>
-            <span>Menu &amp; Order</span>
-          </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -79,45 +73,55 @@ export default function Navbar() {
       {/* Mobile Slide Drawer */}
       {mobileMenuOpen && (
         <div className="site-mobile-drawer" onClick={() => setMobileMenuOpen(false)}>
-          <div className="mobile-drawer-sheet" onClick={(e) => e.stopPropagation()}>
-            <div className="drawer-header-row">
-              <span className="drawer-brand-logo">Cheroney</span>
+          <div
+            className="mobile-drawer-sheet"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mobile-drawer-top">
+              <span className="mobile-drawer-logo">Cheroney</span>
               <button
                 type="button"
-                className="drawer-close-btn"
+                className="mobile-drawer-close"
                 onClick={() => setMobileMenuOpen(false)}
-                aria-label="Close menu"
+                aria-label="Close navigation"
               >
                 ✕
               </button>
             </div>
 
-            <nav className="drawer-nav-list">
+            <nav className="mobile-drawer-nav">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`drawer-nav-item ${isActive ? 'active' : ''}`}
+                    className={`mobile-drawer-link ${isActive ? 'active' : ''}`}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     <span>{link.label}</span>
-                    <span className="drawer-arrow">→</span>
+                    <span className="mobile-drawer-arrow">→</span>
                   </Link>
                 );
               })}
             </nav>
 
-            <div className="drawer-footer-actions">
-              <Link href="/reserve" className="drawer-action-btn primary">
+            <div className="mobile-drawer-actions">
+              <Link
+                href="/reserve"
+                className="mobile-drawer-reserve-btn"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 Reserve a Table
               </Link>
-              <Link href="/menu" className="drawer-action-btn secondary">
-                View Digital Menu &amp; Order
-              </Link>
-              <p className="drawer-hours-note">
-                Open Daily 9:00 AM – 11:00 PM · Beside MK Gold Coast, Yendada
-              </p>
+              <a
+                href={`https://wa.me/${SITE_META.whatsappRaw}?text=${encodeURIComponent('Hello Cheroney! I would like to inquire about visiting your Yendada cafe.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-drawer-wa-btn"
+              >
+                WhatsApp Concierge
+              </a>
             </div>
           </div>
         </div>
